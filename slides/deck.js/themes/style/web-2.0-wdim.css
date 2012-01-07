@@ -208,3 +208,7 @@
 .slide p{
   font-size: 1.25em;
 }
+.slide img.full{
+  margin: 0;
+  
+}

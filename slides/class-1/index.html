@@ -6,13 +6,13 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  
+
   <title>Getting Started with deck.js</title>
-  
+
   <meta name="description" content="A jQuery library for modern HTML presentations">
   <meta name="author" content="Caleb Troughton">
   <meta name="viewport" content="width=1024, user-scalable=no">
-  
+
   <!-- Core and extension CSS files -->
   <link rel="stylesheet" href="../deck.js/core/deck.core.css">
   <link rel="stylesheet" href="../deck.js/extensions/goto/deck.goto.css">
@@ -24,13 +24,15 @@
   <!-- Theme CSS files (menu swaps these out) (or did until we modified) -->
   <link rel="stylesheet" id="style-theme-link" href="../deck.js/themes/style/web-2.0-wdim.css">
   <link rel="stylesheet" id="transition-theme-link" href="../deck.js/themes/transition/vertical-slide.css">
-  
+
   <!-- syntax highlighter -->
   <link rel="stylesheet" href="../custom-common/css/jquery.snippet.css">
 
+  <!-- Custom CSS for all AI classes -->
+  <link rel="stylesheet" href="../custom-common/css/custom-common.css">
   <!-- Custom CSS just for this page -->
   <link rel="stylesheet" href="ai-class.css">
-  
+
   <script src="../deck.js/modernizr.custom.js"></script>
 </head>
 
@@ -132,7 +134,7 @@
     <p>Purpose of HTML is to write text that links to other bits of text, annotated so that the information has organization and context</p>
     <p><cite>II Christopher, Chapter 6 Verse 12</cite></p>
   </blockquote>
-  <pre class="htmlCode"><code class="htmlCode">&lt;html&gt;
+<pre class="htmlCode"><code>&lt;html&gt;
   &lt;body&gt;
   &lt;h1&gt;Lorem Ipsum Dolor&lt;/h1&gt;
   &lt;p class=&quot;main-content&quot;&gt;Placerat, scelerisque, nisi ridiculus ac ut, ac  &lt;a href=&quot;http://www.google.com&quot;&gt;dignissim&lt;/a&gt; phasellus dignissim dignissim augue tristique integer.&lt;/p&gt;
@@ -154,6 +156,72 @@
     <p>As well as <strong>Accessible Design</strong>, wherein that meaning and context is able to be interpreted by browsers or other devices</p>
     <p><cite>II Christopher, Chapter 6 Verse 14</cite></p>
   </blockquote>
+</section>
+
+<section class="slide" id="user-agents">
+  <h2>User Agents</h2>
+  <ol>
+    <li><p>Web browsers</p></li>
+    <li><p>Screen readers</p></li>
+    <li><p>Google spiders, bots.</p></li>
+  </ol>
+</section>
+
+<section class="slide" id="original-html">
+  <h2>HTML Wasn't Meant To Be Pretty</h2>
+  <ol>
+    <li><p>No imagery</p></li>
+    <li><p>No design</p></li>
+    <li><p>HTML was invented with bandwidth was extremely limited</p></li>
+    <li><p>The purpose was text, initially, and text alone</p></li>
+  </ol>
+</section>
+
+<section class="slide" id="timeline">
+  <h2>Timeline</h2>
+  <img src="images/timeline.png"/>
+</section>
+
+<section class="slide" id="w3c1">
+  <h2>The March Toward Standards</h2>
+  <p>New Technology in HTML2.</p>
+  <P>Tables, tables everywhere!</p>
+  <h2>Browser Wars 1.0</h2>
+  <img src="images/derp.png"/>
+  <p>"Standards? Get IE3, bro, it's got blink tags!"</p>
+</section>
+
+<section class="slide" id="w3c2">
+  <h2>The Birth of the W3C</h2>
+  <p>Rising out of the catastrophe of table-based layouts and browser-specific technology, the W3C is formed by internet-inventor Tim Berners-Lee in 1994. </p>
+  <blockquote cite="http://example.org">
+    <p>... made up of member organizations which maintain full-time staff for the purpose of working together in the development of standards for the World Wide Web.</p>
+    <p><cite><a href="http://en.wikipedia.org/wiki/World_Wide_Web_Consortium">http://en.wikipedia.org/wiki/World_Wide_Web_Consortium</a></cite></p>
+  </blockquote>
+</section>
+
+<section class="slide" id="new-tech-1">
+  <h2>New Standards, New Technology</h2>
+  <h3>Cascading Style Sheets</h3>
+  <p>Division of form and content. Information itself could remain distinct, while the experience could be tweaked to suit various devices.</p>
+  <img src="images/css-html.png"/>
+</section>
+
+<section class="slide" id="new-tech-2">
+  <h2>New Standards, New Technology</h2>
+  <h3>Javascript</h3>
+  <p>Form, content and function are now fully discreet ... as an afterthought to where we started: HTML and simple data display.</p>
+  <img src="images/css-html-js.png"/>
+</section>
+
+<section class="slide" id="html5-lands">
+  <h2>HTML5 IS HERE</h2>
+  <img src="images/unicorn-farts.png"/>
+</section>
+
+<section class="slide" id="html5-good">
+  <h2>HTML5 is complete</h2>
+  <blockquote>Instead of three different technologies growing to fit web needs ad hoc, HTML5 can be defined as the combination of HTML, CSS and Javascript in a meticulously planned, full application framework.</blockquote>
 </section>
 
 <section class="slide" id="homework">
@@ -214,12 +282,12 @@
 <section class="slide" id="extensions">
   <h2>Extensions</h2>
   <p>Core gives you basic slide functionality with left and right arrow navigation, but you may want more. Here are the ones included in this&nbsp;deck:</p>
-  
+
   <ul>
     <li class="slide" id="extensions-goto">
       <strong>deck.goto</strong>: Adds a shortcut key to jump to any slide number.  Hit g, type in the slide number, and hit&nbsp;enter.
     </li>
-    
+
     <li class="slide" id="extensions-hash">
       <strong>deck.hash</strong>: Enables internal linking within slides, deep linking to individual slides, and updates the address bar &amp; a permalink anchor with each slide&nbsp;change.
     </li>
@@ -236,7 +304,7 @@
       <strong>deck.status</strong>: Adds a page number indicator. (current/total)
     </li>
   </ul>
-  
+
   <p class="slide" id="extension-folders">Each extension folder in the download package contains the necessary JavaScript, CSS, and HTML&nbsp;files. For a complete list of extension modules included in deck.js, check out the&nbsp;<a href="http://imakewebthings.github.com/deck.js/docs">documentation</a>.</p>
 </section>
 
@@ -245,13 +313,13 @@
   <p>That last slide had a few steps.  To create substeps in slides, just nest them:</p>
   <pre><code>&lt;section class=&quot;slide&quot;&gt;
   &lt;h2&gt;Extensions&lt;/h2&gt;
-  &lt;p&gt;Core gives you basic slide functionality...&lt;/p&gt;    
+  &lt;p&gt;Core gives you basic slide functionality...&lt;/p&gt;
   &lt;ul&gt;
      &lt;li class=&quot;slide&quot;&gt;
         &lt;h3&gt;deck.goto&lt;/h3&gt;
         &lt;p&gt;Adds a shortcut key to jump to any slide number...&lt;/p&gt;
      &lt;/li&gt;
-     &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt; 
+     &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
      &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
      &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
   &lt;/ul&gt;
@@ -280,9 +348,9 @@
 <section class="slide" id="elements-videos">
   <h2>Other Elements: Video Embeds</h2>
   <p>Embed videos from your favorite online video service or with an HTML5 video&nbsp;element.</p>
-  
+
   <iframe src="http://player.vimeo.com/video/1063136?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
-  
+
   <pre><code>&lt;iframe src=&quot;http://player.vimeo.com/video/1063136?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;400&quot; height=&quot;225&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre>
 </section>
 
