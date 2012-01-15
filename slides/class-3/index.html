@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>WDIM393 - Week 1</title>
+
+  <meta name="description" content="A jQuery library for modern HTML presentations">
+  <meta name="author" content="Caleb Troughton">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <!-- Core and extension CSS files -->
+  <link rel="stylesheet" href="../deck.js/core/deck.core.css">
+  <link rel="stylesheet" href="../deck.js/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" href="../deck.js/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="../deck.js/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="../deck.js/extensions/status/deck.status.css">
+  <link rel="stylesheet" href="../deck.js/extensions/hash/deck.hash.css">
+
+  <!-- Theme CSS files (menu swaps these out) (or did until we modified) -->
+  <link rel="stylesheet" id="style-theme-link" href="../deck.js/themes/style/web-2.0-wdim.css">
+  <link rel="stylesheet" id="transition-theme-link" href="../deck.js/themes/transition/vertical-slide.css">
+
+  <!-- syntax highlighter -->
+  <link rel="stylesheet" href="../custom-common/css/jquery.snippet.css">
+
+  <!-- Custom CSS for all AI classes -->
+  <link rel="stylesheet" href="../custom-common/css/custom-common.css">
+  <!-- Custom CSS just for this page -->
+  <link rel="stylesheet" href="ai-class.css">
+
+  <script src="../deck.js/modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+<section class="slide" id="title-slide">
+  <h1>WDIM363 - Week 1</h1>
+</section>
+
+<section class="slide" id="welcome">
+  <h2>Welcome</h2>
+  <img src="http://www.toothpastefordinner.com/113004/time-for-the-presentation.gif" alt="Slides">
+</section>
+
+<section class="slide" id="agenda">
+  <h2>Agenda</h2>
+  <ol>
+    <li>
+      <h3>Intro</h3>
+      <p>Me, You, Syllabus</p>
+    </li>
+    <li>
+      <h3>Class Site</h3>
+      <p><a href="http://wdim.illepic.com" alt="class site"> wdim.illepic.com</a></p>
+    </li>
+    <li>
+      <h3>Tools/Hosting</h3>
+      <p>AI (or your own) http hosting is REQUIRED</p>
+    </li>
+    <li>
+      <h3>Group Assignment</h3>
+      <p>Get to know/hate these people now.</p>
+    </li>
+    <li>
+      <h3>The Semantic Web</h3>
+      <p>There and Back Again</p>
+    </li>
+  </ol>
+</section>
+
+<section class="slide" id="hosting">
+  <h2>Hosting</h2>
+  <ol>
+    <li>
+      <h3>Each group has one hosting account</h3>
+      <p></p>
+    </li>
+    <li>
+      <h3>WDIM hosting (5 available) or personal</h3>
+      <p></p>
+    </li>
+    <li>
+      <h3>All homework will be live on hosting</h3>
+      <p></p>
+    </li>
+  </ol>
+</section>
+
+<section class="slide" id="groups">
+  <h2>Groups</h2>
+  <p>This class will feature a semester-long group project that is used to turn in each homework. You will be randomly assigned to a group. Homework is turned in per group - that is, each member of a group gets the same grade. A single, representative member of the group will turn in the assignment on the website, usually by submitting a link using the handy form.</p>
+
+  <p>Each homework adds sections to a website that your team hosts and maintains. I'll leave it up to you how you split duties (Do you all email files around? GitHub? SSH and Vim?). The homework should make it clear what is required. </p>
+
+  <p>For the love of DOM, use all those skills you picked up here to make it pretty. Pretties count on the grade.</p>
+</section>
+
+<section class="slide" id="semantic-1">
+  <h2>A Brief History of the Semantic Web</h2>
+  <img src="images/luke.jpg" alt="long long ago"/>
+</section>
+
+<section class="slide" id="semantic-2">
+  <h2>A Brief History of the Semantic Web</h2>
+  <img src="images/tim.png" alt="long long ago"/>
+</section>
+
+<section class="slide" id="semantic-3">
+  <h2>A Brief History of the Semantic Web</h2>
+  <ul>
+    <li>
+      <h3>Hyper Text</h3>
+      <p>“Hypertext” is text that avoids strictly linear organization in favor of hyper-linking to a potentially infinite number of other bits of text.</p>
+    </li>
+    <li>
+      <h3>Markup Language</h3>
+      <ul>
+        <li><p><strong>Annotate</strong> a document, in put in indicators that there's more going on in the background besides just the words shown to the user.</p></li>
+        <li><p><strong>"</strong>Similarly to how we use quotation marks to denote when someone is saying something <strong>"</strong></p></li>
+        <li><p><strong>(</strong>And parentheses to provide little asides or non-essential information<strong>)</strong></p></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section class="slide" id="html-def">
+  <h2>HTML Definition</h2>
+  <blockquote cite="http://example.org">
+    <p>Purpose of HTML is to write text that links to other bits of text, annotated so that the information has organization and context</p>
+    <p><cite>II Christopher, Chapter 6 Verse 12</cite></p>
+  </blockquote>
+<pre class="htmlCode"><code>&lt;html&gt;
+  &lt;body&gt;
+  &lt;h1&gt;Lorem Ipsum Dolor&lt;/h1&gt;
+  &lt;p class=&quot;main-content&quot;&gt;Placerat, scelerisque, nisi ridiculus ac ut, ac  &lt;a href=&quot;http://www.google.com&quot;&gt;dignissim&lt;/a&gt; phasellus dignissim dignissim augue tristique integer.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+
+<section class="slide" id="semanticweb-def">
+  <h2>Semantic Web</h2>
+  <blockquote cite="http://example.org">
+    <p>HTML supports the idea of a <strong>Semantic Web</strong>, where the meaning and context of information is clear.</p>
+    <p><cite>II Christopher, Chapter 6 Verse 13</cite></p>
+  </blockquote>
+
+  <pre class="htmlCode"><code>&lt;item rdf:about=&quot;http://dbpedia.org/resource/Cat&quot;&gt;Cat&lt;/item&gt;</code></pre>
+  <cite>Example RDF (Rich Data Format) for true data meaning.</cite>
+</section>
+
+<section class="slide" id="accessibility-def">
+  <h2>Accessibility</h2>
+  <blockquote cite="http://example.org">
+    <p>As well as <strong>Accessible Design</strong>, wherein that meaning and context is able to be interpreted by browsers or other devices</p>
+    <p><cite>II Christopher, Chapter 6 Verse 14</cite></p>
+  </blockquote>
+  <pre class="htmlCode"><code>&lt;header role=&quot;banner&quot;&gt;
+  &lt;h1&gt;HTML5 example with new elements and WAI-ARIA landmark roles&lt;/h1&gt;
+&lt;/header&gt;
+&lt;aside id=&quot;demo-aside-content&quot; role=&quot;complementary&quot;&gt;This is just a demo page to see HTML5 markup and WAI-ARIA landmark roles in action in a simple context&lt;/aside&gt;</code></pre>
+  <cite>Example ARIA (Accessible Rich Internet Applications) "role" tags used to assistive device readers.</cite>
+</section>
+
+<section class="slide" id="user-agents">
+  <h2>User Agents</h2>
+  <ol>
+    <li><p>Web browsers</p></li>
+    <li><p>Screen readers</p></li>
+    <li><p>Google spiders, bots.</p></li>
+  </ol>
+</section>
+
+<section class="slide" id="original-html">
+  <h2>HTML Wasn't Meant To Be Pretty</h2>
+  <ol>
+    <li><p>No imagery</p></li>
+    <li><p>No design</p></li>
+    <li><p>HTML was invented with bandwidth was extremely limited</p></li>
+    <li><p>The purpose was text, initially, and text alone</p></li>
+  </ol>
+</section>
+
+<section class="slide" id="timeline">
+  <h2>Timeline</h2>
+  <img src="images/timeline.png"/>
+  <cite>Source: html5rocks.com</cite>
+</section>
+
+<section class="slide" id="w3c1">
+  <h2>The March Toward Standards</h2>
+  <p>New Technology in HTML2</p>
+  <P>Tables, tables everywhere!</p>
+  <h2>Browser Wars 1.0</h2>
+  <img src="images/derp.png"/>
+  <p>"Standards? Get IE3, bro, it's got blink tags!"</p>
+</section>
+
+<section class="slide" id="w3c2">
+  <h2>The Birth of the W3C</h2>
+  <p>Rising out of the catastrophe of table-based layouts and browser-specific technology, the W3C is formed by internet-inventor Tim Berners-Lee in 1994. </p>
+  <blockquote cite="http://example.org">
+    <p>... made up of member organizations which maintain full-time staff for the purpose of working together in the development of standards for the World Wide Web.</p>
+    <p><cite><a href="http://en.wikipedia.org/wiki/World_Wide_Web_Consortium">http://en.wikipedia.org/wiki/World_Wide_Web_Consortium</a></cite></p>
+  </blockquote>
+</section>
+
+<section class="slide" id="new-tech-1">
+  <h2>New Standards, New Technology</h2>
+  <h3>Cascading Style Sheets</h3>
+  <p>Division of form and content. Information itself could remain distinct, while the experience could be tweaked to suit various devices.</p>
+  <img src="images/css-html.png"/>
+</section>
+
+<section class="slide" id="new-tech-2">
+  <h2>New Standards, New Technology</h2>
+  <h3>Javascript</h3>
+  <p>Form, content and function are now fully discreet ... as an afterthought to where we started: HTML and simple data display.</p>
+  <img src="images/css-html-js.png"/>
+</section>
+
+<section class="slide" id="html5-lands">
+  <h2>HTML5 IS HERE</h2>
+  <img src="images/unicorn-farts.png"/>
+</section>
+
+<section class="slide" id="html5-good">
+  <h2>HTML5 is a complete package (if not "complete" yet)</h2>
+  <blockquote>Instead of three different technologies growing to fit web needs ad hoc, HTML5 can be defined as the combination of HTML, CSS and Javascript in a meticulously planned, full application framework.</blockquote>
+  <blockquote>HTML5 is an <strong><a href="http://en.wikipedia.org/wiki/Application_programming_interface">API</a></strong>, a suite of tools to build applications.</blockquote>
+</section>
+
+<section class="slide" id="mobile">
+  <h2>We can thank mobile for HTML5</h2>
+  <img src="images/mobile.png"/>
+  <blockquote><p>HTML5 looks set for rapid growth in 2012, driven by the need for cross-platform development as a result of increasing mobile market fragmentation.</p>
+  <cite><p><a href="http://www.digitalartsonline.co.uk/news/?newsID=3328165">Digital Arts Online</a></p></cite></blockquote>
+</section>
+
+<section class="slide" id="homework">
+  <h2>Homework</h2>
+  <a href="http://wdim.illepic.com/content/wdim393-homework-1">http://wdim.illepic.com/content/wdim393-homework-1</a>
+  <ul>
+    <li>Every group will submit a link to their live "Hello World" page using the site form.</li>
+    <li>All students will read up on the new HTML5 sections in prep for next class: <a href="http://www.w3.org/TR/2011/WD-html5-author-20110809/sections.html#sections">http://www.w3.org/TR/2011/WD-html5-author-20110809/sections.html#sections</a></li>
+    <li>Set up an account on GitHub.com if you haven't already. <a href="http://rogerdudler.github.com/git-guide/">Read up on Git.</a></li>
+    <li><h3>Git installation</h3><ul>
+      <li>Windows: <a href="http://code.google.com/p/msysgit/downloads/list">http://code.google.com/p/msysgit/downloads/list</a></li>
+      <li>Mac: <a href="http://mac.github.com/">http://mac.github.com/</a></li>
+    </ul></li>
+  </ul>
+</section>
+
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<p class="deck-status">
+  <span class="deck-status-current"></span>
+  /
+  <span class="deck-status-total"></span>
+</p>
+
+<form action="." method="get" class="goto-form">
+  <label for="goto-slide">Go to slide:</label>
+  <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+  <datalist id="goto-datalist"></datalist>
+  <input type="submit" value="Go">
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+  <!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../deck.js/jquery-1.7.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="../deck.js/core/deck.core.js"></script>
+<script src="../deck.js/extensions/hash/deck.hash.js"></script>
+<script src="../deck.js/extensions/menu/deck.menu.js"></script>
+<script src="../deck.js/extensions/goto/deck.goto.js"></script>
+<script src="../deck.js/extensions/status/deck.status.js"></script>
+<script src="../deck.js/extensions/navigation/deck.navigation.js"></script>
+
+<!-- syntax highlighter -->
+<script src="../custom-common/js/jquery.snippet.js"></script>
+
+<!-- Specific to this page -->
+<script src="ai-class.js"></script>
+
+</body>
+</html>
