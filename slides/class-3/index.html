@@ -269,30 +269,24 @@
         <li>
           <article class="clearfix">
             <strong>Article</strong>
-            <header>
-              <strong>Header</strong>
-              <h3>Article title</h3>
-            </header>
             <footer class="post-info">
               <strong>Footer</strong>
               <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
               <address>Dudeface McGee</address>
             </footer>
+            <h3>Article title</h3>
             <p>Content here. Content here. Content here.</p>
           </article>
         </li>
         <li>
           <article class="clearfix">
             <strong>Article</strong>
-            <header>
-              <strong>Header</strong>
-              <h3>Article title</h3>
-            </header>
             <footer class="post-info">
               <strong>Footer</strong>
               <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
               <address>Dudeface McGee</address>
             </footer>
+            <h3>Article title</h3>
             <p>Content here. Content here. Content here.</p>
           </article>
         </li>
@@ -488,12 +482,12 @@
   <h3>An article with a title and metadata</h3>
   <p>Here we&rsquo;re using &lt;header&gt; to group the title and associated metadata, so an &lt;hgroup&gt; is not required:</p>
   <pre class="htmlCode"><code>&lt;article&gt;
-    &lt;header&gt;
-      &lt;h1&gt;Title goes here&lt;/h1&gt;
-      &lt;p&gt;&lt;time datetime=&quot;2010-03-20&quot;&gt;20th March, 2010&lt;/time&gt;&lt;/p&gt;
-    &lt;/header&gt;
-    &lt;p&gt;Lorem Ipsum dolor set amet&lt;/p&gt;
-  &lt;/article&gt;</code></pre>
+  &lt;header&gt;
+    &lt;h1&gt;Title goes here&lt;/h1&gt;
+    &lt;p&gt;&lt;time datetime=&quot;2010-03-20&quot;&gt;20th March, 2010&lt;/time&gt;&lt;/p&gt;
+  &lt;/header&gt;
+  &lt;p&gt;Lorem Ipsum dolor set amet&lt;/p&gt;
+&lt;/article&gt;</code></pre>
   <footer><cite><a href="http://html5doctor.com/the-hgroup-element/">HTML5 Doctor</a></cite></footer>
 </section>
 
@@ -518,69 +512,340 @@
   <h3>An article with a title, subtitle and metadata</h3>
   <p>An <code>&lt;hgroup&gt;</code> contains the title and subtitle of the article, and then a <code>&lt;header&gt;</code> contains the metadata and the <code>&lt;hgroup&gt;</code>:</p>
   <pre class="htmlCode"><code>&lt;article&gt;
-    &lt;header&gt;
-      &lt;h1&gt;Title goes here&lt;/h1&gt;
-      &lt;p&gt;&lt;time datetime=&quot;2010-03-20&quot;&gt;20th March, 2010&lt;/time&gt;&lt;/p&gt;
-    &lt;/header&gt;
-    &lt;p&gt;Lorem Ipsum dolor set amet&lt;/p&gt;
-  &lt;/article&gt;</code></pre>
+  &lt;header&gt;
+    &lt;h1&gt;Title goes here&lt;/h1&gt;
+    &lt;p&gt;&lt;time datetime=&quot;2010-03-20&quot;&gt;20th March, 2010&lt;/time&gt;&lt;/p&gt;
+  &lt;/header&gt;
+  &lt;p&gt;Lorem Ipsum dolor set amet&lt;/p&gt;
+&lt;/article&gt;</code></pre>
 
   <footer><cite><a href="http://html5doctor.com/the-hgroup-element/">HTML5 Doctor</a></cite></footer>
 </section>
 
-<section class="slide" id="w3c2">
-  <h2>The Birth of the W3C</h2>
-  <p>Rising out of the catastrophe of table-based layouts and browser-specific technology, the W3C is formed by internet-inventor Tim Berners-Lee in 1994. </p>
-  <blockquote cite="http://example.org">
-    <p>... made up of member organizations which maintain full-time staff for the purpose of working together in the development of standards for the World Wide Web.</p>
-    <p><cite><a href="http://en.wikipedia.org/wiki/World_Wide_Web_Consortium">http://en.wikipedia.org/wiki/World_Wide_Web_Consortium</a></cite></p>
-  </blockquote>
+<section class="slide" id="newtags-nav">
+
+  <figure class="diagram semantic">
+    <header class="">
+      <strong>Header</strong>
+      <h1>H1 Page Title</h1>
+      <nav class="clearfix highlight">
+        <strong>Nav</strong>
+        <ul>
+          <li><a href="#">Link1</a></li>
+          <li><a href="#">Link2</a></li>
+          <li><a href="#">Link3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <aside >
+      <strong>Aside</strong>
+      <article class="clearfix">
+        <strong>Article</strong>
+        <figure>
+          <strong>Figure</strong>
+          <img src="http://placekitten.com/200/50"/>
+        </figure>
+        <hgroup class="">
+          <strong>HGroup</strong>
+          <h2>H2 Featured articles</h2>
+          <h3>H3 Article title</h3>
+        </hgroup>
+        <p>Lorem ipsum dolor ...</p>
+      </article>
+    </aside>
+    <section class="main">
+      <strong>Section</strong>
+      <header class="">
+        <strong>Header</strong>
+        <hgroup class="">
+          <strong>Hgroup</strong>
+          <h2>H2 Articles</h2>
+          <h3>H3 Subhead</h3>
+        </hgroup>
+        <p>Article archive from 2012-2010</p>
+      </header>
+      <ol>
+        <li>
+          <article class="clearfix">
+            <strong>Article</strong>
+            <footer class="post-info">
+              <strong>Footer</strong>
+              <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
+              <address>Dudeface McGee</address>
+            </footer>
+            <h3>Article title</h3>
+            <p>Content here. Content here. Content here.</p>
+          </article>
+        </li>
+        <li>
+          <article class="clearfix">
+            <strong>Article</strong>
+            <footer class="post-info">
+              <strong>Footer</strong>
+              <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
+              <address>Dudeface McGee</address>
+            </footer>
+            <h3>Article title</h3>
+
+            <p>Content here. Content here. Content here.</p>
+          </article>
+        </li>
+      </ol>
+    </section>
+    <footer class="clearfix">
+      <strong>Footer</strong>
+      <address><span class="logo"><img src="http://placekitten.com/50/25"/></span><span>Author of Page</span></address>
+    </footer>
+  </figure>
+
+  <h2>&lt;nav&gt;</h2>
+  <p>Represents navigation for a document. The nav element is a section containing links to other documents or to parts within the current document.</p> <p>Not required for all navigation uses. It's commong to include navigation in the footer, it's best to use &lt;footer&gt; in that case. </p>
+  <footer><cite><a href="http://html5doctor.com/the-hgroup-element/">HTML5 Doctor</a></cite></footer>
 </section>
 
-<section class="slide" id="new-tech-1">
-  <h2>New Standards, New Technology</h2>
-  <h3>Cascading Style Sheets</h3>
-  <p>Division of form and content. Information itself could remain distinct, while the experience could be tweaked to suit various devices.</p>
-  <img src="images/css-html.png"/>
+<section class="slide" id="newtags-aside">
+
+  <figure class="diagram semantic">
+    <header class="">
+      <strong>Header</strong>
+      <h1>H1 Page Title</h1>
+      <nav class="clearfix ">
+        <strong>Nav</strong>
+        <ul>
+          <li><a href="#">Link1</a></li>
+          <li><a href="#">Link2</a></li>
+          <li><a href="#">Link3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <aside class="highlight">
+      <strong>Aside</strong>
+      <article class="clearfix">
+        <strong>Article</strong>
+        <figure>
+          <strong>Figure</strong>
+          <img src="http://placekitten.com/200/50"/>
+        </figure>
+        <hgroup class="">
+          <strong>HGroup</strong>
+          <h2>H2 Featured articles</h2>
+          <h3>H3 Article title</h3>
+        </hgroup>
+        <p>Lorem ipsum dolor ...</p>
+      </article>
+    </aside>
+    <section class="main">
+      <strong>Section</strong>
+      <header class="">
+        <strong>Header</strong>
+        <hgroup class="">
+          <strong>Hgroup</strong>
+          <h2>H2 Articles</h2>
+          <h3>H3 Subhead</h3>
+        </hgroup>
+        <p>Article archive from 2012-2010</p>
+      </header>
+      <ol>
+        <li>
+          <article class="clearfix">
+            <strong>Article</strong>
+            <footer class="post-info">
+              <strong>Footer</strong>
+              <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
+              <address>Dudeface McGee</address>
+            </footer>
+            <h3>Article title</h3>
+            <p>Content here. Content here. Content here.</p>
+          </article>
+        </li>
+        <li>
+          <article class="clearfix">
+            <strong>Article</strong>
+            <footer class="post-info">
+              <strong>Footer</strong>
+              <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
+              <address>Dudeface McGee</address>
+            </footer>
+            <h3>Article title</h3>
+
+            <p>Content here. Content here. Content here.</p>
+          </article>
+        </li>
+      </ol>
+    </section>
+    <footer class="clearfix">
+      <strong>Footer</strong>
+      <address><span class="logo"><img src="http://placekitten.com/50/25"/></span><span>Author of Page</span></address>
+    </footer>
+  </figure>
+
+  <h2>&lt;aside&gt;</h2>
+  <p>Content that is tangentially related to the content around the aside element, and which could be considered separate from that content. Such sections are often represented as sidebars in printed typography.</p>
+  <p>Think of it as both "related content" and "sidebar"</p>
+  <footer><cite><a href="http://html5doctor.com/the-hgroup-element/">HTML5 Doctor</a></cite></footer>
 </section>
 
-<section class="slide" id="new-tech-2">
-  <h2>New Standards, New Technology</h2>
-  <h3>Javascript</h3>
-  <p>Form, content and function are now fully discreet ... as an afterthought to where we started: HTML and simple data display.</p>
-  <img src="images/css-html-js.png"/>
+<section class="slide" id="newtags-section">
+
+  <figure class="diagram semantic">
+    <header class="">
+      <strong>Header</strong>
+      <h1>H1 Page Title</h1>
+      <nav class="clearfix ">
+        <strong>Nav</strong>
+        <ul>
+          <li><a href="#">Link1</a></li>
+          <li><a href="#">Link2</a></li>
+          <li><a href="#">Link3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <aside class="">
+      <strong>Aside</strong>
+      <article class="clearfix">
+        <strong>Article</strong>
+        <figure>
+          <strong>Figure</strong>
+          <img src="http://placekitten.com/200/50"/>
+        </figure>
+        <hgroup class="">
+          <strong>HGroup</strong>
+          <h2>H2 Featured articles</h2>
+          <h3>H3 Article title</h3>
+        </hgroup>
+        <p>Lorem ipsum dolor ...</p>
+      </article>
+    </aside>
+    <section class="main highlight">
+      <strong>Section</strong>
+      <header class="">
+        <strong>Header</strong>
+        <hgroup class="">
+          <strong>Hgroup</strong>
+          <h2>H2 Articles</h2>
+          <h3>H3 Subhead</h3>
+        </hgroup>
+        <p>Article archive from 2012-2010</p>
+      </header>
+      <ol>
+        <li>
+          <article class="clearfix">
+            <strong>Article</strong>
+            <footer class="post-info">
+              <strong>Footer</strong>
+              <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
+              <address>Dudeface McGee</address>
+            </footer>
+            <h3>Article title</h3>
+            <p>Content here. Content here. Content here.</p>
+          </article>
+        </li>
+        <li>
+          <article class="clearfix">
+            <strong>Article</strong>
+            <footer class="post-info">
+              <strong>Footer</strong>
+              <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
+              <address>Dudeface McGee</address>
+            </footer>
+            <h3>Article title</h3>
+
+            <p>Content here. Content here. Content here.</p>
+          </article>
+        </li>
+      </ol>
+    </section>
+    <footer class="clearfix">
+      <strong>Footer</strong>
+      <address><span class="logo"><img src="http://placekitten.com/50/25"/></span><span>Author of Page</span></address>
+    </footer>
+  </figure>
+
+  <h2>&lt;section&gt;</h2>
+  <p>A generic document or application section. In this context, a section is a thematic grouping of content, typically with a header, possibly with a footer. Examples include chapters in a book, the various tabbed pages in a tabbed dialog box, or the numbered sections of a thesis. A web site's home page could be split into sections for an introduction, news items, contact information.</p>
+  <footer><cite><a href="http://html5doctor.com/the-hgroup-element/">HTML5 Doctor</a></cite></footer>
 </section>
 
-<section class="slide" id="html5-lands">
-  <h2>HTML5 IS HERE</h2>
-  <img src="images/unicorn-farts.png"/>
-</section>
+<section class="slide" id="newtags-footer">
 
-<section class="slide" id="html5-good">
-  <h2>HTML5 is a complete package (if not "complete" yet)</h2>
-  <blockquote>Instead of three different technologies growing to fit web needs ad hoc, HTML5 can be defined as the combination of HTML, CSS and Javascript in a meticulously planned, full application framework.</blockquote>
-  <blockquote>HTML5 is an <strong><a href="http://en.wikipedia.org/wiki/Application_programming_interface">API</a></strong>, a suite of tools to build applications.</blockquote>
-</section>
+  <figure class="diagram semantic">
+    <header class="">
+      <strong>Header</strong>
+      <h1>H1 Page Title</h1>
+      <nav class="clearfix ">
+        <strong>Nav</strong>
+        <ul>
+          <li><a href="#">Link1</a></li>
+          <li><a href="#">Link2</a></li>
+          <li><a href="#">Link3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <aside class="">
+      <strong>Aside</strong>
+      <article class="clearfix">
+        <strong>Article</strong>
+        <figure>
+          <strong>Figure</strong>
+          <img src="http://placekitten.com/200/50"/>
+        </figure>
+        <hgroup class="">
+          <strong>HGroup</strong>
+          <h2>H2 Featured articles</h2>
+          <h3>H3 Article title</h3>
+        </hgroup>
+        <p>Lorem ipsum dolor ...</p>
+      </article>
+    </aside>
+    <section class="main">
+      <strong>Section</strong>
+      <header class="">
+        <strong>Header</strong>
+        <hgroup class="">
+          <strong>Hgroup</strong>
+          <h2>H2 Articles</h2>
+          <h3>H3 Subhead</h3>
+        </hgroup>
+        <p>Article archive from 2012-2010</p>
+      </header>
+      <ol>
+        <li>
+          <article class="clearfix">
+            <strong>Article</strong>
+            <footer class="post-info highlight">
+              <strong>Footer</strong>
+              <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
+              <address>Dudeface McGee</address>
+            </footer>
+            <h3>Article title</h3>
+            <p>Content here. Content here. Content here.</p>
+          </article>
+        </li>
+        <li>
+          <article class="clearfix">
+            <strong>Article</strong>
+            <footer class="post-info highlight">
+              <strong>Footer</strong>
+              <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
+              <address>Dudeface McGee</address>
+            </footer>
+            <h3>Article title</h3>
 
-<section class="slide" id="mobile">
-  <h2>We can thank mobile for HTML5</h2>
-  <img src="images/mobile.png"/>
-  <blockquote><p>HTML5 looks set for rapid growth in 2012, driven by the need for cross-platform development as a result of increasing mobile market fragmentation.</p>
-  <cite><p><a href="http://www.digitalartsonline.co.uk/news/?newsID=3328165">Digital Arts Online</a></p></cite></blockquote>
-</section>
+            <p>Content here. Content here. Content here.</p>
+          </article>
+        </li>
+      </ol>
+    </section>
+    <footer class="clearfix highlight">
+      <strong>Footer</strong>
+      <address><span class="logo"><img src="http://placekitten.com/50/25"/></span><span>Author of Page</span></address>
+    </footer>
+  </figure>
 
-<section class="slide" id="homework">
-  <h2>Homework</h2>
-  <a href="http://wdim.illepic.com/content/wdim393-homework-1">http://wdim.illepic.com/content/wdim393-homework-1</a>
-  <ul>
-    <li>Every group will submit a link to their live "Hello World" page using the site form.</li>
-    <li>All students will read up on the new HTML5 sections in prep for next class: <a href="http://www.w3.org/TR/2011/WD-html5-author-20110809/sections.html#sections">http://www.w3.org/TR/2011/WD-html5-author-20110809/sections.html#sections</a></li>
-    <li>Set up an account on GitHub.com if you haven't already. <a href="http://rogerdudler.github.com/git-guide/">Read up on Git.</a></li>
-    <li><h3>Git installation</h3><ul>
-      <li>Windows: <a href="http://code.google.com/p/msysgit/downloads/list">http://code.google.com/p/msysgit/downloads/list</a></li>
-      <li>Mac: <a href="http://mac.github.com/">http://mac.github.com/</a></li>
-    </ul></li>
-  </ul>
+  <h2>&lt;footer&gt;</h2>
+  <p>Represents the "footer" of a document or section of a document. The footer element typically contains metadata about its enclosing section, such as who wrote it, links to related documents, copyright data, etc. Contact information for the section given in a footer should be marked up using the address element.</p>
+  <p>Wrinkle your brain a bit: <code>&lt;footer&gt;</code>s doesn't just have to go at the bottom of a doc or section. See example.</p>
+  <footer><cite><a href="http://html5doctor.com/the-hgroup-element/">HTML5 Doctor</a></cite></footer>
 </section>
 
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
