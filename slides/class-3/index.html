@@ -206,149 +206,326 @@
     <li><code>small</code>
       <p>No longer means "use small font". Now represents side comments or "small print".</p>
     </li>
-    <li><code>b</code><p>A span of text to which attention is being drawn for utilitarian purposes without conveying any extra importance and with no implication of an alternate voice or mood, such as key words in a document abstract, product names in a review, actionable words in interactive text-driven software, or an article lede</p>
+    <li><code>b</code><p>A span of text to which attention is being drawn for utilitarian purposes <em>without conveying any extra importance</em> and with no implication of an alternate voice or mood, such as key words in a document abstract, product names in a review, actionable words in interactive text-driven software, or an article lede</p>
     </li>
-    <li><code>i</code><p> represents a span of text in an alternate voice or mood, or otherwise offset from the normal prose in a manner indicating a different quality of text, such as a taxonomic designation, a technical term, an idiomatic phrase from another language, a thought, or a ship name in Western texts</p>
+    <li><code>i</code><p> A span of text in an <em>alternate voice or mood</em>, or otherwise offset from the normal prose in a manner indicating a different quality of text, such as a taxonomic designation, a technical term, an idiomatic phrase from another language, a thought, or a ship name in Western texts</p>
     </li>
   </ul>
   <footer><cite><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-u-element">whatwg.org</a></cite></footer>
 </section>
 
 <section class="slide" id="semantic-redefined-2">
-  <h2>Presentational to structural</h2>
+  <h2>Presentational to structural (cont'd)</h2>
   <ul>
-    <li><code>u</code><p>a span of text with an unarticulated, though explicitly rendered, non-textual annotation, such as labeling the text as being a proper name in Chinese text (a Chinese proper name mark), or labeling the text as being misspelt.</p></li>
-    <li><code>tt</code></li>
+    <li><code>u</code><p>A span of text with an unarticulated, though explicitly rendered, non-textual annotation, such as labeling the text as being a proper name in Chinese text (a Chinese proper name mark), or labeling the text as being misspelt.</p></li>
+    <li><code>mark</code><p> Marks up text with indicators that what is marked up is unique/relevant to the user viewing it. Think how Google highlights your specific search phrase in search results. </p></li>
   </ul>
   <footer><cite><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-u-element">whatwg.org</a></cite></footer>
 </section>
 
+<section class="slide" id="newtags">
 
-<section class="slide" id="hosting">
-  <h2>Hosting</h2>
-  <ol>
-    <li>
-      <h3>Each group has one hosting account</h3>
-      <p></p>
-    </li>
-    <li>
-      <h3>WDIM hosting (5 available) or personal</h3>
-      <p></p>
-    </li>
-    <li>
-      <h3>All homework will be live on hosting</h3>
-      <p></p>
-    </li>
-  </ol>
+  <figure class="diagram semantic">
+    <header>
+      <strong>Header</strong>
+      <h1>H1 Page Title</h1>
+      <nav class="clearfix">
+        <strong>Nav</strong>
+        <ul>
+          <li><a href="#">Link1</a></li>
+          <li><a href="#">Link2</a></li>
+          <li><a href="#">Link3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <aside >
+      <strong>Aside</strong>
+      <article class="clearfix">
+        <strong>Article</strong>
+        <figure>
+          <strong>Figure</strong>
+          <img src="http://placekitten.com/200/50"/>
+        </figure>
+        <hgroup>
+          <strong>HGroup</strong>
+          <h2>H2 Featured articles</h2>
+          <h3>H3 Article title</h3>
+        </hgroup>
+        <p>Lorem ipsum dolor ...</p>
+      </article>
+    </aside>
+    <section class="main">
+      <strong>Section</strong>
+      <header>
+        <strong>Header</strong>
+        <hgroup>
+          <strong>Hgroup</strong>
+          <h2>H2 Articles</h2>
+          <h3>H3 Subhead</h3>
+        </hgroup>
+        <p>Article archive from 2012-2010</p>
+      </header>
+      <ol>
+        <li>
+          <article class="clearfix">
+            <strong>Article</strong>
+            <header>
+              <strong>Header</strong>
+              <h3>Article title</h3>
+            </header>
+            <footer class="post-info">
+              <strong>Footer</strong>
+              <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
+              <address>Dudeface McGee</address>
+            </footer>
+            <p>Content here. Content here. Content here.</p>
+          </article>
+        </li>
+        <li>
+          <article class="clearfix">
+            <strong>Article</strong>
+            <header>
+              <strong>Header</strong>
+              <h3>Article title</h3>
+            </header>
+            <footer class="post-info">
+              <strong>Footer</strong>
+              <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
+              <address>Dudeface McGee</address>
+            </footer>
+            <p>Content here. Content here. Content here.</p>
+          </article>
+        </li>
+      </ol>
+    </section>
+    <footer class="clearfix">
+      <strong>Footer</strong>
+      <address><span class="logo"><img src="http://placekitten.com/50/25"/></span><span>Author of Page</span></address>
+    </footer>
+  </figure>
+
+  <h2>New Tags</h2>
+  <p>Take a moment to inspect the demo code to the left. </p>
+  <p>Tags we'll discuss will be highighted in red.</p>
 </section>
 
-<section class="slide" id="groups">
-  <h2>Groups</h2>
-  <p>This class will feature a semester-long group project that is used to turn in each homework. You will be randomly assigned to a group. Homework is turned in per group - that is, each member of a group gets the same grade. A single, representative member of the group will turn in the assignment on the website, usually by submitting a link using the handy form.</p>
+<section class="slide" id="newtags-header">
 
-  <p>Each homework adds sections to a website that your team hosts and maintains. I'll leave it up to you how you split duties (Do you all email files around? GitHub? SSH and Vim?). The homework should make it clear what is required. </p>
+  <figure class="diagram semantic">
+    <header class="highlight">
+      <strong>Header</strong>
+      <h1>H1 Page Title</h1>
+      <nav class="clearfix">
+        <strong>Nav</strong>
+        <ul>
+          <li><a href="#">Link1</a></li>
+          <li><a href="#">Link2</a></li>
+          <li><a href="#">Link3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <aside >
+      <strong>Aside</strong>
+      <article class="clearfix">
+        <strong>Article</strong>
+        <figure>
+          <strong>Figure</strong>
+          <img src="http://placekitten.com/200/50"/>
+        </figure>
+        <hgroup>
+          <strong>HGroup</strong>
+          <h2>H2 Featured articles</h2>
+          <h3>H3 Article title</h3>
+        </hgroup>
+        <p>Lorem ipsum dolor ...</p>
+      </article>
+    </aside>
+    <section class="main">
+      <strong>Section</strong>
+      <header class="highlight">
+        <strong>Header</strong>
+        <hgroup>
+          <strong>Hgroup</strong>
+          <h2>H2 Articles</h2>
+          <h3>H3 Subhead</h3>
+        </hgroup>
+        <p>Article archive from 2012-2010</p>
+      </header>
+      <ol>
+        <li>
+          <article class="clearfix">
+            <strong>Article</strong>
+            <footer class="post-info">
+              <strong>Footer</strong>
+              <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
+              <address>Dudeface McGee</address>
+            </footer>
+            <h3>Article title</h3>
+            <p>Content here. Content here. Content here.</p>
+          </article>
+        </li>
+        <li>
+          <article class="clearfix">
+            <strong>Article</strong>
+            <footer class="post-info">
+              <strong>Footer</strong>
+              <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
+              <address>Dudeface McGee</address>
+            </footer>
+            <h3>Article title</h3>
 
-  <p>For the love of DOM, use all those skills you picked up here to make it pretty. Pretties count on the grade.</p>
+            <p>Content here. Content here. Content here.</p>
+          </article>
+        </li>
+      </ol>
+    </section>
+    <footer class="clearfix">
+      <strong>Footer</strong>
+      <address><span class="logo"><img src="http://placekitten.com/50/25"/></span><span>Author of Page</span></address>
+    </footer>
+  </figure>
+
+  <h2>Header</h2>
+  <p>The "header" of a document or section of a document. Contains a set of h1–h6 elements, a page's title with its subtitle or tagline. May contain more than just the section's headings and subheadings — e.g., version history information or publication date.</p>
+  <p>Why no header tag within each article?</p>
+  <footer><cite><a href="http://oli.jp/2009/html5-structure2/">Dr. Oli</a></cite></footer>
 </section>
 
-<section class="slide" id="semantic-1">
-  <h2>A Brief History of the Semantic Web</h2>
-  <img src="images/luke.jpg" alt="long long ago"/>
+<section class="slide" id="newtags-hgroup">
+
+  <figure class="diagram semantic">
+    <header class="">
+      <strong>Header</strong>
+      <h1>H1 Page Title</h1>
+      <nav class="clearfix">
+        <strong>Nav</strong>
+        <ul>
+          <li><a href="#">Link1</a></li>
+          <li><a href="#">Link2</a></li>
+          <li><a href="#">Link3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <aside >
+      <strong>Aside</strong>
+      <article class="clearfix">
+        <strong>Article</strong>
+        <figure>
+          <strong>Figure</strong>
+          <img src="http://placekitten.com/200/50"/>
+        </figure>
+        <hgroup class="highlight">
+          <strong>HGroup</strong>
+          <h2>H2 Featured articles</h2>
+          <h3>H3 Article title</h3>
+        </hgroup>
+        <p>Lorem ipsum dolor ...</p>
+      </article>
+    </aside>
+    <section class="main">
+      <strong>Section</strong>
+      <header class="">
+        <strong>Header</strong>
+        <hgroup class="highlight">
+          <strong>Hgroup</strong>
+          <h2>H2 Articles</h2>
+          <h3>H3 Subhead</h3>
+        </hgroup>
+        <p>Article archive from 2012-2010</p>
+      </header>
+      <ol>
+        <li>
+          <article class="clearfix">
+            <strong>Article</strong>
+            <footer class="post-info">
+              <strong>Footer</strong>
+              <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
+              <address>Dudeface McGee</address>
+            </footer>
+            <h3>Article title</h3>
+            <p>Content here. Content here. Content here.</p>
+          </article>
+        </li>
+        <li>
+          <article class="clearfix">
+            <strong>Article</strong>
+            <footer class="post-info">
+              <strong>Footer</strong>
+              <time datetime="2012-01-29T13:58Z">January 29th, 2012 at 13:58</time>
+              <address>Dudeface McGee</address>
+            </footer>
+            <h3>Article title</h3>
+
+            <p>Content here. Content here. Content here.</p>
+          </article>
+        </li>
+      </ol>
+    </section>
+    <footer class="clearfix">
+      <strong>Footer</strong>
+      <address><span class="logo"><img src="http://placekitten.com/50/25"/></span><span>Author of Page</span></address>
+    </footer>
+  </figure>
+
+  <h2>HGroup</h2>
+  <p>Used for grouping titles with their associated subtitles. Acts as a wrapper for one or more related heading elements possibly contained within a <code>&lt;header&gt;</code> element. It can only contain a group of <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> element(s), and it should be used for subtitles, alternative titles, and tag lines.</p>
+  <footer><cite><a href="http://html5doctor.com/the-hgroup-element/">HTML5 Doctor</a></cite></footer>
 </section>
 
-<section class="slide" id="semantic-2">
-  <h2>A Brief History of the Semantic Web</h2>
-  <img src="images/tim.png" alt="long long ago"/>
+<section class="slide" id="newtags-header-v-hgroup">
+  <h2>Header vs HGroup</h2>
+  <h3>An article with one title</h3>
+  <p>The title consists of a single &lt;h1&gt;, so neither &lt;hgroup&gt; nor &lt;header&gt; is required:</p>
+  <pre class="htmlCode"><code>&lt;article&gt;
+  &lt;h1&gt;Title goes here&lt;/h1&gt;
+  &lt;p&gt;Lorem Ipsum dolor set amet&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+  <footer><cite><a href="http://html5doctor.com/the-hgroup-element/">HTML5 Doctor</a></cite></footer>
 </section>
 
-<section class="slide" id="semantic-3">
-  <h2>A Brief History of the Semantic Web</h2>
-  <ul>
-    <li>
-      <h3>Hyper Text</h3>
-      <p>“Hypertext” is text that avoids strictly linear organization in favor of hyper-linking to a potentially infinite number of other bits of text.</p>
-    </li>
-    <li>
-      <h3>Markup Language</h3>
-      <ul>
-        <li><p><strong>Annotate</strong> a document, in put in indicators that there's more going on in the background besides just the words shown to the user.</p></li>
-        <li><p><strong>"</strong>Similarly to how we use quotation marks to denote when someone is saying something <strong>"</strong></p></li>
-        <li><p><strong>(</strong>And parentheses to provide little asides or non-essential information<strong>)</strong></p></li>
-      </ul>
-    </li>
-  </ul>
+<section class="slide" id="newtags-header-v-hgroup2">
+  <h2>Header vs HGroup (cont'd)</h2>
+  <h3>An article with a title and metadata</h3>
+  <p>Here we&rsquo;re using &lt;header&gt; to group the title and associated metadata, so an &lt;hgroup&gt; is not required:</p>
+  <pre class="htmlCode"><code>&lt;article&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Title goes here&lt;/h1&gt;
+      &lt;p&gt;&lt;time datetime=&quot;2010-03-20&quot;&gt;20th March, 2010&lt;/time&gt;&lt;/p&gt;
+    &lt;/header&gt;
+    &lt;p&gt;Lorem Ipsum dolor set amet&lt;/p&gt;
+  &lt;/article&gt;</code></pre>
+  <footer><cite><a href="http://html5doctor.com/the-hgroup-element/">HTML5 Doctor</a></cite></footer>
 </section>
 
-<section class="slide" id="html-def">
-  <h2>HTML Definition</h2>
-  <blockquote cite="http://example.org">
-    <p>Purpose of HTML is to write text that links to other bits of text, annotated so that the information has organization and context</p>
-    <p><cite>II Christopher, Chapter 6 Verse 12</cite></p>
-  </blockquote>
-<pre class="htmlCode"><code>&lt;html&gt;
-  &lt;body&gt;
-  &lt;h1&gt;Lorem Ipsum Dolor&lt;/h1&gt;
-  &lt;p class=&quot;main-content&quot;&gt;Placerat, scelerisque, nisi ridiculus ac ut, ac  &lt;a href=&quot;http://www.google.com&quot;&gt;dignissim&lt;/a&gt; phasellus dignissim dignissim augue tristique integer.&lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<section class="slide" id="newtags-header-v-hgroup3">
+
+  <h2>Header vs HGroup (cont'd)</h2>
+  <h3>An article with a title and subtitle</h3>
+  <p>An <code>&lt;hgroup&gt;</code> contains the title and subtitle of the article:</p>
+  <pre class="htmlCode"><code>&lt;article&gt;
+  &lt;hgroup&gt;
+    &lt;h1&gt;Title goes here&lt;/h1&gt;
+    &lt;h2&gt;Subtitle of article&lt;/h2&gt;
+  &lt;/hgroup&gt;
+  &lt;p&gt;Lorem Ipsum dolor set amet&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+  <footer><cite><a href="http://html5doctor.com/the-hgroup-element/">HTML5 Doctor</a></cite></footer>
 </section>
 
-<section class="slide" id="semanticweb-def">
-  <h2>Semantic Web</h2>
-  <blockquote cite="http://example.org">
-    <p>HTML supports the idea of a <strong>Semantic Web</strong>, where the meaning and context of information is clear.</p>
-    <p><cite>II Christopher, Chapter 6 Verse 13</cite></p>
-  </blockquote>
+<section class="slide" id="newtags-header-v-hgroup4">
 
-  <pre class="htmlCode"><code>&lt;item rdf:about=&quot;http://dbpedia.org/resource/Cat&quot;&gt;Cat&lt;/item&gt;</code></pre>
-  <cite>Example RDF (Rich Data Format) for true data meaning.</cite>
-</section>
+  <h2>Header vs HGroup (cont'd)</h2>
+  <h3>An article with a title, subtitle and metadata</h3>
+  <p>An <code>&lt;hgroup&gt;</code> contains the title and subtitle of the article, and then a <code>&lt;header&gt;</code> contains the metadata and the <code>&lt;hgroup&gt;</code>:</p>
+  <pre class="htmlCode"><code>&lt;article&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Title goes here&lt;/h1&gt;
+      &lt;p&gt;&lt;time datetime=&quot;2010-03-20&quot;&gt;20th March, 2010&lt;/time&gt;&lt;/p&gt;
+    &lt;/header&gt;
+    &lt;p&gt;Lorem Ipsum dolor set amet&lt;/p&gt;
+  &lt;/article&gt;</code></pre>
 
-<section class="slide" id="accessibility-def">
-  <h2>Accessibility</h2>
-  <blockquote cite="http://example.org">
-    <p>As well as <strong>Accessible Design</strong>, wherein that meaning and context is able to be interpreted by browsers or other devices</p>
-    <p><cite>II Christopher, Chapter 6 Verse 14</cite></p>
-  </blockquote>
-  <pre class="htmlCode"><code>&lt;header role=&quot;banner&quot;&gt;
-  &lt;h1&gt;HTML5 example with new elements and WAI-ARIA landmark roles&lt;/h1&gt;
-&lt;/header&gt;
-&lt;aside id=&quot;demo-aside-content&quot; role=&quot;complementary&quot;&gt;This is just a demo page to see HTML5 markup and WAI-ARIA landmark roles in action in a simple context&lt;/aside&gt;</code></pre>
-  <cite>Example ARIA (Accessible Rich Internet Applications) "role" tags used to assistive device readers.</cite>
-</section>
-
-<section class="slide" id="user-agents">
-  <h2>User Agents</h2>
-  <ol>
-    <li><p>Web browsers</p></li>
-    <li><p>Screen readers</p></li>
-    <li><p>Google spiders, bots.</p></li>
-  </ol>
-</section>
-
-<section class="slide" id="original-html">
-  <h2>HTML Wasn't Meant To Be Pretty</h2>
-  <ol>
-    <li><p>No imagery</p></li>
-    <li><p>No design</p></li>
-    <li><p>HTML was invented with bandwidth was extremely limited</p></li>
-    <li><p>The purpose was text, initially, and text alone</p></li>
-  </ol>
-</section>
-
-<section class="slide" id="timeline">
-  <h2>Timeline</h2>
-  <img src="images/timeline.png"/>
-  <cite>Source: html5rocks.com</cite>
-</section>
-
-<section class="slide" id="w3c1">
-  <h2>The March Toward Standards</h2>
-  <p>New Technology in HTML2</p>
-  <P>Tables, tables everywhere!</p>
-  <h2>Browser Wars 1.0</h2>
-  <img src="images/derp.png"/>
-  <p>"Standards? Get IE3, bro, it's got blink tags!"</p>
+  <footer><cite><a href="http://html5doctor.com/the-hgroup-element/">HTML5 Doctor</a></cite></footer>
 </section>
 
 <section class="slide" id="w3c2">

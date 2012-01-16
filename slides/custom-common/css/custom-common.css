@@ -1,3 +1,25 @@
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  display: inline-table;
+}
+/* Hides from IE-mac \*/
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+/* End hide from IE-mac */
+section {
+  clear: both;
+}
 .deck-container {
   width: auto;
 }
@@ -7,4 +29,121 @@ cite {
 }
 code {
   background-color: #fff;
+}
+.diagram.semantic {
+  float: left;
+  width: 480px;
+  margin-right: 10px;
+  padding: 10px;
+  margin-top: 20px;
+}
+.diagram.semantic header,
+.diagram.semantic nav,
+.diagram.semantic aside,
+.diagram.semantic figure,
+.diagram.semantic hgroup,
+.diagram.semantic section,
+.diagram.semantic article,
+.diagram.semantic footer {
+  padding: 10px 10px 9px 10px;
+  border: 1px solid #a7a7a7;
+  position: relative;
+  line-height: 12px;
+}
+.diagram.semantic article {
+  margin-bottom: 0;
+}
+.diagram.semantic article header {
+  margin-bottom: 10px;
+}
+.diagram.semantic  > header, .diagram.semantic  > section, .diagram.semantic  > aside {
+  margin-bottom: 10px;
+}
+.diagram.semantic p {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+.diagram.semantic strong {
+  display: block;
+  font-size: 10px;
+  height: 10px;
+  line-height: 10px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  background-color: white;
+  position: absolute;
+  top: -5px;
+}
+.diagram.semantic h1, .diagram.semantic h2, .diagram.semantic h3 {
+  font-size: 12px;
+  height: 12px;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+.diagram.semantic h1 {
+  position: static;
+  top: auto;
+  font-size: 18px;
+  height: 18px;
+  line-height: 18px;
+  padding: 0;
+  transform: none;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+}
+.diagram.semantic nav li {
+  float: left;
+  display: inline;
+  padding: 0;
+}
+.diagram.semantic nav li a {
+  display: inline-block;
+  height: 12px;
+  padding: 0 5px;
+  font-size: 12px;
+  line-height: 12px;
+}
+.diagram.semantic figure {
+  float: right;
+  width: 100px;
+}
+.diagram.semantic aside hgroup, .diagram.semantic aside p {
+  float: left;
+  clear: left;
+}
+.diagram.semantic img {
+  padding: 0;
+  margin: 0;
+}
+.diagram.semantic .main footer {
+  float: left;
+  font-size: 10px;
+  margin-right: 10px;
+  width: 100px;
+}
+.diagram.semantic .main footer address, .diagram.semantic .main footer time {
+  display: inline;
+}
+.diagram.semantic .logo {
+  float: left;
+  margin-right: 10px;
+}
+.diagram.semantic ol {
+  margin: 0 0 0 25px;
+}
+.highlight {
+  border: 2px solid red !important;
+}
+.htmlCode {
+  line-height: 23px;
+  margin: 0;
+}
+.htmlCode li {
+  padding: 0;
+}
+.slide pre.htmlCode {
+  padding: 0;
 }
