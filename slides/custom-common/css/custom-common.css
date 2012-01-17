@@ -58,6 +58,7 @@ code {
 }
 .diagram.semantic  > header, .diagram.semantic  > section, .diagram.semantic  > aside {
   margin-bottom: 10px;
+  blah: blah;
 }
 .diagram.semantic p {
   font-size: 12px;
