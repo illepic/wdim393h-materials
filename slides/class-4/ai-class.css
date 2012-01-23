@@ -1,54 +1,21 @@
-.deck-container .theme-menu {
-  display: none;
-  position: fixed;
-  z-index: 3;
-  bottom: 10px;
-  left: 10px;
-  height: 20px;
-  line-height: 20px;
-  padding: 5px;
-  border: 1px solid #ddd;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  overflow: hidden;
-  background: #fff;
-  font-family: sans-serif;
-  color: #888;
-}
-.js .deck-container .theme-menu {
+#title-slide h1:before {
+  content: url(../custom-common/images/HTML5_Tech_Classes_256/HTML5_Styling_256.png);
   display: block;
+  margin: auto;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
 }
-.deck-container .theme-menu h2 {
-  float: left;
-  font-size: 20px;
-  border: 0;
-  padding: 5px 10px;
-  margin: 0;
-  height: 20px;
-  position: relative;
-  top: -5px;
-  left: -5px;
-  background: #ccc;
-  color: #444;
-  text-shadow: none;
-  font-family: sans-serif;
-  font-weight: bold;
+.slide h2 {
+  padding-left: 2em;
+  background: url(../custom-common/images/HTML5_Tech_Classes_256/HTML5_Styling_256.png) left top no-repeat;
+  background-size: 1.6em 1.6em;
 }
-.deck-container .theme-menu label {
-  float: left;
-  display: block;
-  font-size: 12px;
-  vertical-align: baseline;
-  margin: 0 4px 0 15px;
+.slide li {
+  font-size: 1.5em;
 }
-.deck-container .theme-menu select {
-  float: left;
-  display: block;
-  font-size: 14px;
-}
-@media print {
-  .theme-menu {
-    display: none !important;
-  }
+#vendor-prefixes blockquote {
+  font-size: 1.75em;
 }

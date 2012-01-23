@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>WDIM393 - Week 3</title>
+  <title>WDIM393 - Week 4</title>
 
   <meta name="description" content="A jQuery library for modern HTML presentations">
   <meta name="author" content="Caleb Troughton">
@@ -39,58 +39,89 @@
 <body class="deck-container class-3">
 
 <section class="slide" id="title-slide">
-  <h1>WDIM363 - Week 3</h1>
+  <h1>WDIM363 - Week 4</h1>
 </section>
 
 <section class="slide" id="agenda">
   <h2>Agenda</h2>
+  <h3>CSS3!</h3>
   <ol>
-    <li>
-      <h3>HTML5 New Tech Overview</h3>
-      <p>Lots of goodies</p>
-    </li>
-    <li>
-      <h3>Quick Semantics Discussion</h3>
-      <p>Semantics, context, "meaning"</p>
-    </li>
-    <li>
-      <h3>Don't let the door hit you on the way out</h3>
-      <p>Tags that got the boot</p>
-    </li>
-    <li>
-      <h3>New tags</h3>
-      <p>Goodbye "div"</p>
-    </li>
+    <li>Vendor Prefixes</li>
+    <li><a href="http://www.w3.org/TR/selectors/">Selectors</a></li>
+    <li><a href="http://css-tricks.com/pseudo-element-roundup/">Psuedo Elements</a></li>
+    <li>Color</li>
+    <li>Gradients</li>
+    <li>Multiple Backgrounds</li>
+    <li>Box Shadow</li>
+    <li>Transforms: rotate, skew, scale</li>
+    <li>Animations</li>
+    <li>Media Queries</li>
   </ol>
 </section>
 
-<section class="slide" id="tech">
-  <h2>HTML5 Tech</h2>
-  <img src="images/html5-tech.png"/>
+<section class="slide" id="note">
+  <h2>A Note</h2>
+  <p>There are many, many additions to CSS in CSS3. We're going to try and clarify the tech that users tend to have issues with at first.</p>
 </section>
 
-<section class="slide" id="tech-semantics">
-  <h2>SEMANTICS</h2>
-  <img src="images/class-header-semantics.jpg"/>
-  <p>MOAR TAGZ! A richer set of tags, along with RDFa, microdata, and microformats, for data-driven web development.</p>
-  <p><cite><a href="http://w3.org">w3.org</a></cite></p>
+<section class="slide" id="vendor-prefixes">
+  <h2>Vendor Prefixes</h2>
+  <blockquote>
+    <p>If we have to wait for browser makers to agree it will take forever, and if they were to implement competing implementations before a final spec we simply wouldn’t be able to use them. Vendor prefixes let browser makers nudge the standards groups into finalising things, and we get to play with them in the meantime.</p>
+    <footer><cite><a href="http://gsnedders.html5.org/outliner/">Jonathan Smiley, zurb.com</a></cite></footer>
+  </blockquote>
 </section>
 
-<section class="slide" id="tech-offline-storage">
-  <h2>OFFLINE & STORAGE</h2>
-  <img src="images/class-header-offline.jpg"/>
-  <p>Web Apps can start faster and work even if there is no internet connection, thanks to the HTML5 App Cache, as well as the Local Storage, Indexed DB, and the File API specifications.</p>
-  <p><cite><a href="http://w3.org">w3.org</a></cite></p>
+<section class="slide" id="vendor-prefixes-details">
+  <h2>Vendor Prefixes</h2>
+  <ul>
+    <li>Gecko (Firefox): -moz-</li>
+    <li>WebKit (Chrome, Safari): -webkit-</li>
+    <li>Presto (Opera): -o- (<i>-wap used in certain forms</i>)</li>
+    <li>Trident (Internet Explorer): -ms-</li>
+  </ul>
 </section>
 
-<section class="slide" id="tech-device">
-  <h2>DEVICE ACCESS</h2>
-  <img src="images/class-header-device.jpg"/>
-  <p>Beginning with the Geolocation API, Web Applications can present rich, device-aware features and experiences. Incredible device access innovations are being developed and implemented, from audio/video input access to microphones and cameras, to local data such as contacts & events, and even tilt orientation.</p>
-  <p><cite><a href="http://w3.org">w3.org</a></cite></p>
+<section class="slide" id="vendor-prefixes-details2">
+  <h2>Vendor Prefixes</h2>
+  <p>Vendor prefixes allow us to use CSS3 (and beyond) tech before the W3C spec has been 100% finalized. It's good practice to include all vendor prefixes you mean to support.</p>
 </section>
 
-<section class="slide" id="tech-connectivity">
+<section class="slide" id="vendor-prefixes-automation">
+  <h2>Vendor Prefixes - Automation</h2>
+  <a href="http://leaverou.github.com/prefixfree/"><img src="images/prefixr.png"></a>
+</section>
+
+<section class="slide" id="selectors">
+  <h2>Powerful New Selectors</h2>
+  <ol>
+    <li><code>[attr*=]</code></li>
+    <li><code>[attr^=]</code></li>
+    <li><code>[attr$=]</code></li>
+    <li><code>[attr|=]</code></li>
+    <li><code>:nth-child</code></li>
+    <li><code>:first-child</code></li>
+    <li><code>:last-child</code></li>
+    <li><code>:hover</code></li>
+    <li><code>:not</code></li>
+  </ol>
+</section>
+
+<section class="slide" id="selectors-attr1">
+  <h2>[attr*=]</h2>
+  <figure class="diagram">
+    <a href="http://wikipedia.com">Wiki should be selected</a>
+    <a href="http://reddit.com">Reddit should not</a>
+  </figure>
+  <code><pre></pre></code>
+</section>
+
+<section class="slide" id="selectors-selectivizr">
+  <h2>Selectors for Derp Browsers</h2>
+  <a href="http://selectivizr.com/"><img src="images/selectivizr.png"></a>
+</section>
+
+<section class="slide" id="selectors-iehelp">
   <h2>CONNECTIVITY</h2>
   <img src="images/class-header-connectivity.jpg"/>
   <p>Efficient communication means real-time chats, faster games, and better communication. Web Sockets and Server-Sent Events are pushing data between client and server more efficiently than ever before.</p>
