@@ -29,133 +29,135 @@ code{
   background-color: #fff;
 }
 
-.diagram.semantic{
+.diagram{
   float: left;
   width: 480px;
   //border: 1px solid #919191;
   margin-right: 10px;
   padding: 10px;
   margin-top: 20px;
-
-  header, nav, aside, figure, hgroup, section, article, footer{
-    padding: 10px 10px 9px 10px;
-    border: 1px solid #a7a7a7;
-    position: relative;
-    line-height: 12px;
-  }
-  article{
-    margin-bottom: 0;
-    //padding-bottom: 0;
-    header{
+  
+  &.semantic{
+    header, nav, aside, figure, hgroup, section, article, footer{
+      padding: 10px 10px 9px 10px;
+      border: 1px solid #a7a7a7;
+      position: relative;
+      line-height: 12px;
+    }
+    article{
+      margin-bottom: 0;
+      //padding-bottom: 0;
+      header{
+        margin-bottom: 10px;
+      }
+    }
+    & > header,
+    & > section,
+    & > aside{
       margin-bottom: 10px;
+      blah: blah;
     }
-  }
-  & > header,
-  & > section,
-  & > aside{
-    margin-bottom: 10px;
-    blah: blah;
-  }
-  p{
-    font-size: 12px;
-    margin-bottom: 0;
-  }
-  strong{
-    display: block;
-    font-size: 10px;
-    height: 10px;
-    line-height: 10px;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    background-color: white;
-    position: absolute;
-    top: -5px;
-  }
-  h1, h2, h3{
-    font-size: 12px;
-    height: 12px;
-    text-align: left;
-    padding: 0;
-    margin: 0;
-  }
-  h1{
-    position: static;
-    top: auto;
-    font-size: 18px;
-    height: 18px;
-    line-height: 18px;
-    padding: 0;
-    transform: none;
-    -webkit-transform: none;
-    -moz-transform: none;
-    -ms-transform: none;
-    -o-transform: none;
-  }
-  nav{
-    li{
-      float: left;
-      display: inline;
-      padding: 0;
-      a{
-        display: inline-block;
-        height: 12px;
-        padding: 0 5px;
-        font-size: 12px;
-        line-height: 12px;
-      }
+    p{
+      font-size: 12px;
+      margin-bottom: 0;
     }
-  }
-  figure{
-    float: right;
-    width: 100px;
-  }
-  aside{
-    hgroup, p{
-      float: left;
-      clear: left;
-    }
-  }
-  img{
-    padding: 0;
-    margin: 0;
-  }
-  .main{
-    article h3{
-
-    }
-    footer{
-      float: left;
+    strong{
+      display: block;
       font-size: 10px;
-      margin-right: 10px;
-      width: 100px;
-
-      address,
-      time{
+      height: 10px;
+      line-height: 10px;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      background-color: white;
+      position: absolute;
+      top: -5px;
+    }
+    h1, h2, h3{
+      font-size: 12px;
+      height: 12px;
+      text-align: left;
+      padding: 0;
+      margin: 0;
+    }
+    h1{
+      position: static;
+      top: auto;
+      font-size: 18px;
+      height: 18px;
+      line-height: 18px;
+      padding: 0;
+      transform: none;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      -o-transform: none;
+    }
+    nav{
+      li{
+        float: left;
         display: inline;
+        padding: 0;
+        a{
+          display: inline-block;
+          height: 12px;
+          padding: 0 5px;
+          font-size: 12px;
+          line-height: 12px;
+        }
       }
     }
-  }
-  .logo{
-    float: left;
-    margin-right: 10px;
-  }
-  ol{
-    margin: 0 0 0 25px;
-  }
-}
+    figure{
+      float: right;
+      width: 100px;
+    }
+    aside{
+      hgroup, p{
+        float: left;
+        clear: left;
+      }
+    }
+    img{
+      padding: 0;
+      margin: 0;
+    }
+    .main{
+      article h3{
 
-.highlight{
-  border: 2px solid red !important;
-}
+      }
+      footer{
+        float: left;
+        font-size: 10px;
+        margin-right: 10px;
+        width: 100px;
 
-.htmlCode{
-  line-height: 23px;
-  margin: 0;
+        address,
+        time{
+          display: inline;
+        }
+      }
+    }
+    .logo{
+      float: left;
+      margin-right: 10px;
+    }
+    ol{
+      margin: 0 0 0 25px;
+    }
+  }
 
-  li{
+  .highlight{
+    border: 2px solid red !important;
+  }
+
+  .htmlCode{
+    line-height: 23px;
+    margin: 0;
+
+    li{
+      padding: 0;
+    }
+  }
+  .slide pre.htmlCode {
     padding: 0;
   }
-}
-.slide pre.htmlCode {
-  padding: 0;
 }

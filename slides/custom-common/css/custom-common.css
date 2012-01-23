@@ -30,7 +30,7 @@ cite {
 code {
   background-color: #fff;
 }
-.diagram.semantic {
+.diagram {
   float: left;
   width: 480px;
   margin-right: 10px;
@@ -135,16 +135,16 @@ code {
 .diagram.semantic ol {
   margin: 0 0 0 25px;
 }
-.highlight {
+.diagram .highlight {
   border: 2px solid red !important;
 }
-.htmlCode {
+.diagram .htmlCode {
   line-height: 23px;
   margin: 0;
 }
-.htmlCode li {
+.diagram .htmlCode li {
   padding: 0;
 }
-.slide pre.htmlCode {
+.diagram .slide pre.htmlCode {
   padding: 0;
 }
