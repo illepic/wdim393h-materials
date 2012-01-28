@@ -35,7 +35,6 @@ code {
   width: 480px;
   margin-right: 10px;
   padding: 10px;
-  margin-top: 20px;
   clear: left;
 }
 .diagram.semantic header,
@@ -159,4 +158,5 @@ code {
   border-color: #CDE;
   background: white;
   margin-right: 15px;
+  margin-top: 15px;
 }
