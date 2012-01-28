@@ -61,7 +61,8 @@
 
 <section class="slide" id="note">
   <h2>A Note</h2>
-  <p>There are many, many additions to CSS in CSS3. We're going to try and clarify the tech that users tend to have issues with at first.</p>
+  <p>There are many, many additions to CSS in CSS3. We're going to try and clarify the features that users tend to have issues with at first.</p>
+  <p>(And by "users" I mean "Chris Bloom".)</p>
 </section>
 
 <section class="slide" id="vendor-prefixes">
@@ -95,10 +96,11 @@
 <section class="slide" id="selectors">
   <h2>Powerful New Selectors</h2>
   <ol>
-    <li><code>[attr*=]</code></li>
     <li><code>[attr^=]</code></li>
     <li><code>[attr$=]</code></li>
+    <li><code>[attr*=]</code></li>
     <li><code>[attr|=]</code></li>
+    <li><code>Multiple attribute selectors</code></li>
     <li><code>:nth-child</code></li>
     <li><code>:first-child</code></li>
     <li><code>:last-child</code></li>
@@ -108,12 +110,23 @@
 </section>
 
 <section class="slide" id="selectors-attr1">
-  <h2>[attr*=]</h2>
-  <figure class="diagram">
-    <a href="http://wikipedia.com">Wiki should be selected</a>
-    <a href="http://reddit.com">Reddit should not</a>
+  <h2>[attr^=], [attr$=], [attr*=]</h2>
+  <figure class="diagram result">
+    <iframe style="width: 100%; height: 400px" src="http://jsfiddle.net/illepic/XuNL6/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
   </figure>
-  <code><pre></pre></code>
+  <p>Use the <code>^=</code> operator to cause an attribute selector to match elements that have an <strong>attribute</strong> containing a value that <strong>STARTS with the specified value</strong>.</p>
+  <p>Use the <code>$=</code> operator to cause an attribute selector to match elements that have an <strong>attribute</strong> containing a value that <strong>ENDS with the specified value</strong>.</p>
+  <p>Use the <code>*=</code> operator to cause an attribute selector to match elements that have an <strong>attribute</strong> containing a value that <strong>contains the value anywhere.</strong>.</p>
+</section>
+
+<section class="slide" id="selectors-attr2">
+  <h2>[attr~=], [attr|=], multiple attribute selectors</h2>
+  <figure class="diagram result">
+    <iframe style="width: 100%; height: 400px" src="http://jsfiddle.net/illepic/kFDtp/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+  </figure>
+  <p>Use the <code>~=</code> operator to cause an attribute selector to match elements that have an <strong>attribute</strong> containing a value that is <strong>within a SPACE SEPARATED LIST</strong>.</p>
+  <p>Use the <code>|=</code> operator to cause an attribute selector to match elements that have an <strong>attribute</strong> STARTING with a value that is <strong>within a dash-separated list.</strong>.</p>
+  <p>You can use <strong>multiple attribute selectors</strong> in the same selector. All must match for the selector to match.</p>
 </section>
 
 <section class="slide" id="selectors-selectivizr">

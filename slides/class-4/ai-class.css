@@ -1,3 +1,6 @@
+.diagram {
+  width: 640px;
+}
 #title-slide h1:before {
   content: url(../custom-common/images/HTML5_Tech_Classes_256/HTML5_Styling_256.png);
   display: block;

@@ -29,13 +29,14 @@ code{
   background-color: #fff;
 }
 
-.diagram{
+&.diagram{
   float: left;
   width: 480px;
   //border: 1px solid #919191;
   margin-right: 10px;
   padding: 10px;
   margin-top: 20px;
+  clear: left;
   
   &.semantic{
     header, nav, aside, figure, hgroup, section, article, footer{
@@ -149,15 +150,28 @@ code{
     border: 2px solid red !important;
   }
 
-  .htmlCode{
-    line-height: 23px;
-    margin: 0;
-
+  .htmlCode,
+  .cssCode{
     li{
+      line-height: 23px;
+      font-size: 18px;
+      margin: 0;
       padding: 0;
     }
   }
-  .slide pre.htmlCode {
-    padding: 0;
+  &.result{
+    background: white;
+    padding: 1em;
+    line-height: 1.8em;
+    overflow: auto;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #000;
+    -moz-box-shadow: 2px 2px 5px #000;
+    -webkit-box-shadow: 2px 2px 5px #000;
+    border-color: #CDE;
+    background: white;
+    margin-right: 15px;
   }
 }

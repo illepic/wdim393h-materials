@@ -6,6 +6,7 @@ $(function() {
 	$.deck('.slide');
 
 	$("pre.htmlCode").snippet("html",{style:"acid"});
+  $("pre.cssCode").snippet("css",{style:"acid"});
 
 	blink();
 });

@@ -36,6 +36,7 @@ code {
   margin-right: 10px;
   padding: 10px;
   margin-top: 20px;
+  clear: left;
 }
 .diagram.semantic header,
 .diagram.semantic nav,
@@ -138,13 +139,24 @@ code {
 .diagram .highlight {
   border: 2px solid red !important;
 }
-.diagram .htmlCode {
+.diagram .htmlCode li, .diagram .cssCode li {
   line-height: 23px;
+  font-size: 18px;
   margin: 0;
-}
-.diagram .htmlCode li {
   padding: 0;
 }
-.diagram .slide pre.htmlCode {
-  padding: 0;
+.diagram.result {
+  background: white;
+  padding: 1em;
+  line-height: 1.8em;
+  overflow: auto;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #000;
+  -moz-box-shadow: 2px 2px 5px #000;
+  -webkit-box-shadow: 2px 2px 5px #000;
+  border-color: #CDE;
+  background: white;
+  margin-right: 15px;
 }
