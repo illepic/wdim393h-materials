@@ -23,6 +23,17 @@ section {
 .deck-container {
   width: auto;
 }
+.deck-container dt {
+  font-weight: bold;
+}
+.deck-container .left {
+  float: left;
+}
+.deck-container .right {
+  float: left;
+  width: 485px;
+  margin-left: 15px;
+}
 cite {
   display: block;
   text-align: right;
@@ -31,9 +42,7 @@ code {
   background-color: #fff;
 }
 .diagram {
-  float: left;
   width: 480px;
-  margin-right: 10px;
   padding: 10px;
   clear: left;
 }
@@ -157,6 +166,11 @@ code {
   -webkit-box-shadow: 2px 2px 5px #000;
   border-color: #CDE;
   background: white;
-  margin-right: 15px;
   margin-top: 15px;
+}
+.slide > small {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  width: 545  px;
 }
