@@ -47,8 +47,12 @@
   <h3>CSS3!</h3>
   <ol>
     <li>Vendor Prefixes</li>
-    <li><a href="http://www.w3.org/TR/selectors/">Selectors</a></li>
-    <li><a href="http://css-tricks.com/pseudo-element-roundup/">Psuedo Elements</a></li>
+    <li>
+      <a href="http://www.w3.org/TR/selectors/">Selectors</a>
+    </li>
+    <li>
+      <a href="http://css-tricks.com/pseudo-element-roundup/">Psuedo Elements</a>
+    </li>
     <li>Color</li>
     <li>Gradients</li>
     <li>Multiple Backgrounds</li>
@@ -61,15 +65,23 @@
 
 <section class="slide" id="note">
   <h2>A Note</h2>
-  <p>There are many, many additions to CSS in CSS3. We're going to try and clarify the features that users tend to have issues with at first.</p>
+  <p>
+    There are many, many additions to CSS in CSS3. We're going to try and clarify the features that users tend to have issues with at first.
+  </p>
   <p>(And by "users" I mean "Chris Bloom".)</p>
 </section>
 
 <section class="slide" id="vendor-prefixes">
   <h2>Vendor Prefixes</h2>
   <blockquote>
-    <p>If we have to wait for browser makers to agree it will take forever, and if they were to implement competing implementations before a final spec we simply wouldn’t be able to use them. Vendor prefixes let browser makers nudge the standards groups into finalising things, and we get to play with them in the meantime.</p>
-    <footer><cite><a href="http://gsnedders.html5.org/outliner/">Jonathan Smiley, zurb.com</a></cite></footer>
+    <p>
+      If we have to wait for browser makers to agree it will take forever, and if they were to implement competing implementations before a final spec we simply wouldn’t be able to use them. Vendor prefixes let browser makers nudge the standards groups into finalising things, and we get to play with them in the meantime.
+    </p>
+    <footer>
+      <cite>
+        <a href="http://gsnedders.html5.org/outliner/">Jonathan Smiley, zurb.com</a>
+      </cite>
+    </footer>
   </blockquote>
 </section>
 
@@ -111,169 +123,343 @@
 
 <section class="slide" id="selectors-attr1">
   <h2>[attr^=], [attr$=], [attr*=]</h2>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/XuNL6/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/XuNL6/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <p>Use the <code>^=</code> operator to cause an attribute selector to match elements that have an <strong>attribute</strong> containing a value that <strong>STARTS with the specified value</strong>.</p>
-  <p>Use the <code>$=</code> operator to cause an attribute selector to match elements that have an <strong>attribute</strong> containing a value that <strong>ENDS with the specified value</strong>.</p>
-  <p>Use the <code>*=</code> operator to cause an attribute selector to match elements that have an <strong>attribute</strong> containing a value that <strong>contains the value anywhere.</strong>.</p>
+  <div class="left">
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/XuNL6/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/XuNL6/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+  </div>
+  <div class="right">
+    <p>
+      Use the
+      <code>^=</code>
+      operator to cause an attribute selector to match elements that have an <strong>attribute</strong>
+      containing a value that <strong>STARTS with the specified value</strong>
+      .
+    </p>
+    <p>
+      Use the
+      <code>$=</code>
+      operator to cause an attribute selector to match elements that have an
+      <strong>attribute</strong>
+      containing a value that
+      <strong>ENDS with the specified value</strong>
+      .
+    </p>
+    <p>
+      Use the
+      <code>*=</code>
+      operator to cause an attribute selector to match elements that have an
+      <strong>attribute</strong>
+      containing a value that
+      <strong>contains the value anywhere.</strong>
+      .
+    </p>
+  </div>
 </section>
 
 <section class="slide" id="selectors-attr2">
   <h2>[attr~=], [attr|=], multiple attribute selectors</h2>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/kFDtp/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
+  <div class="left">
     <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/kFDtp/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <p>Use the <code>~=</code> operator to cause an attribute selector to match elements that have an <strong>attribute</strong> containing a value that is <strong>within a SPACE SEPARATED LIST</strong>.</p>
-  <p>Use the <code>|=</code> operator to cause an attribute selector to match elements that have an <strong>attribute</strong> STARTING with a value that is <strong>within a dash-separated list.</strong>.</p>
-  <p>You can use <strong>multiple attribute selectors</strong> in the same selector. All must match for the selector to match.</p>
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/kFDtp/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/kFDtp/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+  </div>
+  <div class="right">
+    <p>
+      Use the
+      <code>~=</code>
+      operator to cause an attribute selector to match elements that have an <strong>attribute</strong>
+      containing a value that is <strong>within a SPACE SEPARATED LIST</strong>.
+    </p>
+    <p>
+      Use the
+      <code>|=</code>
+      operator to cause an attribute selector to match elements that have an
+      <strong>attribute</strong>
+      STARTING with a value that is
+      <strong>within a dash-separated list.</strong>
+      .
+    </p>
+    <p>
+      You can use
+      <strong>multiple attribute selectors</strong>
+      in the same selector. All must match for the selector to match.
+    </p>
+  </div>
 </section>
 
 <section class="slide" id="nth-child1">
   <h2>:nth-child</h2>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/z9rqm/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
+  <div class="left">
     <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/z9rqm/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <p>Match elements on the basis of their positions within a parent element's list of child elements. Accepts an argument as a keyword ("odd" or "even", a number or an expression in the form <code>an+b</code></p>
-  <p>If argument N is a number, it represents the position of the element. So, 3 = 3rd position.</p>
-  <p>Argument N can be in the form <cod>an+b</cod>, where <code>a</code> and <code>b</code> are integers. For example, <code>4n+1</code>. In this case, <code>b</code> represents the starting position (1 or 1st position) and the number <code>a</code> represents the ordinal number (think "position in a sequence") of every element we want to match after that. So <code>4n+1</code> means we will select the first element and then every 4th after that point. </p>
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/z9rqm/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/z9rqm/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+  </div>
+  <div class="right">
+    <p>
+      Match elements on the basis of their positions within a parent element's list of child elements. Accepts an argument as a keyword ("odd" or "even", a number or an expression in the form
+      <code>an+b</code>
+    </p>
+    <p>
+      If argument N is a number, it represents the position of the element. So, 3 = 3rd position.
+    </p>
+    <p>
+      Argument N can be in the form
+      <cod>an+b</cod>
+      , where
+      <code>a</code>
+      and
+      <code>b</code>
+      are integers. For example,
+      <code>4n+1</code>
+      . In this case,
+      <code>b</code>
+      represents the starting position (1 or 1st position) and the number
+      <code>a</code>
+      represents the ordinal number (think "position in a sequence") of every element we want to match after that. So
+      <code>4n+1</code>
+      means we will select the first element and then every 4th after that point.
+    </p>
+  </div>
 </section>
 
 <section class="slide" id="nth-child2">
   <h2>:nth-child</h2>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/UgbHE/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/UgbHE/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <p>A few more examples to get the hang of it.</p>
-  <footer><a href="http://css-tricks.com/useful-nth-child-recipies/">A few great nth-child() recipes.</a></footer>
+  <div class="left">
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/UgbHE/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/UgbHE/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+  </div>
+  <div class="right">
+    <p>A few more examples to get the hang of it.</p>
+  </div>
+  <div class="right">
+    <footer>
+      <a href="http://css-tricks.com/useful-nth-child-recipies/">A few great nth-child() recipes.</a>
+    </footer>
+  </div>
 </section>
 
 <section class="slide" id="first-child">
   <h2>:first-child</h2>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/s6WUp/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/s6WUp/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <p>:first-child</cod> is a pseudo-class that matches an element if it's the first child element of its parent element. In other words, when we select li:first-child, we're grabbing the first &lt;li&gt; within it's parent (&lt;ol&gt; or &lt;ul&gt;.</p>
+  <div class="left">
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/s6WUp/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/s6WUp/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+  </div>
+  <div class="right">
+    <p>:first-child</cod>
+    is a pseudo-class that matches an element if it's the first child element of its parent element. In other words, when we select li:first-child, we're grabbing the first &lt;li&gt; within it's parent (&lt;ol&gt; or &lt;ul&gt;.
+  </p>
+</div>
 </section>
 
 <section class="slide" id="last-child">
   <h2>:last-child</h2>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/RGs4h/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/RGs4h/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <p>:last-child</cod>, just like :first-child, is a pseudo class. It simply matches the last child element of its parent element.</p>
+  <div class="left">
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/RGs4h/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/RGs4h/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+  </div>
+  <div class="right">
+    <p>:last-child</cod>
+    , just like :first-child, is a pseudo class. It simply matches the last child element of its parent element.
+  </p>
+</div>
 </section>
 
 <section class="slide" id="last-child">
   <h2>:last-child</h2>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/RGs4h/embedded/css,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/RGs4h/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <p>:last-child</cod>, just like :first-child, is a pseudo class. It simply matches the last child element of its parent element.</p>
+  <div class="left">
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/RGs4h/embedded/css,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/RGs4h/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+  </div>
+  <div class="right">
+    <p>:last-child</cod>
+    , just like :first-child, is a pseudo class. It simply matches the last child element of its parent element.
+  </p>
+</div>
 </section>
 
 <section class="slide" id="hover-not">
   <h2>:hover & :not</h2>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/67J7B/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/67J7B/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <p>:hover is a pseudo class that matches any element that's being designated by a pointing device. "Designated" is a term that will come up often to refer to the process of hovering over a box generated by the element.</p>
-
-  <p>:not is used as a "negation pseudo-class". It simply matches all elements EXCEPT the element passed as an argument.</p>
+  <div class="left">
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/67J7B/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/67J7B/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+  </div>
+  <div class="right">
+    <p>
+      :hover is a pseudo class that matches any element that's being designated by a pointing device. "Designated" is a term that will come up often to refer to the process of hovering over a box generated by the element.
+    </p>
+    <p>
+      :not is used as a "negation pseudo-class". It simply matches all elements EXCEPT the element passed as an argument.
+    </p>
+  </div>
 </section>
 
 <section class="slide" id="selectors-selectivizr">
   <h2>Selectors for Derp Browsers</h2>
-  <a href="http://selectivizr.com/"><img src="images/selectivizr.png"></a>
+  <a href="http://selectivizr.com/">
+    <img src="images/selectivizr.png"></a>
 </section>
 
 <section class="slide" id="before-after1">
   <h2>:before & :after</h2>
-  <figure class="diagram result">
-  <img src="images/after-before.png">  
-  </figure>
-  <p>Pseudo elements :before and :after are incredibly powerful. For every element on a page we essentially get <strong>two more free ones that we can do just about anything to</strong>.</p>
-  <p>One more time for posterity: :before and :after give us a free "div" before and after any element we want.</p>
-  <p>These new elements contain no true content and are absolutely positioned. </p>
-  <footer><a href="http://nicolasgallagher.com/multiple-backgrounds-and-borders-with-css2/">Nicolas Gallagher on pseudo elements</a></footer>
+  <div class="left">
+    <figure class="diagram result">
+      <img src="images/after-before.png"></figure>
+  </div>
+  <div class="right">
+    <p>
+      Pseudo elements :before and :after are incredibly powerful. For every element on a page we essentially get <strong>two more free ones that we can do just about anything to</strong>
+      .
+    </p>
+    <p>
+      One more time for posterity: :before and :after give us a free "div" before and after any element we want.
+    </p>
+    <p>
+      These new elements contain no true content and are absolutely positioned.
+    </p>
+    <footer>
+      <a href="http://nicolasgallagher.com/multiple-backgrounds-and-borders-with-css2/">Nicolas Gallagher on pseudo elements</a>
+    </footer>
+  </div>
 </section>
 
 <section class="slide" id="before-after2">
   <h2>:before & :after</h2>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/MHacb/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/MHacb/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <p>Pay attention to the <code>content:""</code> declaration for the pseudo elements.</p>
-  <p>Why does <code>:after</code> show above <code>:before</code>?</p>
-  <p>Think about the posibilities of <code>:after</code> and <code>:before</code> both having their own <code>content:"&lt;img src=&quot;image.jpg&quot;&gt;";</code> coupled with multiple background images afforded in CSS3.</p>
+  <div class="left">
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/MHacb/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/MHacb/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+  </div>
+  <div class="right">
+    <p>
+      Pay attention to the
+      <code>content:""</code>
+      declaration for the pseudo elements.
+    </p>
+    <p>
+      Why does
+      <code>:after</code>
+      show above
+      <code>:before</code>
+      ?
+    </p>
+    <p>
+      Think about the posibilities of
+      <code>:after</code>
+      and
+      <code>:before</code>
+      both having their own
+      <code>content:"&lt;img src=&quot;image.jpg&quot;&gt;";</code>
+      coupled with multiple background images afforded in CSS3.
+    </p>
+  </div>
 </section>
 
 <section class="slide" id="color1">
   <h2>Color</h2>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/2q535/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/2q535/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <p>RGBA: uses standard red, green, blue color defintion with an alpha channel as a decimal between 0 and 1.</p>
-  <p>HSLa: Hue, Saturation, Lightness. </p>
-  <dl>
-    <dt>Hue</dt>
-    <dd>
-      <img src="images/hsl_top.jpg">
-      An angle on the color wheel.
-    </dd>
-    <dt>Saturation</dt>
+  <div class="left">
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/2q535/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/2q535/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+  </div>
+  <div class="right">
+    <p>
+      RGBA: uses standard red, green, blue color defintion with an alpha channel as a decimal between 0 and 1.
+    </p>
+    <p>HSLa: Hue, Saturation, Lightness.</p>
+    <dl>
+      <dt>Hue</dt>
+      <dd>
+        <img src="images/hsl_top.jpg">An angle on the color wheel.</dd>
+      <dt>Saturation</dt>
       <dd>0% is completely denatured, 100% is fully saturated</dd>
-    <dt>Lightness</dt>
-      <dd>0% is completely dark (black). 100% is completely light (white). 50% is "average".</dd>
-  </dl>
-  <small>http://css-tricks.com/yay-for-hsla/, http://www.lateralcode.com/playing-with-css3-colors/, http://hslpicker.com/#00FF80, http://www.useragentman.com/blog/2010/08/28/coding-colors-easily-using-css3-hsl-notation/</small>
+      <dt>Lightness</dt>
+      <dd>
+        0% is completely dark (black). 100% is completely light (white). 50% is "average".
+      </dd>
+    </dl>
+    <small>
+      http://css-tricks.com/yay-for-hsla/, http://www.lateralcode.com/playing-with-css3-colors/, http://hslpicker.com/#00FF80, http://www.useragentman.com/blog/2010/08/28/coding-colors-easily-using-css3-hsl-notation/
+    </small>
+  </div>
 </section>
 
 <section class="slide" id="bgs">
   <h2>Multiple Backgrounds</h2>
   <div class="left">
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/2q535/embedded/css,html,result/presentation" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
-  <figure class="diagram result">
-    <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/2q535/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-  </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/Whtqg/embedded/css,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/Whtqg/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
   </div>
   <div class="right">
-    <p>Multiple background property declarations, separated by commas. Each background property is then matched up in order. For example:</p>
+    <p>
+      Multiple background property declarations, separated by commas. Each background property is then matched up in order. For example:
+    </p>
     <code><pre>background-image: url(image1.png), url(image2.png);
 background-repeat: no-repeat, repeat-x; </pre></code>
+    <p>
+      WARNING: The precedence of listed background images is <strong>opposite</strong>
+      of normal css elements. In other words, images listed first show above images listed after.
+    </p>
   </div>
+</section>
+
+<section class="slide" id="shadow-gradients">
+  <h2>Linear Gradients and Box Shadow</h2>
+  <div class="left">
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/Whtqg/embedded/css,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/Whtqg/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+  </div>
+  <div class="right">
+    <p>
+      Use gradient functions anywhere you would normally place an image reference.
+    </p>
+    <code>-webkit-linear-gradient([&lt;point&gt; || &lt;angle&gt;,]? &lt;stop&gt;, &lt;stop&gt; [, &lt;stop&gt;]);</code>
+
+  </div>
+  <small>http://css-tricks.com/css3-gradients/</small>
 </section>
 
 <section class="slide" id="homework">
@@ -298,6 +484,7 @@ background-repeat: no-repeat, repeat-x; </pre></code>
 <a href="#" class="deck-next-link" title="Next">&#8594;</a>
 
 <p class="deck-status">
+  Press "m" to see all slides. 
   <span class="deck-status-current"></span>
   /
   <span class="deck-status-total"></span>
