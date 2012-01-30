@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="../custom-common/css/custom-common.css">
   <!-- Custom CSS just for this page -->
   <link rel="stylesheet" href="ai-class.css">
+  <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='demo.css' />
 
   <script src="../deck.js/modernizr.custom.js"></script>
 </head>
@@ -54,11 +55,11 @@
       <a href="http://css-tricks.com/pseudo-element-roundup/">Psuedo Elements</a>
     </li>
     <li>Color</li>
-    <li>Gradients</li>
     <li>Multiple Backgrounds</li>
     <li>Box Shadow</li>
-    <li>Transforms: rotate, skew, scale</li>
-    <li>Animations</li>
+    <li>Gradients</li>
+    <li>Transforms</li>
+    <li>Transitions</li>
     <li>Media Queries</li>
   </ol>
 </section>
@@ -446,38 +447,109 @@ background-repeat: no-repeat, repeat-x; </pre></code>
   <h2>Linear Gradients and Box Shadow</h2>
   <div class="left">
     <figure class="diagram result">
-      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/Whtqg/embedded/css,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/CLC6U/embedded/css,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
     </figure>
     <figure class="diagram result">
-      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/Whtqg/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/CLC6U/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
     </figure>
   </div>
   <div class="right">
     <p>
       Use gradient functions anywhere you would normally place an image reference.
     </p>
-    <code>-webkit-linear-gradient([&lt;point&gt; || &lt;angle&gt;,]? &lt;stop&gt;, &lt;stop&gt; [, &lt;stop&gt;]);</code>
-
+    <p><code>-webkit-linear-gradient([&lt;point&gt; || &lt;angle&gt;,]? &lt;stop&gt;, &lt;stop&gt; [, &lt;stop&gt;]);</code></p>
+    <p>Starting point, starting color, first stop color and point, second stop color and point, etc. Notice change from orange to red to yellow.</p>
+    <p>Box shadow notation:</p>
+    <ul><li>Horizontal offset: positive places shadow right.</li><li>Vertical offset: positive places shadow above.</li><li>Blur radius: Higher, the blurrier.</li><li>Spread radius: positive makes the shadow larger in relation to the blur</li><li>Color</li></ul>
   </div>
-  <small>http://css-tricks.com/css3-gradients/</small>
+  <small>http://css-tricks.com/css3-gradients/, http://css-tricks.com/snippets/css/css-box-shadow/</small>
+</section>
+
+<section class="slide" id="transforms">
+  <h2>Transforms</h2>
+  <div class="left">
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/7gj3r/embedded/css,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 350px" src="http://jsfiddle.net/illepic/7gj3r/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+  </div>
+  <div class="right">
+    <p>
+      Transforms let us modify various attributes of an element in the format:
+      <code>transform: function(a, b);</code>
+    </p>
+    <ul>
+      <li>Rotate takes one argument, an angle in "deg"rees.</li>
+      <li>
+        Skew takes two args, the first for x axis in degs and the other for y axis in degs.
+      </li>
+      <li>
+        Translate let's us position an element like position:absolute; from its starting point.
+      </li>
+      <li>
+        Scale takes two numbers in decimal notation, one for x axis one for y axis.
+      </li>
+      <li><code>transform-origin</code> sets the center point of where the transform happens. transform-origin let's us rotate, scale etc from other points within the element instead of center.</li>
+    </ul>
+  </div>
+  <small>http://www.sitepoint.com/a-primer-on-css3-transforms/</small>
+</section>
+
+<section class="slide" id="transition">
+  <h2>Transitions</h2>
+  <div class="left">
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/VGMGP/embedded/css,html,js,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="diagram result">
+      <iframe style="width: 100%; height: 300px" src="http://jsfiddle.net/illepic/VGMGP/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+  </div>
+  <div class="right">
+    <p>Transitions let us animate the change of an element's attribute from one state to another. :hover and :focus are most often used.</p>
+    <p>To start, we declare what properties we want to transition. In the example "all" is used as a catch-all but you can choose very specific attributes like ONLY background-color or rotation.</p>
+    <p>Once there is a state change (:hover), the declared transform or attribute is triggered.</p>
+    <p>Pay attention to what happens when you click either box (look at the JavaScript tab).</p>
+    <p>Any attribute can be transitioned.</p>
+  </div>
+  <small>http://net.tutsplus.com/tutorials/html-css-techniques/css-fundametals-css-3-transitions/</small>
+</section>
+
+<section class="slide" id="media-queries">
+  <h2>Media Queries</h2>
+  <p>
+    "Responsive design" is finally here. Call it "mobile first" or "resolution dependent layouts", it's simply a technique to load different css files into our page based on device OR window size.
+  </p>
+  <p>Example: "For screens between resolution 701px and 900px"</p>
+  <code><pre>&lt;link rel=&#039;stylesheet&#039; media=&#039;screen and (min-width: 701px) and (max-width: 900px)&#039; href=&#039;css/medium.css&#039; /&gt;</pre></code>
+  <p>
+    Media queries consist of a media type and zero or more expressions that check for the conditions of particular media features, such as:
+  </p>
+  <ul>
+    <li>width, height - width of window</li>
+    <li>device-width, device-height - width of <strong>DEVICE</strong> regardless of window size</li>
+    <li>orientation</li>
+    <li>aspect-ratio</li>
+    <li>color</li>
+    <li>resolution</li>
+  </ul>
+  <small>
+    http://coding.smashingmagazine.com/2011/01/12/guidelines-for-responsive-web-design/, http://css-tricks.com/resolution-specific-stylesheets/
+  </small>
 </section>
 
 <section class="slide" id="homework">
-
   <h2>Homework</h2>
-  <p>A full, working site with NO styling (please) up on your group's hosting meeting the following criteria: </p>
-  <ol>
-    <li>This is a site about your group. You're selling yourseves as devs, designers and all-around wedev badasses.</li>
-    <li>A landing page featuring a top call to action. <a href="http://blog.kissmetrics.com/landing-page-design-infographic/?wide=1">Think this style.</a> Also features a blogroll (latest news posts). </li>
-    <li>An About us featuring all members of the team, with profile pics and links out to relevant resources about each. </li>
-    <li>Portfolio Page: Show us some work you've already done at the AI. Images and links galore. </li>
-    <li>A 10 maximum progress bar featured prominently with a single portion progress.</li>
-    <li>Visually there will be sidebars on internal pages, a full navigation header, a sitewide footer. </li>
-    <li>Grading will be on semantic code utilizing all HTML5 elements taught today. A minimum of 3 tags not covered today will also be used. NO DIVs!</li>
-  </ol>
-  <footer><cite><a href="http://html5doctor.com/the-hgroup-element/">HTML5 Doctor</a></cite></footer>
+  <ul>
+  <li>Style your group's front page. Impress me. Make it pretty. Find a site you like, make your landing page emulate that.</li>
+  <li>Use at least 5 of the selectors discussed.</li>
+  <li>Use every CSS3 technology discussed.</li>
+  <li>When turning in the assignment, in the textbox provided, point me to how you're using the tech provided. "We used gradients instead of background images for the menu."</li>
+  </ul>
+  <h3>Test will cover semantic elements and CSS3 tech.</h3>
 </section>
-
 
 
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
