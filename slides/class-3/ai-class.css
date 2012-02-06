@@ -57,3 +57,6 @@
   background: url(../custom-common/images/HTML5_Tech_Classes_256/HTML5_Semantics_256.png) center top no-repeat;
   background-size: 150px 150px;
 }
+.diagram {
+  float: left;
+}
