@@ -174,12 +174,31 @@
 
 <section class="slide" id="modernizr-load">
   <h2>Modernizr.load()</h2>
-  <p>JS exampe here - polyfill for transforms</p>
+<pre><code>Modernizr.load({
+  test: Modernizr.geolocation,
+  yep : &#039;geo.js&#039;,
+  nope: &#039;geo-polyfill.js&#039;
+});</code></pre>
+  <ol>
+  <li>Test for particular features</li>
+  <li>Load polyfill libraries (js and css) dynamically</li>
+  <li>Load ONLY what you need, when you need it</li>
+</ol>
+</section>
+
+<section class="slide" id="modernizr-load-demo">
+  <h2>Modernizr.load() Demo</h2>
+  <h3>Open in IE7 and Chrome/Firefox</h3>
+  <ol>
+  <li>No Modernizr: http://localdev/wdim393/demos/modernizr/index.html</li>
+  <li>Only Modernizr: http://localdev/wdim393/demos/modernizr/index.html</li>
+  <li>Modernizr.load() checking for textshadow: http://localdev/wdim393/demos/modernizr/index.html</li>
+</ol>
 </section>
 
 <section class="slide" id="homework">
   <h2>Homework</h2>
-  <p>Using Modernizr, integrate at least TWO polyfill techniques into your front page: 1) Using a simple CSS selector to test whether the client supports it or not and 2) using Modernizr.load to check and load a polyfill from the polyfill list. ALL CSS3 ON YOUR FRONT PAGE DOES NOT HAVE TO WORK IN IE. Just the two polyfills. Please point these out to me.</p>
+  <p>Using Modernizr, integrate at least TWO polyfill techniques into your front page: 1) Using a simple CSS selector to load alernate styles for IE7 and 2) using Modernizr.load to check and load a polyfill from the polyfill list. ALL CSS3 ON YOUR FRONT PAGE DOES NOT HAVE TO WORK IN IE. Just the two polyfills. Please point these out to me.</p>
 </section>
 
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
