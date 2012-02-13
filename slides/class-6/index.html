@@ -136,21 +136,40 @@
   <h2>The Wrong Way (User Agent Detection)</h2>
   <img src="images/fray.jpg">
   <p><a href="http://thefray.com">TheFray.com</a></p>
-  <h3>Chrome HTML Element:</h3>
+  <h3>Chrome 18 HTML Element:</h3>
   <p><code>&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; lang=&quot;en&quot; xml:lang=&quot;en&quot; class=&quot;js&quot;&gt;</code></p>
   <h3>IE7 HTML Element:</h3>
   <p><code>&lt;html class=&quot;ie7 js slvzr-first-child&quot; lang=&quot;en&quot; ... xml:lang=&quot;&quot;&gt;</code></p>
+  <h3>IE7 CSS for background-size fallback: </h3>
+  <code>.ie7 body{ background: url(&quot;../images/content_bg.png&quot;) top right repeat; }</code>
+</section>
+
+<section class="slide" id="modernizr-good">
+  <h2>The Right Way (what we should have done)</h2>
+  <img src="images/fray.jpg">
+  <p><a href="http://thefray.com">TheFray.com</a></p>
+  <h3>Chrome 18 HTML Element:</h3>
+  <p><code>&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot; class=&quot;js no-touch backgroundsize postmessage history multiplebgs boxshadow opacity cssanimations csscolumns cssgradients csstransforms csstransitions fontface localstorage ...&quot;&gt;</code></p>
+  <h3>IE7 HTML Element:</h3>
+  <p><code>&lt;html class=&quot; js no-touch no-backgroundsize postmessage no-history no-multiplebgs no-boxshadow no-opacity no-cssanimations no-csscolumns no-cssgradients no-csstransforms no-csstransitions fontface localstorage ...&quot; lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;</code></p>
+  <h3>IE7 CSS for background-size fallback: </h3>
+  <code>.no-backgroundsize body{ background: url(&quot;../images/content_bg.png&quot;) top right repeat; }</code>
 </section>
 
 <section class="slide" id="modernizr-3">
   <h2>Modernizr - HTML Classes Example</h2>
   <p>Modernizr.com in Chrome 18.</p>
+  <img src="images/modernizr-chrome.png">
   <p>Modernizr.com in IE7.</p>
+  <img src="images/modernizr-ie7.png">
 </section>
 
 <section class="slide" id="modernizr-4">
-  <h2>CSS Example</h2>
-  <p>CSS exampe here</p>
+  <h2>Modernizr.com</h2>
+  <h3>Chrome 18 HTML element</h3>
+  <p><code>&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot; id=&quot;modernizrcom&quot; class=&quot;js no-touch postmessage history multiplebgs boxshadow opacity cssanimations csscolumns cssgradients csstransforms csstransitions fontface localstorage sessionstorage svg inlinesvg blobbuilder bloburls download formdata wf-proximanova1proximanova2-n4-active wf-proximanova1proximanova2-i4-active wf-proximanova1proximanova2-n7-active wf-proximanova1proximanova2-i7-active wf-proximanovacondensed1proximanovacondensed2-n6-active wf-athelas1athelas2-n4-active wf-active js flexbox flexbox-legacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths tk-loaded wf-active&quot;&gt;</code></p>
+  <h3>IE7 HTML Element</h3>
+  <p><code>&lt;html class=&quot;js no-touch postmessage no-history no-multiplebgs no-boxshadow no-opacity no-cssanimations no-csscolumns no-cssgradients no-csstransforms no-csstransitions fontface localstorage sessionstorage no-svg no-inlinesvg no-blobbuilder no-bloburls no-download no-formdata wf-proximanova1proximanova2-n4-active wf-proximanova1proximanova2-i4-active wf-proximanova1proximanova2-n7-active wf-proximanova1proximanova2-i7-active wf-proximanovan4-n4-active wf-proximanovai4-i4-active wf-proximanovan7-n7-active wf-proximanovai7-i7-active wf-proximanovacondensed1proximanovacondensed2-n6-active wf-proximanovacondensedn6-n6-active wf-athelas1athelas2-n4-active wf-athelasn4-n4-active wf-active js no-flexbox no-flexbox-legacy no-canvas no-canvastext no-webgl no-touch no-geolocation postmessage no-websqldatabase no-indexeddb no-hashchange no-history draganddrop no-websockets no-rgba no-hsla no-multiplebgs no-backgroundsize no-borderimage no-borderradius no-boxshadow no-textshadow no-opacity no-cssanimations no-csscolumns no-cssgradients no-cssreflections no-csstransforms no-csstransforms3d no-csstransitions no-fontface no-generatedcontent no-video no-audio localstorage sessionstorage no-webworkers no-applicationcache no-svg no-inlinesvg no-smil no-svgclippaths tk-loaded wf-active&quot; id=&quot;modernizrcom&quot; lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;</code></p>
 </section>
 
 <section class="slide" id="modernizr-load">
