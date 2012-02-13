@@ -4,5 +4,4 @@ section{
 
 li{
   text-shadow: 10px 10px 5px #ff00ff;
-  filter: dropshadow(color=#ff00ff, offx=10, offy=10);
 }
