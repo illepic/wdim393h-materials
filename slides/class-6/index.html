@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>WDIM393 - Week 5</title>
+  <title>WDIM393 - Week 6</title>
 
   <meta name="description" content="A jQuery library for modern HTML presentations">
   <meta name="author" content="Caleb Troughton">
@@ -40,28 +40,127 @@
 <body class="deck-container class-3">
 
 <section class="slide" id="title-slide">
-  <h1>WDIM363 - Week 5</h1>
+  <h1>WDIM363 - Week 6</h1>
 </section>
 
 <section class="slide" id="agenda">
-  <h2>Agenda: OMGMIDTERM</h2>
+  <h2>Agenda</h2>
+  <h3>HTML5 Polyfills!</h3>
   <ol>
-    <li>Test</li>
-    <li>Homework</li>
+    <li>Why?</li>
+    <li>=prefix-free</li>
+    <li>Selectivizr</li>
+    <li>Modernizr</li>
+    <li>CSS Transforms: http://www.useragentman.com/blog/2010/03/09/cross-browser-css-transforms-even-in-ie/</li>
   </ol>
+</section>
+
+<section class="slide" id="what">
+  <h2>Paul Irish, Internet Big Guy</h2>
+  <blockquote>
+    <p>polyfill (n): a JavaScript shim that replicates the standard API for older browsers</p>
+  </blockquote>
+</section>
+
+<section class="slide" id="remy">
+  <h2>Remy Sharp, Left Logic</h2>
+  <blockquote>
+    <p>A polyfill, or polyfiller, is a piece of code (or plugin) that provides the technology that you, the developer, expect the browser to provide natively. Flattening the API landscape if you will.</p>
+  </blockquote>
+</section>
+
+<section class="slide" id="alex">
+  <h2>Alex Sexton, Modernizr/jQuery Team Member</h2>
+  <blockquote>
+    <p>...I classify polyfilling as a form of Regressive Enhancement</p>
+  </blockquote>
+</section>
+
+<section class="slide" id="like-prefixes">
+  <h2>&larr;Polyfills vs Prefixes&rarr;</h2>
+  <p>Much in the same way that browser prefixes let us utilize new CSS3/HTML5 technology before they've officially arrived, polyfills let us ensure that this new technology either <strong>fails gracefully</strong> or <strong>emulates similarly</strong> back to older browsers.</p>
+</section>
+
+<section class="slide" id="landscape">
+  <h2>Almost there</h2>
+  <div id="browser-ww-monthly-201101-201201" width="800" height="500" style="width:800px; height: 500px; margin: 0 auto;"></div><!-- You may change the values of width and height above to resize the chart --><script type="text/javascript" src="http://www.statcounter.com/js/FusionCharts.js"></script><script type="text/javascript" src="http://gs.statcounter.com/chart.php?browser-ww-monthly-201101-201201"></script>
+  <ul>
+    <li>Chrome is set to overtake Internet Explorer 8 by the middle of 2012.</li>
+    <li>HTML5/CSS3 compliant browsers - Firefox 4+, Chrome, Safari - make up ~60% of the market</li>
+    <li>Non-compliant browsers: IE7/8 and Firefox &lt;3.7 make up <strong>a whopping 30%.</strong></li>
+  </ul>
+  <small><a href="http://gs.statcounter.com/">StatCounter Global Stats - Browser Market Share</a>, http://www.sitepoint.com/browser-trends-february-2012/</small>
+</section>
+
+<section class="slide" id="landscape-ie8">
+  <h2>Almost there</h2>
+  <div id="browser_version-ww-monthly-201101-201201" width="1024" height="675" style="width:1024px; height: 675px; margin: 0 auto;"></div><!-- You may change the values of width and height above to resize the chart --><script type="text/javascript" src="http://www.statcounter.com/js/FusionCharts.js"></script><script type="text/javascript" src="http://gs.statcounter.com/chart.php?browser_version-ww-monthly-201101-201201"></script>
+  
+  <small>Source: <a href="http://gs.statcounter.com/#browser_version-ww-monthly-201101-201201">StatCounter Global Stats - Browser Version Market Share</a></small>
+</section>
+
+<section class="slide" id="landscape-ie8-t1000">
+  <h2>Why won't you die</h2>
+  <img src="images/die-already.jpg">
+</section>
+
+<section class="slide" id="job">
+  <h2>This does not suck</h2>
+  <blockquote><p>Part of your job description from here on out will be to "get it working" in IE. That's just how it is. Luckily, we have more tools at our disposal than ever before. Interesting tools. Dare I say, even <strong>fun</strong> tools.</p></blockquote>
+</section>
+
+<section class="slide" id="list">
+  <h2>The amazing list of polyfills</h2>
+  <p>https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills</p>
+</section>
+
+<section class="slide" id="modernizr-1">
+  <h2>Modernizr</h2>
+  <img src="images/modernizr-logo.png">
+  <p>"Modernizr is a small JavaScript library that detects the availability of native implementations for next-generation web technologies, i.e. features that stem from the HTML5 and CSS3 specifications. Many of these features are already implemented in at least one major browser (most of them in two or more), and what Modernizr does is, very simply, tell you whether the current browser has this feature natively implemented or not."</p>
+</section>
+
+<section class="slide" id="modernizr-2">
+  <h2>Modernizr</h2>
+  <ul>
+    <li>Is NOT user-agent detection</li>
+    <li>It does NOT make IE magically work with all HTML5 technologies.</li>
+    <li>Is instead FEATURE detection. More reliable, more flexible.</li>
+    <li>Tests for over 40 next-gen features and adds classes to the html element to explain what features are and are <stron>not</stron> supported.</li>
+    <li>Provides a script loader so polyfills can be dynamically loaded: that is, loaded <strong>only</strong> when needed.</li>
+    <li>Oh, and it upgrades IE6/7/8 to recognize HTML5 semantic elements.</li>
+  </ul>
+</section>
+
+<section class="slide" id="modernizr-bad">
+  <h2>The Wrong Way (User Agent Detection)</h2>
+  <img src="images/fray.jpg">
+  <p><a href="http://thefray.com">TheFray.com</a></p>
+  <h3>Chrome HTML Element:</h3>
+  <p><code>&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; lang=&quot;en&quot; xml:lang=&quot;en&quot; class=&quot;js&quot;&gt;</code></p>
+  <h3>IE7 HTML Element:</h3>
+  <p><code>&lt;html class=&quot;ie7 js slvzr-first-child&quot; lang=&quot;en&quot; ... xml:lang=&quot;&quot;&gt;</code></p>
+</section>
+
+<section class="slide" id="modernizr-3">
+  <h2>Modernizr - HTML Classes Example</h2>
+  <p>Modernizr.com in Chrome 18.</p>
+  <p>Modernizr.com in IE7.</p>
+</section>
+
+<section class="slide" id="modernizr-4">
+  <h2>CSS Example</h2>
+  <p>CSS exampe here</p>
+</section>
+
+<section class="slide" id="modernizr-load">
+  <h2>Modernizr.load()</h2>
+  <p>JS exampe here - polyfill for transforms</p>
 </section>
 
 <section class="slide" id="homework">
   <h2>Homework</h2>
   <ul>
-    <li>Now that the landing page is starting to take shape, let's kick ass on a few more parts of the site.</li>
-    <li>Style "About us" using all the tech we've talked about</li>
-    <li>Style the "Portfolio" page using all the tech we've talked about</li>
-    <li>Remember that 10-segment progress bar? Let's get it filled to 50% and styled so it fits the theme of your site.</li>
-    <li>I'd like to see subtle :hover transforms used. Take a look at <a href="http://ibuypink.com/">http://ibuypink.com/</a> for inspiration.</li>
-    <li>Let's toss some (decent) fonts in using <a href="http://css3clickchart.com/#font-face">@font-face</a>.(Google Fonts, FontSquirrel, etc)</li>
-    <li>When submitting, use the textbox to please provide me a couple of paragraphs of your approach, the reason you marked it up/laid it out/styled it the way you did.</li>
-    <li>Bonus points for using and writing about techniques we didn't cover in class. (CSS columns? Keyframe animations? Reflections?)</li>
   </ul>
 </section>
 
