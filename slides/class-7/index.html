@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>WDIM393 - Week 6</title>
+  <title>WDIM393 - Week 7</title>
 
   <meta name="description" content="A jQuery library for modern HTML presentations">
   <meta name="author" content="Caleb Troughton">
@@ -40,54 +40,97 @@
 <body class="deck-container class-3">
 
 <section class="slide" id="title-slide">
-  <h1>WDIM363 - Week 6</h1>
-</section>
-
-<section class="slide" id="job-posting">
-  <h2>Job Posting</h2>
-  <p><a href="http://portland.craigslist.org/clc/web/2850247219.html">http://portland.craigslist.org/clc/web/2850247219.html</a></p>
+  <h1>WDIM363 - Week 7</h1>
 </section>
 
 <section class="slide" id="agenda">
   <h2>Agenda</h2>
-  <h3>HTML5 Polyfills!</h3>
+  <h3>Audio, Video, SVG</h3>
   <ol>
-    <li>Why?</li>
-    <li>Polyfills</li>
-    <li>State of the Union</li>
-    <li>Polyfill Menu: All you can eat buffet</li>
-    <li>Modernizr</li>
-    <li>Say "no" to UA sniffing</li>
-    <li>Test for features</li>
-    <li>Modernizr class lists</li>
-    <li>Modernizr.load()</li>
+    <li>From whence we came</li>
+    <li>Why not Object?</li>
+    <li>Need for first-class citizens</li>
+    <li>Do as the natives do</li>
+    <li>Audio Implementation</li>
+    <li>Video Implementation</li>
+    <li>SVG</li>
   </ol>
 </section>
 
-<section class="slide" id="what">
-  <h2>Paul Irish, Internet Big Guy</h2>
-  <blockquote>
-    <p>polyfill (n): a JavaScript shim that replicates the standard API for older browsers</p>
+<section class="slide" id="history-1">
+  <h2>History of Multimedia On The Web</h2>
+  <p>In the beginning there was MIDI. And it was good.</p>
+  <p>A defacto standard at first due to filesize and bandwidth limitations.</p>
+  <embed src="images/final-countdown.mid" align="baseline" border="0" controls="smallconsole" autostart="false" loop="true">
+  <p> Yet never native:</p>
+  <code>&lt;embed src=&quot;images/final-countdown.mid&quot; align=&quot;baseline&quot; border=&quot;0&quot; controls=&quot;smallconsole&quot; autostart=&quot;true&quot; loop=&quot;true&quot;&gt;</code>
+</section>
+
+<section class="slide" id="history-2">
+  <h2>History of Multimedia On The Web</h2>
+  <h3>Motion achieved through gifs</h3>
+  <div id="hamster">
+    <img src="images/anin.gif" width="144" height="48"><img src="images/anin.gif" width="144" height="48"><img src="images/anin.gif" width="144" height="48">
+    <img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70">
+    <img src="images/anin.gif" width="144" height="48"> <img src="images/anin.gif" width="144" height="48"> <img src="images/anin.gif" width="144" height="48">
+    <img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70">
+    <img src="images/anin.gif" width="144" height="48">
+    <img src="images/anin.gif" width="144" height="48"> <img src="images/anin.gif" width="144" height="48">
+    <img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74">
+    <img src="images/anin.gif" width="144" height="48"><img src="images/anin.gif" width="144" height="48"><img src="images/anin.gif" width="144" height="48">
+  </div>
+</section>
+
+<section class="slide" id="multimedia-00s">
+  <h2>History of Multimedia On The Web</h2>
+  <h3>Early 00s: Hello Broadband</h3>
+  <img src="images/windows-media-player-logo.jpg" >
+  <img src="images/real_logo.jpg">
+  <img src="images/quicktime-logo.gif">
+  <h3>A Challenger Appears!</h3>
+  <img src="images/flashplayer_logo.gif">
   </blockquote>
 </section>
 
-<section class="slide" id="remy">
-  <h2>Remy Sharp, Left Logic</h2>
-  <blockquote>
-    <p>A polyfill, or polyfiller, is a piece of code (or plugin) that provides the technology that you, the developer, expect the browser to provide natively. Flattening the API landscape if you will.</p>
-  </blockquote>
+<section class="slide" id="flash">
+  <h2>The Reason Flash Won The War</h2>
+  <iframe width="420" height="315" src="http://www.youtube.com/embed/6GUN-rVrxgY" frameborder="0" allowfullscreen></iframe>
+  <p>No, not baby owls. </p>
+  <p>YouTube's launch in 2005 cemented Flash as <strong>the</strong> web video standard.</p>
 </section>
 
-<section class="slide" id="alex">
-  <h2>Alex Sexton, Modernizr/jQuery Team Member</h2>
-  <blockquote>
-    <p>...I classify polyfilling as a form of Regressive Enhancement</p>
-  </blockquote>
+<section class="slide" id="native">
+  <h2>Let's Talk Native vs Non-Native</h2>
+  <img src="images/hatin.jpg">
+  <code>&lt;img src=&quot;images/hatin.jpg&quot;&gt;</code>
+  <p>Browsers implement <code>&lt;img&gt;</code> natively, with full "understanding" of the object being embedded. Attributes like height, width, file path and file size are all available to the browser to manipulate at will.</p>
 </section>
 
-<section class="slide" id="like-prefixes">
-  <h2>&larr;Polyfills vs Prefixes&rarr;</h2>
-  <p>Much in the same way that browser prefixes let us utilize new CSS3/HTML5 technology before they've officially arrived, polyfills let us ensure that this new technology either <strong>fails gracefully</strong> or <strong>emulates similarly</strong> back to older browsers.</p>
+<section class="slide" id="non-native">
+  <h2>Non-Native</h2>
+  <img src="http://i.qkme.me/367s2d.jpg">
+  <h3>The &lt;object&gt; tag hands off all responsibility to an external program or plugin</h3>
+  <pre><code>&lt;object width=&quot;425&quot; height=&quot;344&quot;&gt;
+  &lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/video&quot; /&gt;
+  &lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;
+  &lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;
+  &lt;embed src=&quot;http://www.youtube.com/video&quot;
+  type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot;
+  allowfullscreen=&quot;true&quot; width=&quot;425&quot; height=&quot;344&quot;&gt;
+  &lt;/embed&gt;
+&lt;/object&gt;</code></pre>
+</section>
+
+<section class="slide" id="non-native-sucks">
+  <h2>Why this sucks</h2>
+  <p>Handing off handling of multimedia is web standards "cheating".</p>
+  <ul>
+	  <li>The code is complicated to write and understand</li>
+	  <li>Browser has to verify that the user has a third party plugin</li>
+	  <li>Or has the knowledge and ability to download it. </li>
+	  <li>Plugins frequently cause instability and crash</li>
+	  <li>Freak out less tech-savvy people by prompting to download something to view the desirable content.</li>
+	</ul>
 </section>
 
 <section class="slide" id="landscape">
