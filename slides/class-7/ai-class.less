@@ -1,11 +1,21 @@
-#title-slide h1{
-  
+.deck-container{
+  table{
+    margin-bottom: 20px;
+    caption{
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+  td,th{
+    padding: 10px;
+  }
+  td{
+    text-align: center;
+  }
+  .snippet-container{
+    font-size: .7em !important;
+  }
 }
-
-.diagram{
-  width: 640px;
-}
-
 #title-slide h1{
 
   &:before{
@@ -21,10 +31,6 @@
   li{
     font-size: 1.5em;
   }
-}
-
-#vendor-prefixes blockquote{
-  font-size: 1.75em;
 }
 
 #title-slide h1{
@@ -51,4 +57,17 @@
     width: 200px;
     height: 200px;
   }
+}
+.file-format{
+  color: green;
+}
+.video-format{
+  color: blue;
+}
+.audio-format{
+  color: red;
+}
+
+.snippet-wrap .snippet-num li{
+  padding-left: 0;
 }

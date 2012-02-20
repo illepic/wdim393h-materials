@@ -123,129 +123,179 @@
 
 <section class="slide" id="non-native-sucks">
   <h2>Why this sucks</h2>
-  <p>Handing off handling of multimedia is web standards "cheating".</p>
+  <p>Handing off rendering of multimedia is web standards "cheating".</p>
   <ul>
 	  <li>The code is complicated to write and understand</li>
 	  <li>Browser has to verify that the user has a third party plugin</li>
 	  <li>Or has the knowledge and ability to download it. </li>
 	  <li>Plugins frequently cause instability and crash</li>
 	  <li>Freak out less tech-savvy people by prompting to download something to view the desirable content.</li>
+	  <li>Ever try to overlay an element (css dropdown menus, overlay lightboxes) overtop of an &lt;object&gt;?</li>
 	</ul>
 </section>
 
-<section class="slide" id="landscape">
-  <h2>Almost there</h2>
-  <div id="browser-ww-monthly-201101-201201" width="800" height="500" style="width:800px; height: 500px; margin: 0 auto;"></div><!-- You may change the values of width and height above to resize the chart --><script type="text/javascript" src="http://www.statcounter.com/js/FusionCharts.js"></script><script type="text/javascript" src="http://gs.statcounter.com/chart.php?browser-ww-monthly-201101-201201"></script>
+<section class="slide" id="great-idea">
+  <h2>A great idea</h2>
+  <figure><blockquote>Opera has some internal experimental builds with an implementation of a &lt;video&gt; element. The element exposes a simple API (for the moment) much like the Audio() object: play(), pause(), stop(). The idea is that it works like &lt;object&gt; except that it has special &lt;video&gt; semantics much like &lt;img&gt; has image semantics.</blockquote><figcaption>Anne van Kesteren, 2007, W3C Working Group</figcaption></figure>
+</section>
+
+<section class="slide" id="new-elements">
+  <h2>A great idea</h2>
+  <figure><blockquote>Opera has some internal experimental builds with an implementation of a &lt;video&gt; element. The element exposes a simple API (for the moment) much like the Audio() object: play(), pause(), stop(). The idea is that it works like &lt;object&gt; except that it has special &lt;video&gt; semantics much like &lt;img&gt; has image semantics.</blockquote><figcaption>Anne van Kesteren, 2007, W3C Working Group</figcaption></figure>
+</section>
+
+<section class="slide" id="ta-da">
+  <h2>Ta da!</h2>
+  <h3><code>&lt;video&gt;,&lt;audio&gt;</code></h3>
+  <p>HTML5 provides a standardized way to play video directly in the browser, with no plugins required.</p>
+  <figure>
+  <blockquote>One of the major advantages of the HTML5 video element is that, finally, video is a full-fledged citizen on the Web. It&rsquo;s no longer shunted off to the hinterland of &lt;object&gt; or the non-validating &lt;embed&gt; element.</blockquote>
+  	<figcaption>Remy Sharp & Bruce Lawson, October 2010</figcaption>
+  </figure>
+</section>
+
+<section class="slide" id="markup">
+  <h2>Markup</h2>
+  <p>Markup is similar to <code>&lt;img&gt;</code>, but with a few handy attributes.</p>
+  <pre class="htmlCode"><code>&lt;audio src=&quot;elvis.ogg&quot; controls preload=&quot;auto&quot;&gt;&lt;/audio&gt;
+
+&lt;video src=&quot;videofile.ogv&quot; controls preload=&quot;meta&quot;&gt;
+  Download the &lt;a href=videofile.ogv&gt;HTML5 video&lt;/a&gt;
+&lt;/video&gt;</code></pre>
+</section>
+
+<section class="slide" id="formats">
+  <h2>Formats</h2>
+  <p>Browser support and formats:</p>
+  <table class="table">
+  	<caption>Audio support</caption>
+  	<thead>
+  		<tr>
+  			<th>Browser</th>
+  			<th>Ogg Vorbis</th>
+  			<th>MP3</th>
+  			<th>WAV</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<tr>
+  			<td>Firefox 3.6+</td>
+  			<td>✓</td>
+  			<td></td>
+  			<td>✓</td>
+  		</tr>
+  		<tr>
+  			<td>Safari 5+</td>
+  			<td></td>
+  			<td>✓</td>
+  			<td>✓</td>
+  		</tr>
+  		<tr>
+  			<td>Chrome 6+</td>
+  			<td>✓</td>
+  			<td>✓</td>
+  			<td></td>
+  		</tr>
+  		<tr>
+  			<td>Opera 105+</td>
+  			<td>✓</td>
+  			<td></td>
+  			<td>✓</td>
+  		</tr>
+  		<tr>
+  			<td>Internet Explorer 9+</td>
+  			<td></td>
+  			<td>✓</td>
+  			<td>✓</td>
+  		</tr>
+  	</tbody>
+  </table>
+  <p>"Think of a <span class="file-format">video format</span> as a zip file which contains the encoded <span class="video-format">video stream</span> and <span class="audio-format">audio stream</span>. The three formats you should care about for the web are (<a href="http://caniuse.com/#search=mp4">mp4</a>, <a href="http://caniuse.com/#search=ogg">ogv</a> and <a href="http://caniuse.com/#search=webm">webm</a>)."</p>
+  <table class="table">
+  	<caption>Video support</caption>
+  	<thead>
+  		<tr>
+  			<th>Browser</th>
+  			<th><span class="file-format">.mp4</span> = <br><span class="video-format">H.264</span> + <span class="audio-format">AAC</span></th>
+  			<th><span class="file-format">.ogg/.ogv</span> = <br><span class="video-format">Theora</span> + <span class="audio-format">Vorbis</span></th>
+  			<th>.<span class="file-format">webm</span> = <br><span class="video-format">VP8</span> + <span class="audio-format">Vorbis</span></th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<tr>
+  			<td>Firefox 3.6+</td>
+  			<td></td>
+  			<td>✓</td>
+  			<td>✓</td>
+  		</tr>
+  		<tr>
+  			<td>Safari 5+</td>
+  			<td>✓</td>
+  			<td></td>
+  			<td></td>
+  		</tr>
+  		<tr>
+  			<td>Chrome 6+</td>
+  			<td>✓</td>
+  			<td>✓</td>
+  			<td>✓</td>
+  		</tr>
+  		<tr>
+  			<td>Opera 105+</td>
+  			<td></td>
+  			<td>✓</td>
+  			<td>✓</td>
+  		</tr>
+  		<tr>
+  			<td>Internet Explorer 9+</td>
+  			<td>✓</td>
+  			<td></td>
+  			<td>✓<br>(with plugin, ugh)</td>
+  		</tr>
+  	</tbody>
+  </table>
+  <cite>html5rocks.com, http://caniuse.com/</cite>
+</section>
+
+<section class="slide" id="stack-example">
+  <h2>The "Stack"</h2>
+  <p>This is a "safe" stack of &lt;source&gt; elements: </p>
+<pre class="htmlCode"><code>&lt;video&gt;
+  &lt;source src=&quot;video/wall.webm&quot; type=&#039;video/webm; codecs=&quot;vp8, vorbis&quot;&#039; /&gt;
+  &lt;source src=&quot;video/wall.mp4&quot; type=&#039;video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;&#039; /&gt;
+  &lt;source src=&quot;video/wall.theora.ogv&quot; type=&#039;video/ogg; codecs=&quot;theora, vorbis&quot;&#039; /&gt;
+  Video tag not supported. Download the video &lt;a href=&quot;movie.webm&quot;&gt;here&lt;/a&gt;.
+&lt;/video&gt;</code></pre>
+  <p>We included multiple &lt;source&gt; elements to "fall back" for browsers that don't support certain formats. At this early stage it is also recommended to include detailed "type" attributes to let browsers best decide rendering.</p>
+</section>
+
+<section class="slide" id="demo">
+  <h2>Demo</h2>
+  <video>
+	  <source src="video/wall.webm" type='video/webm; codecs="vp8, vorbis"' />
+	  <source src="video/wall.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+	  <source src="video/wall.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
+	  Video tag not supported. Download the video <a href="movie.webm">here</a>.
+	</video>
+	<h3>Why isn't it playing?</h3>
+</section>
+
+<section class="slide" id="attributes">
+  <h2>Attributes</h2>
+  <p>Both &lt;audio&gt; and &lt;video&gt; share the following attributes:</p>
   <ul>
-    <li>Chrome is set to overtake Internet Explorer 8 by the middle of 2012.</li>
-    <li>HTML5/CSS3 compliant browsers - Firefox 4+, Chrome, Safari - make up ~60% of the market</li>
-    <li>Non-compliant browsers: IE7/8 and Firefox &lt;3.7 make up <strong>a whopping 30%.</strong></li>
-  </ul>
-  <small><a href="http://gs.statcounter.com/">StatCounter Global Stats - Browser Market Share</a>, http://www.sitepoint.com/browser-trends-february-2012/</small>
+		<li>src: <p>The file or URL to play.</p></li>
+		<li>autoplay</li>
+		<li>loop</li>
+		<li>controls</li>
+		<li>preload</li>
+		<li>type</li>
+	</ul>
 </section>
 
-<section class="slide" id="landscape-ie8">
-  <h2>Almost there</h2>
-  <div id="browser_version-ww-monthly-201101-201201" width="1024" height="675" style="width:1024px; height: 675px; margin: 0 auto;"></div><!-- You may change the values of width and height above to resize the chart --><script type="text/javascript" src="http://www.statcounter.com/js/FusionCharts.js"></script><script type="text/javascript" src="http://gs.statcounter.com/chart.php?browser_version-ww-monthly-201101-201201"></script>
-  <p styl="text-align: center;"><a href="http://paulirish.com/2011/browser-market-pollution-iex-is-the-new-ie6/">Oh, except we're stuck with IE8 for at least the next 9 years. And we may end up developing for upwards of 76 browsers soon.</a></p>
-  <small>Source: <a href="http://gs.statcounter.com/#browser_version-ww-monthly-201101-201201">StatCounter Global Stats - Browser Version Market Share</a></small>
-</section>
-
-<section class="slide" id="landscape-ie8-t1000">
-  <h2>Why won't you die</h2>
-  <img src="images/die-already.jpg">
-</section>
-
-<section class="slide" id="job">
-  <h2>This does not suck</h2>
-  <blockquote><p>Part of your job description from here on out will be to "get it working" in IE. That's just how it is. Luckily, we have more tools at our disposal than ever before. Interesting tools. Dare I say, even <strong>fun</strong> tools.</p></blockquote>
-</section>
-
-<section class="slide" id="list">
-  <h2>The amazing list of polyfills</h2>
-  <p><a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills">https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills</a></p>
-</section>
-
-<section class="slide" id="modernizr-1">
-  <h2>Modernizr</h2>
-  <img src="images/modernizr-logo.png">
-  <p>"Modernizr is a small JavaScript library that detects the availability of native implementations for next-generation web technologies, i.e. features that stem from the HTML5 and CSS3 specifications. Many of these features are already implemented in at least one major browser (most of them in two or more), and what Modernizr does is, very simply, tell you whether the current browser has this feature natively implemented or not."</p>
-</section>
-
-<section class="slide" id="modernizr-2">
-  <h2>Modernizr</h2>
-  <ul>
-    <li>Is NOT user-agent detection</li>
-    <li>It does NOT make IE magically work with all HTML5 technologies.</li>
-    <li>Is instead FEATURE detection. More reliable, more flexible.</li>
-    <li>Tests for over 40 next-gen features and adds classes to the html element to explain what features are and are <stron>not</stron> supported.</li>
-    <li>Provides a script loader so polyfills can be dynamically loaded: that is, loaded <strong>only</strong> when needed.</li>
-    <li>Oh, and it upgrades IE6/7/8 to recognize HTML5 semantic elements.</li>
-  </ul>
-</section>
-
-<section class="slide" id="modernizr-bad">
-  <h2>The Wrong Way (User Agent Detection)</h2>
-  <img src="images/fray.jpg">
-  <p><a href="http://thefray.com">TheFray.com</a></p>
-  <h3>Chrome 18 HTML Element:</h3>
-  <p><code>&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; lang=&quot;en&quot; xml:lang=&quot;en&quot; class=&quot;js&quot;&gt;</code></p>
-  <h3>IE7 HTML Element:</h3>
-  <p><code>&lt;html class=&quot;ie7 js slvzr-first-child&quot; lang=&quot;en&quot; ... xml:lang=&quot;&quot;&gt;</code></p>
-  <h3>IE7 CSS for background-size fallback: </h3>
-  <code>.ie7 body{ background: url(&quot;../images/content_bg.png&quot;) top right repeat; }</code>
-</section>
-
-<section class="slide" id="modernizr-good">
-  <h2>The Right Way (what we should have done)</h2>
-  <img src="images/fray.jpg">
-  <p><a href="http://thefray.com">TheFray.com</a></p>
-  <h3>Chrome 18 HTML Element:</h3>
-  <p><code>&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot; class=&quot;js no-touch backgroundsize postmessage history multiplebgs boxshadow opacity cssanimations csscolumns cssgradients csstransforms csstransitions fontface localstorage ...&quot;&gt;</code></p>
-  <h3>IE7 HTML Element:</h3>
-  <p><code>&lt;html class=&quot; js no-touch no-backgroundsize postmessage no-history no-multiplebgs no-boxshadow no-opacity no-cssanimations no-csscolumns no-cssgradients no-csstransforms no-csstransitions fontface localstorage ...&quot; lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;</code></p>
-  <h3>IE7 CSS for background-size fallback: </h3>
-  <code>.no-backgroundsize body{ background: url(&quot;../images/content_bg.png&quot;) top right repeat; }</code>
-</section>
-
-<section class="slide" id="modernizr-3">
-  <h2>Modernizr - HTML Classes Example</h2>
-  <p>Modernizr.com in Chrome 18.</p>
-  <img src="images/modernizr-chrome.png">
-  <p>Modernizr.com in IE7.</p>
-  <img src="images/modernizr-ie7.png">
-</section>
-
-<section class="slide" id="modernizr-4">
-  <h2>Modernizr.com</h2>
-  <h3>Chrome 18 HTML element</h3>
-  <p><code>&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot; id=&quot;modernizrcom&quot; class=&quot;js no-touch postmessage history multiplebgs boxshadow opacity cssanimations csscolumns cssgradients csstransforms csstransitions fontface localstorage sessionstorage svg inlinesvg blobbuilder bloburls download formdata wf-proximanova1proximanova2-n4-active wf-proximanova1proximanova2-i4-active wf-proximanova1proximanova2-n7-active wf-proximanova1proximanova2-i7-active wf-proximanovacondensed1proximanovacondensed2-n6-active wf-athelas1athelas2-n4-active wf-active js flexbox flexbox-legacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths tk-loaded wf-active&quot;&gt;</code></p>
-  <h3>IE7 HTML Element</h3>
-  <p><code>&lt;html class=&quot;js no-touch postmessage no-history no-multiplebgs no-boxshadow no-opacity no-cssanimations no-csscolumns no-cssgradients no-csstransforms no-csstransitions fontface localstorage sessionstorage no-svg no-inlinesvg no-blobbuilder no-bloburls no-download no-formdata wf-proximanova1proximanova2-n4-active wf-proximanova1proximanova2-i4-active wf-proximanova1proximanova2-n7-active wf-proximanova1proximanova2-i7-active wf-proximanovan4-n4-active wf-proximanovai4-i4-active wf-proximanovan7-n7-active wf-proximanovai7-i7-active wf-proximanovacondensed1proximanovacondensed2-n6-active wf-proximanovacondensedn6-n6-active wf-athelas1athelas2-n4-active wf-athelasn4-n4-active wf-active js no-flexbox no-flexbox-legacy no-canvas no-canvastext no-webgl no-touch no-geolocation postmessage no-websqldatabase no-indexeddb no-hashchange no-history draganddrop no-websockets no-rgba no-hsla no-multiplebgs no-backgroundsize no-borderimage no-borderradius no-boxshadow no-textshadow no-opacity no-cssanimations no-csscolumns no-cssgradients no-cssreflections no-csstransforms no-csstransforms3d no-csstransitions no-fontface no-generatedcontent no-video no-audio localstorage sessionstorage no-webworkers no-applicationcache no-svg no-inlinesvg no-smil no-svgclippaths tk-loaded wf-active&quot; id=&quot;modernizrcom&quot; lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;</code></p>
-</section>
-
-<section class="slide" id="modernizr-load">
-  <h2>Modernizr.load()</h2>
-<pre><code>Modernizr.load({
-  test: Modernizr.geolocation,
-  yep : &#039;geo.js&#039;,
-  nope: &#039;geo-polyfill.js&#039;
-});</code></pre>
-  <ol>
-  <li>Test for particular features</li>
-  <li>Load polyfill libraries (js and css) dynamically</li>
-  <li>Load ONLY what you need, when you need it</li>
-</ol>
-</section>
-
-<section class="slide" id="modernizr-load-demo">
-  <h2>Modernizr.load() Demo</h2>
-  <h3>Open in IE7 and Chrome/Firefox</h3>
-  <ol>
-  <li>No Modernizr: http://localdev/wdim393/demos/modernizr/index.html</li>
-  <li>Only Modernizr: http://localdev/wdim393/demos/modernizr/index.html</li>
-  <li>Modernizr.load() checking for textshadow: http://localdev/wdim393/demos/modernizr/index.html</li>
-</ol>
+<section class="slide" id="tools">
+  <h2>Tools/Resources</h2>
+  <ul><li>http://www.mirovideoconverter.com/</li></ul>
 </section>
 
 <section class="slide" id="homework">

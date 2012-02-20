@@ -1,5 +1,18 @@
-.diagram {
-  width: 640px;
+.deck-container table {
+  margin-bottom: 20px;
+}
+.deck-container table caption {
+  text-align: left;
+  font-weight: bold;
+}
+.deck-container td, .deck-container th {
+  padding: 10px;
+}
+.deck-container td {
+  text-align: center;
+}
+.deck-container .snippet-container {
+  font-size: .7em !important;
 }
 .slide h2 {
   padding-left: 2em;
@@ -8,9 +21,6 @@
 }
 .slide li {
   font-size: 1.5em;
-}
-#vendor-prefixes blockquote {
-  font-size: 1.75em;
 }
 #title-slide h1 {
   padding-top: 200px;
@@ -32,4 +42,16 @@
   margin: 0;
   width: 200px;
   height: 200px;
+}
+.file-format {
+  color: green;
+}
+.video-format {
+  color: blue;
+}
+.audio-format {
+  color: red;
+}
+.snippet-wrap .snippet-num li {
+  padding-left: 0;
 }
