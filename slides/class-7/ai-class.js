@@ -1,6 +1,3 @@
-function blink(){
-    $('#semantic-blink img').delay(100).fadeTo(100,0).delay(100).fadeTo(100,1, blink);
-}
 $(function() {
 	// Deck initialization
 	$.deck('.slide');
@@ -8,6 +5,11 @@ $(function() {
 	$("pre.htmlCode").snippet("html",{style:"acid"});
   $("pre.cssCode").snippet("css",{style:"acid"});
 
-	blink();
+  $('#api-video').bind('timeupdate', function(){
+    $('#timer').html($(this).get(0).currentTime);
+  });
+  $('#api-video').get(0).currentTime = 10;
+  $('#api-video').get(0).play();
+  
 });
 

@@ -45,7 +45,7 @@
 
 <section class="slide" id="agenda">
   <h2>Agenda</h2>
-  <h3>Audio, Video, SVG</h3>
+  <h3>Audio, Video</h3>
   <ol>
     <li>From whence we came</li>
     <li>Why not Object?</li>
@@ -53,7 +53,6 @@
     <li>Do as the natives do</li>
     <li>Audio Implementation</li>
     <li>Video Implementation</li>
-    <li>SVG</li>
   </ol>
 </section>
 
@@ -266,7 +265,7 @@
 
 <section class="slide" id="demo">
   <h2>Demo</h2>
-  <video>
+  <video preload="auto">
 	  <source src="video/wall.webm" type='video/webm; codecs="vp8, vorbis"' />
 	  <source src="video/wall.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
 	  <source src="video/wall.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
@@ -331,7 +330,7 @@ AddType video/webm .webm</code></pre>
 
 <section class="slide" id="first-class">
   <h2>A true first class citizen</h2>
-  <pre>And a completely contrived example.</pre>
+  <p>And a completely contrived example.</p>
   <video poster="images/karot.jpg" controls loop width="720" class="bling">
 	  <source src="video/wall.webm" type='video/webm; codecs="vp8, vorbis"' />
 	  <source src="video/wall.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
@@ -340,14 +339,44 @@ AddType video/webm .webm</code></pre>
 	</video>
 </section>
 
+<section class="slide" id="video-api">
+  <h2>&lt;video&gt;/&lt;audio&gt; elements have a full API</h2>
+  <p><a href="http://www.w3.org/2010/05/video/mediaevents.html">Click me: Huge list of video event and api in a beautiful interactive interface.</a></p>
+  <p>The video element comes with a bunch of new events to detect (and control) when the video is playing, paused or finished. Since loading a video resource can have many caveats there are many events to have a fine control of the loading process, both at network level (loadstart, progress, suspend, abort, error, emptied, stalled) and at buffering level (loadedmetadata, loadeddata, waiting, playing, canplay, canplaythrough).</p>
+  <a href="http://www.w3.org/2010/05/video/mediaevents.html"><img src="images/video-api.jpg" width="720"></a>
+	<cite>http://www.html5rocks.com/en/tutorials/video/basics/</cite>
+</section>
+
+<section class="slide" id="video-api-continued">
+  <h2>&lt;video&gt; API javascript demo</h2>
+  <pre><code>$(&#039;#api-video&#039;).bind(&#039;timeupdate&#039;, function(){
+  $(&#039;#timer&#039;).html($(this).get(0).currentTime);
+});
+$(&#039;#api-video&#039;).get(0).currentTime = 10;
+$(&#039;#api-video&#039;).get(0).play();</code></pre>
+  <p>Timer example: <span id="timer">TIMER!</span></p>
+  <video poster="images/karot.jpg" controls loop preload="auto" id="api-video">
+	  <source src="video/wall.webm" type='video/webm; codecs="vp8, vorbis"' />
+	  <source src="video/wall.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+	  <source src="video/wall.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
+	  Video tag not supported. Download the video <a href="movie.webm">here</a>.
+	</video>
+	<cite>http://www.html5rocks.com/en/tutorials/video/basics/</cite>
+</section>
+
 <section class="slide" id="tools">
   <h2>Tools/Resources</h2>
-  <ul><li>http://www.mirovideoconverter.com/</li></ul>
+  <ul><li>http://www.mirovideoconverter.com/</li>
+	<li>http://www.html5rocks.com/en/tutorials/video/basics/</li>
+	<li>Amazing HTML5 video player and shim: http://mediaelementjs.com/</li>
+	</ul>
 </section>
 
 <section class="slide" id="homework">
   <h2>Homework</h2>
-  <p>Using Modernizr, integrate at least TWO polyfill techniques into your front page: 1) Using a simple CSS selector to load alernate styles for IE7 and 2) using Modernizr.load to check and load a polyfill from the polyfill list. ALL CSS3 ON YOUR FRONT PAGE DOES NOT HAVE TO WORK IN IE. Just the two polyfills. Please point these out to me.</p>
+  <p>Video record interviews with each of your group members. Add a page for each member that plays the interview (link to each interview from the existing "About" page). Ensure the video is properly converted and stacked into the three formats. Dress up the video into your overall theme (CSS). Use posters. The interviews must play on Safari, Firefox, Chrome and IE9.</p>
+
+  <p>Build some form of interaction to the videos via javascript. Perhaps external play buttons, manipulation of playspeed, things that "fire" at various times throughout each video? Please surprise me.</p>
 </section>
 
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
