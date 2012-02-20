@@ -139,11 +139,6 @@
   <figure><blockquote>Opera has some internal experimental builds with an implementation of a &lt;video&gt; element. The element exposes a simple API (for the moment) much like the Audio() object: play(), pause(), stop(). The idea is that it works like &lt;object&gt; except that it has special &lt;video&gt; semantics much like &lt;img&gt; has image semantics.</blockquote><figcaption>Anne van Kesteren, 2007, W3C Working Group</figcaption></figure>
 </section>
 
-<section class="slide" id="new-elements">
-  <h2>A great idea</h2>
-  <figure><blockquote>Opera has some internal experimental builds with an implementation of a &lt;video&gt; element. The element exposes a simple API (for the moment) much like the Audio() object: play(), pause(), stop(). The idea is that it works like &lt;object&gt; except that it has special &lt;video&gt; semantics much like &lt;img&gt; has image semantics.</blockquote><figcaption>Anne van Kesteren, 2007, W3C Working Group</figcaption></figure>
-</section>
-
 <section class="slide" id="ta-da">
   <h2>Ta da!</h2>
   <h3><code>&lt;video&gt;,&lt;audio&gt;</code></h3>
@@ -280,17 +275,69 @@
 	<h3>Why isn't it playing?</h3>
 </section>
 
-<section class="slide" id="attributes">
+<section class="slide" id="new-attributes">
   <h2>Attributes</h2>
   <p>Both &lt;audio&gt; and &lt;video&gt; share the following attributes:</p>
   <ul>
-		<li>src: <p>The file or URL to play.</p></li>
-		<li>autoplay</li>
-		<li>loop</li>
-		<li>controls</li>
-		<li>preload</li>
-		<li>type</li>
+		<li>src: <p>The URL to play.</p></li>
+		<li>autoplay: <p>Plays on load</p></li>
+		<li>loop: <p>Replay the file after completion</p></li>
+		<li>controls: <p>Implement browser/OS default player controls</p></li>
 	</ul>
+</section>
+
+<section class="slide" id="new-attributes-continued">
+  <h2>Attributes</h2>
+  <p>Both &lt;audio&gt; and &lt;video&gt; share the following attributes:</p>
+  <ul>
+		<li>preload: "buffer" the file automatically before some kind of user interaction
+			<ul>
+				<li>auto: let the browser decide to buffer or not based on current conditions</li>
+				<li>none: do not preload</li>
+				<li>meta: tells the browser that it should prefetch metadata (sizing, first frame, poster, duration etc) but that it shouldnt download anything until the user activates the controls</li>
+			</ul>
+		</li>
+		<li>poster (&lt;video&gt; only): a link to an image to show as a placeholder</li>
+	</ul>
+</section>
+
+<section class="slide" id="demo-2">
+  <h2>A more dressed-up demo</h2>
+  <video poster="images/karot.jpg" controls loop width="720">
+	  <source src="video/wall.webm" type='video/webm; codecs="vp8, vorbis"' />
+	  <source src="video/wall.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+	  <source src="video/wall.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
+	  Video tag not supported. Download the video <a href="movie.webm">here</a>.
+	</video>
+</section>
+
+<section class="slide" id="gotchas">
+  <h2>Gotchas</h2>
+ 	<ul>
+ 		<li>Firefox has a bug with "loop". jQuery fix:
+<pre><code>$(&#039;video[loop]&#039;).bind(&#039;ended&#039;, function () {
+	this.play();
+});</pre></code>
+ 		</li>
+ 		<li>Firefox will not recognize video without proper Apache config serving the correct MIME type. Add the following to <strong>httpd.conf</strong>:
+<pre><code>AddType video/ogg .ogv
+AddType video/mp4 .mp4
+AddType video/webm .webm</code></pre>
+ 	</li>
+ 		<li>Poster image will set width/height by default. (See demo)</li>
+ 		<li>iPads require mp4 being the first &lt;source&gt; in the video stack.</li>
+	</ul>
+</section>
+
+<section class="slide" id="first-class">
+  <h2>A true first class citizen</h2>
+  <pre>And a completely contrived example.</pre>
+  <video poster="images/karot.jpg" controls loop width="720" class="bling">
+	  <source src="video/wall.webm" type='video/webm; codecs="vp8, vorbis"' />
+	  <source src="video/wall.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+	  <source src="video/wall.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
+	  Video tag not supported. Download the video <a href="movie.webm">here</a>.
+	</video>
 </section>
 
 <section class="slide" id="tools">
