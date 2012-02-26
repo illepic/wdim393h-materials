@@ -39,30 +39,37 @@
 
 <body class="deck-container class-3">
 
-<section class="slide" id="title-slide">
-  <h1>WDIM363 - Week 8</h1>
-</section>
+  <section class="slide" id="title-slide">
+    <h1>WDIM363 - Week 8</h1>
+  </section>
 
-<section class="slide" id="agenda">
-  <h2>Agenda</h2>
-  <h3>Canvas</h3>
-  <ol>
-    <li></li>
-  </ol>
-</section>
+  <section class="slide" id="agenda">
+    <h2>Agenda</h2>
+    <h3>Canvas</h3>
+    <ol>
+      <li></li>
+    </ol>
+  </section>
 
-<section class="slide" id="what-1">
-  <h2>What is it?</h2>
-  <p>Canvas is a drawing API (for both 2d and 3d).</p>
-  <p>We get a new, special element <strong>outside</strong> of the DOM to manipulate with many, many new commands.</p>
-  <p>Fun fact: Canvas was created by Apple for use in their Dashboard widgets and has seen been adopted by every major browser vendor.</p>
-</section>
+  <section class="slide" id="what-1">
+    <h2>What is it?</h2>
+    <p>Canvas is a drawing API (for both 2d and 3d).</p>
+    <p>
+      We get a new, special element <strong>outside</strong>
+      of the DOM to manipulate with many, many new commands.
+    </p>
+    <p>
+      Fun fact: Canvas was created by Apple for use in their Dashboard widgets and has seen been adopted by every major browser vendor.
+    </p>
+  </section>
 
-<section class="slide" id="what-2">
-  <h2>Flash Replacement</h2>
-  <p>Canvas allows us to run complex animations and applications using Web Standards.</p>
-  <h3>Example</h3>
-  <code><pre>&lt;html&gt;
+  <section class="slide" id="what-2">
+    <h2>Flash Replacement</h2>
+    <p>
+      Canvas allows us to run complex animations and applications using Web Standards.
+    </p>
+    <h3>Example</h3>
+    <code><pre>&lt;html&gt;
 &lt;body&gt;
 &lt;canvas width=&quot;800&quot; height=&quot;600&quot; id=&quot;canvas&quot;&gt;&lt;/canvas&gt;
 &lt;script&gt;
@@ -73,49 +80,71 @@ c.fillRect(100,100,400,300);
 &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre></code>
-  <img src="images/canvas-green-square.png"/>
-</section>
+    <img src="images/canvas-green-square.png"/>
+  </section>
 
-<section class="slide" id="what-3">
-  <h2>Details</h2>
-  <p>Canvas is manipulated with javascript. Hence the flogging of javascript resources all semester.  </p>
-  <p>Canvas is essentially a bitmap: zooming in reveals pixels.</p>
-  <p>Unlike Flash, Canvas is not shape or vector-based.</p>
-</section>
+  <section class="slide" id="what-3">
+    <h2>Details</h2>
+    <p>
+      Canvas is manipulated with javascript. Hence the flogging of javascript resources all semester.
+    </p>
+    <p>Canvas is essentially a bitmap: zooming in reveals pixels.</p>
+    <p>Unlike Flash, Canvas is not shape or vector-based.</p>
+  </section>
 
-<section class="slide" id="homework">
-  <h2>Homework</h2>
-  <p>Video record interviews with each of your group members. Add a page for each member that plays the interview (link to each interview from the existing "About" page). Ensure the video is properly converted and stacked into the three formats. Dress up the video into your overall theme (CSS). Use posters. The interviews must play on Safari, Firefox, Chrome and IE9.</p>
+  <section class="slide" id="fit">
+    <h2>Fit in existing tech</h2>
+    <ul>
+      <li>
+        Flash: flash still has a place within the &lt;object&gt; stack (high above the page).
+      </li>
+      <li>
+        SVG: if you're working in vector formats. SVG is part of the dom and you can attach events to it.
+      </li>
+      <li>
+        CSS: CSS has no awareness of the contents of the canvas element
+      </li>
+    </ul>
+  </section>
 
-  <p>Build some form of interaction to the videos via javascript. Perhaps external play buttons, manipulation of playspeed, things that "fire" at various times throughout each video? Please surprise me.</p>
+  <section class="slide" id="lower">
+    <h2>Fit in existing tech</h2>
+    <p>Canvas sits "lower" than most other web tech.</p>
+  </section>
 
-  <p>Bump your progress bar up to 7/10.</p>
-</section>
+  <section class="slide" id="homework">
+    <h2>Homework</h2>
+    <p>
+      Video record interviews with each of your group members. Add a page for each member that plays the interview (link to each interview from the existing "About" page). Ensure the video is properly converted and stacked into the three formats. Dress up the video into your overall theme (CSS). Use posters. The interviews must play on Safari, Firefox, Chrome and IE9.
+    </p>
 
-<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
-<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    <p>
+      Build some form of interaction to the videos via javascript. Perhaps external play buttons, manipulation of playspeed, things that "fire" at various times throughout each video? Please surprise me.
+    </p>
 
-<p class="deck-status">
-  Press "m" to see all slides.
-  <span class="deck-status-current"></span>
-  /
-  <span class="deck-status-total"></span>
-</p>
+    <p>Bump your progress bar up to 7/10.</p>
+  </section>
 
-<form action="." method="get" class="goto-form">
-  <label for="goto-slide">Go to slide:</label>
-  <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
-  <datalist id="goto-datalist"></datalist>
-  <input type="submit" value="Go">
-</form>
+  <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+  <a href="#" class="deck-next-link" title="Next">&#8594;</a>
 
-<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+  <p class="deck-status">
+    Press "m" to see all slides.
+    <span class="deck-status-current"></span>
+    /
+    <span class="deck-status-total"></span>
+  </p>
 
+  <form action="." method="get" class="goto-form">
+    <label for="goto-slide">Go to slide:</label>
+    <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+    <datalist id="goto-datalist"></datalist>
+    <input type="submit" value="Go"></form>
 
-  <!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+  <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+<!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
   <script>window.jQuery || document.write('<script src="../deck.js/jquery-1.7.min.js"><\/script>')</script>
-
 <!-- Deck Core and extensions -->
 <script src="../deck.js/core/deck.core.js"></script>
 <script src="../deck.js/extensions/hash/deck.hash.js"></script>
@@ -123,10 +152,8 @@ c.fillRect(100,100,400,300);
 <script src="../deck.js/extensions/goto/deck.goto.js"></script>
 <script src="../deck.js/extensions/status/deck.status.js"></script>
 <script src="../deck.js/extensions/navigation/deck.navigation.js"></script>
-
 <!-- syntax highlighter -->
 <script src="../custom-common/js/jquery.snippet.js"></script>
-
 <!-- Specific to this page -->
 <script src="ai-class.js"></script>
 
