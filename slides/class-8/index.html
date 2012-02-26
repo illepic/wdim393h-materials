@@ -178,7 +178,7 @@ c.fillRect(0,0,400,300);</pre></code>
     <canvas width="640" height="300"></canvas>
   </section>
 
-  <section class="slide" id="code-5">
+  <section class="slide" id="code-image-1">
     <h2>Images</h2>
   <code><pre>var image = new Image();
 $(image).load(function(){
@@ -196,6 +196,64 @@ $(image).load(function(){
 image.src = &#039;images/derp.png&#039;;</pre></code>
     <canvas class="first" width="560" height="300"></canvas>
     <canvas class="second" width="560" height="300"></canvas>
+  </section>
+
+  <section class="slide" id="code-image-2">
+    <h2>Images: Direct Placement</h2>
+  <code><pre>c.drawImage(image, 0,0);
+c.drawImage(image, 150,0, // X/Y position
+  200,200 //width/height
+);
+c.drawImage(image, 30,30,50,50, // WITHIN image 30/30 x/y to 50/50 x/y
+  400,0,200,200 // PLACE to 400 x, 0 y. SCALE 200 wide, 200 tall.
+);</pre></code>
+    <canvas width="600" height="300"></canvas>
+  </section>
+
+  <section class="slide" id="paths">
+    <h2>Paths</h2>
+    <p>Paths are a collection of straight or curved lines. We start paths with beginPath() and have a number of functions available to help us draw like moveTo(), lineTo() and bezierCurveTo(). </p>
+    <p>When the current path is empty, such as immediately after calling beginPath(), or on a newly created canvas, the first path construction command is always treated as a moveTo(), regardless of what it actually is. For that reason, you will almost always want to specifically set your starting position after resetting a path.</p>
+    <figure class="fiddle">
+      <iframe style="width: 580px; height: 350px" src="http://jsfiddle.net/illepic/3mgEf/embedded/js,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="fiddle">
+      <iframe style="width: 580px; height: 350px" src="http://jsfiddle.net/illepic/3mgEf/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+  </section>
+
+  <section class="slide" id="paths-advanced">
+    <h2>Paths: Bezier Curves</h2>
+    <p>If you've drawn a line in Adobe Illustrator or any other vector graphics program, you've worked with Bezier curves. Function looks like this: <code>.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)</code></p>
+    <ul>
+      <li>cp1x: Required. The x-coordinate of the first Bézier control point.</li>
+      <li>cp1y: Required. The y-coordinate of the first Bézier control point.</li>
+      <li>cp2x: Required. The x-coordinate of the second Bézier control point.</li>
+      <li>cp2y: Required. The y-coordinate of the second Bézier control point.</li>
+      <li>x: Required. The x-coordinate of the point to add to the current path.</li>
+      <li>y: Required. The y-coordinate of the point to add to the current path.</li>
+    </ul>
+
+    <figure class="fiddle">
+      <iframe style="width: 580px; height: 350px" src="http://jsfiddle.net/illepic/pAEM5/embedded/js,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="fiddle">
+      <iframe style="width: 580px; height: 350px" src="http://jsfiddle.net/illepic/pAEM5/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <cite><a href="http://msdn.microsoft.com/en-us/library/ie/ff975406(v=vs.85).aspx">MSDN Library</a></cite>
+  </section>
+
+  <section class="slide" id="text">
+    <h2>Text</h2>
+    <p>Text is cake.</p>
+
+    <figure class="fiddle">
+      <iframe style="width: 580px; height: 350px" src="http://jsfiddle.net/illepic/TVu2y/embedded/js,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="fiddle">
+      <iframe style="width: 580px; height: 350px" src="http://jsfiddle.net/illepic/TVu2y/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <cite><a href="http://msdn.microsoft.com/en-us/library/ie/ff975406(v=vs.85).aspx">MSDN Library</a></cite>
   </section>
 
   <section class="slide" id="homework">

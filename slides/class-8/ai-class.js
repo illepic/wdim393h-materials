@@ -32,15 +32,15 @@ $(function() {
 	c.fillStyle = grad;
 	c.fillRect(0,0,400,300);
 
-	// #code-5
+	// #code-image-1
 	var image = new Image();
 	$(image).load(function(){
-		var c = $('#code-5 canvas.first').get(0).getContext('2d');
+		var c = $('#code-image-1 canvas.first').get(0).getContext('2d');
 		var pat = c.createPattern(image, 'repeat');
 		c.fillStyle = pat;
 		c.fillRect(10,10,560,300);
 
-		var c = $('#code-5 canvas.second').get(0).getContext('2d');
+		var c = $('#code-image-1 canvas.second').get(0).getContext('2d');
 		var pat = c.createPattern(image, 'repeat-y');
 		c.fillStyle = pat;
 		c.fillRect(10,10,560,300);
@@ -48,5 +48,18 @@ $(function() {
 	});
 	image.src = 'images/derp.png';
 
+	// #code-image-2
+	var image = new Image();
+	$(image).load(function(){
+		var c = $('#code-image-2 canvas').get(0).getContext('2d');
+		c.drawImage(image, 0,0);
+		c.drawImage(image, 150,0, // X/Y position
+			200,200 //width/height
+		);
+		c.drawImage(image, 30,30,50,50, // WITHIN image 30/30 x/y to 50/50 x/y
+			400,0,200,200 // PLACE to 400 x, 0 y. SCALE 200 wide, 200 tall.
+		);
+	});
+	image.src = 'images/derp.png';
 });
 
