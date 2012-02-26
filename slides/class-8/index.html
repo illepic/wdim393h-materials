@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>WDIM393 - Week 7</title>
+  <title>WDIM393 - Week 8</title>
 
   <meta name="description" content="A jQuery library for modern HTML presentations">
   <meta name="author" content="Caleb Troughton">
@@ -40,337 +40,47 @@
 <body class="deck-container class-3">
 
 <section class="slide" id="title-slide">
-  <h1>WDIM363 - Week 7</h1>
+  <h1>WDIM363 - Week 8</h1>
 </section>
 
 <section class="slide" id="agenda">
   <h2>Agenda</h2>
-  <h3>Audio, Video</h3>
+  <h3>Canvas</h3>
   <ol>
-    <li>From whence we came</li>
-    <li>Why not Object?</li>
-    <li>Need for first-class citizens</li>
-    <li>Do as the natives do</li>
-    <li>Audio Implementation</li>
-    <li>Video Implementation</li>
+    <li></li>
   </ol>
 </section>
 
-<section class="slide" id="history-1">
-  <h2>History of Multimedia On The Web</h2>
-  <p>In the beginning there was MIDI. And it was good.</p>
-  <p>A defacto standard at first due to filesize and bandwidth limitations.</p>
-  <embed src="images/final-countdown.mid" align="baseline" border="0" controls="smallconsole" autostart="false" loop="true">
-  <p> Yet never native:</p>
-  <code>&lt;embed src=&quot;images/final-countdown.mid&quot; align=&quot;baseline&quot; border=&quot;0&quot; controls=&quot;smallconsole&quot; autostart=&quot;true&quot; loop=&quot;true&quot;&gt;</code>
+<section class="slide" id="what-1">
+  <h2>What is it?</h2>
+  <p>Canvas is a drawing API (for both 2d and 3d).</p>
+  <p>We get a new, special element <strong>outside</strong> of the DOM to manipulate with many, many new commands.</p>
+  <p>Fun fact: Canvas was created by Apple for use in their Dashboard widgets and has seen been adopted by every major browser vendor.</p>
 </section>
 
-<section class="slide" id="history-2">
-  <h2>History of Multimedia On The Web</h2>
-  <h3>Motion achieved through gifs</h3>
-  <div id="hamster">
-    <img src="images/anin.gif" width="144" height="48"><img src="images/anin.gif" width="144" height="48"><img src="images/anin.gif" width="144" height="48">
-    <img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70">
-    <img src="images/anin.gif" width="144" height="48"> <img src="images/anin.gif" width="144" height="48"> <img src="images/anin.gif" width="144" height="48">
-    <img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70">
-    <img src="images/anin.gif" width="144" height="48">
-    <img src="images/anin.gif" width="144" height="48"> <img src="images/anin.gif" width="144" height="48">
-    <img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74">
-    <img src="images/anin.gif" width="144" height="48"><img src="images/anin.gif" width="144" height="48"><img src="images/anin.gif" width="144" height="48">
-  </div>
+<section class="slide" id="what-2">
+  <h2>Flash Replacement</h2>
+  <p>Canvas allows us to run complex animations and applications using Web Standards.</p>
+  <h3>Example</h3>
+  <code><pre>&lt;html&gt;
+&lt;body&gt;
+&lt;canvas width=&quot;800&quot; height=&quot;600&quot; id=&quot;canvas&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+var canvas = document.getElementById(&#039;canvas&#039;);
+var c = canvas.getContext(&#039;2d&#039;);
+c.fillStyle = &quot;green&quot;;
+c.fillRect(100,100,400,300);
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></code>
+  <img src="images/canvas-green-square.png"/>
 </section>
 
-<section class="slide" id="multimedia-00s">
-  <h2>History of Multimedia On The Web</h2>
-  <h3>Early 00s: Hello Broadband</h3>
-  <img src="images/windows-media-player-logo.jpg" >
-  <img src="images/real_logo.jpg">
-  <img src="images/quicktime-logo.gif">
-  <h3>A Challenger Appears!</h3>
-  <img src="images/flashplayer_logo.gif">
-  </blockquote>
-</section>
-
-<section class="slide" id="flash">
-  <h2>The Reason Flash Won The War</h2>
-  <iframe width="420" height="315" src="http://www.youtube.com/embed/6GUN-rVrxgY" frameborder="0" allowfullscreen></iframe>
-  <p>No, not baby owls. </p>
-  <p>YouTube's launch in 2005 cemented Flash as <strong>the</strong> web video standard.</p>
-</section>
-
-<section class="slide" id="native">
-  <h2>Let's Talk Native vs Non-Native</h2>
-  <img src="images/hatin.jpg">
-  <code>&lt;img src=&quot;images/hatin.jpg&quot;&gt;</code>
-  <p>Browsers implement <code>&lt;img&gt;</code> natively, with full "understanding" of the object being embedded. Attributes like height, width, file path and file size are all available to the browser to manipulate at will.</p>
-</section>
-
-<section class="slide" id="non-native">
-  <h2>Non-Native</h2>
-  <img src="http://i.qkme.me/367s2d.jpg">
-  <h3>The &lt;object&gt; tag hands off all responsibility to an external program or plugin</h3>
-  <pre><code>&lt;object width=&quot;425&quot; height=&quot;344&quot;&gt;
-  &lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/video&quot; /&gt;
-  &lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;
-  &lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;
-  &lt;embed src=&quot;http://www.youtube.com/video&quot;
-  type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot;
-  allowfullscreen=&quot;true&quot; width=&quot;425&quot; height=&quot;344&quot;&gt;
-  &lt;/embed&gt;
-&lt;/object&gt;</code></pre>
-</section>
-
-<section class="slide" id="non-native-sucks">
-  <h2>Why this sucks</h2>
-  <p>Handing off rendering of multimedia is web standards "cheating".</p>
-  <ul>
-	  <li>The code is complicated to write and understand</li>
-	  <li>Browser has to verify that the user has a third party plugin</li>
-	  <li>Or has the knowledge and ability to download it. </li>
-	  <li>Plugins frequently cause instability and crash</li>
-	  <li>Freak out less tech-savvy people by prompting to download something to view the desirable content.</li>
-	  <li>Ever try to overlay an element (css dropdown menus, overlay lightboxes) overtop of an &lt;object&gt;?</li>
-	</ul>
-</section>
-
-<section class="slide" id="great-idea">
-  <h2>A great idea</h2>
-  <figure><blockquote>Opera has some internal experimental builds with an implementation of a &lt;video&gt; element. The element exposes a simple API (for the moment) much like the Audio() object: play(), pause(), stop(). The idea is that it works like &lt;object&gt; except that it has special &lt;video&gt; semantics much like &lt;img&gt; has image semantics.</blockquote><figcaption>Anne van Kesteren, 2007, W3C Working Group</figcaption></figure>
-</section>
-
-<section class="slide" id="ta-da">
-  <h2>Ta da!</h2>
-  <h3><code>&lt;video&gt;,&lt;audio&gt;</code></h3>
-  <p>HTML5 provides a standardized way to play video directly in the browser, with no plugins required.</p>
-  <figure>
-  <blockquote>One of the major advantages of the HTML5 video element is that, finally, video is a full-fledged citizen on the Web. It&rsquo;s no longer shunted off to the hinterland of &lt;object&gt; or the non-validating &lt;embed&gt; element.</blockquote>
-  	<figcaption>Remy Sharp & Bruce Lawson, October 2010</figcaption>
-  </figure>
-</section>
-
-<section class="slide" id="markup">
-  <h2>Markup</h2>
-  <p>Markup is similar to <code>&lt;img&gt;</code>, but with a few handy attributes.</p>
-  <pre class="htmlCode"><code>&lt;audio src=&quot;elvis.ogg&quot; controls preload=&quot;auto&quot;&gt;&lt;/audio&gt;
-
-&lt;video src=&quot;videofile.ogv&quot; controls preload=&quot;meta&quot;&gt;
-  Download the &lt;a href=videofile.ogv&gt;HTML5 video&lt;/a&gt;
-&lt;/video&gt;</code></pre>
-</section>
-
-<section class="slide" id="formats">
-  <h2>Formats</h2>
-  <p>Browser support and formats:</p>
-  <table class="table">
-  	<caption>Audio support</caption>
-  	<thead>
-  		<tr>
-  			<th>Browser</th>
-  			<th>Ogg Vorbis</th>
-  			<th>MP3</th>
-  			<th>WAV</th>
-  		</tr>
-  	</thead>
-  	<tbody>
-  		<tr>
-  			<td>Firefox 3.6+</td>
-  			<td>✓</td>
-  			<td></td>
-  			<td>✓</td>
-  		</tr>
-  		<tr>
-  			<td>Safari 5+</td>
-  			<td></td>
-  			<td>✓</td>
-  			<td>✓</td>
-  		</tr>
-  		<tr>
-  			<td>Chrome 6+</td>
-  			<td>✓</td>
-  			<td>✓</td>
-  			<td></td>
-  		</tr>
-  		<tr>
-  			<td>Opera 105+</td>
-  			<td>✓</td>
-  			<td></td>
-  			<td>✓</td>
-  		</tr>
-  		<tr>
-  			<td>Internet Explorer 9+</td>
-  			<td></td>
-  			<td>✓</td>
-  			<td>✓</td>
-  		</tr>
-  	</tbody>
-  </table>
-  <p>"Think of a <span class="file-format">video format</span> as a zip file which contains the encoded <span class="video-format">video stream</span> and <span class="audio-format">audio stream</span>. The three formats you should care about for the web are (<a href="http://caniuse.com/#search=mp4">mp4</a>, <a href="http://caniuse.com/#search=ogg">ogv</a> and <a href="http://caniuse.com/#search=webm">webm</a>)."</p>
-  <table class="table">
-  	<caption>Video support</caption>
-  	<thead>
-  		<tr>
-  			<th>Browser</th>
-  			<th><span class="file-format">.mp4</span> = <br><span class="video-format">H.264</span> + <span class="audio-format">AAC</span></th>
-  			<th><span class="file-format">.ogg/.ogv</span> = <br><span class="video-format">Theora</span> + <span class="audio-format">Vorbis</span></th>
-  			<th>.<span class="file-format">webm</span> = <br><span class="video-format">VP8</span> + <span class="audio-format">Vorbis</span></th>
-  		</tr>
-  	</thead>
-  	<tbody>
-  		<tr>
-  			<td>Firefox 3.6+</td>
-  			<td></td>
-  			<td>✓</td>
-  			<td>✓</td>
-  		</tr>
-  		<tr>
-  			<td>Safari 5+</td>
-  			<td>✓</td>
-  			<td></td>
-  			<td></td>
-  		</tr>
-  		<tr>
-  			<td>Chrome 6+</td>
-  			<td>✓</td>
-  			<td>✓</td>
-  			<td>✓</td>
-  		</tr>
-  		<tr>
-  			<td>Opera 105+</td>
-  			<td></td>
-  			<td>✓</td>
-  			<td>✓</td>
-  		</tr>
-  		<tr>
-  			<td>Internet Explorer 9+</td>
-  			<td>✓</td>
-  			<td></td>
-  			<td>✓<br>(with plugin, ugh)</td>
-  		</tr>
-  	</tbody>
-  </table>
-  <cite>html5rocks.com, http://caniuse.com/</cite>
-</section>
-
-<section class="slide" id="stack-example">
-  <h2>The "Stack"</h2>
-  <p>This is a "safe" stack of &lt;source&gt; elements: </p>
-<pre class="htmlCode"><code>&lt;video&gt;
-  &lt;source src=&quot;video/wall.webm&quot; type=&#039;video/webm; codecs=&quot;vp8, vorbis&quot;&#039; /&gt;
-  &lt;source src=&quot;video/wall.mp4&quot; type=&#039;video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;&#039; /&gt;
-  &lt;source src=&quot;video/wall.theora.ogv&quot; type=&#039;video/ogg; codecs=&quot;theora, vorbis&quot;&#039; /&gt;
-  Video tag not supported. Download the video &lt;a href=&quot;movie.webm&quot;&gt;here&lt;/a&gt;.
-&lt;/video&gt;</code></pre>
-  <p>We included multiple &lt;source&gt; elements to "fall back" for browsers that don't support certain formats. At this early stage it is also recommended to include detailed "type" attributes to let browsers best decide rendering.</p>
-</section>
-
-<section class="slide" id="demo">
-  <h2>Demo</h2>
-  <video preload>
-	  <source src="video/wall.webm" type='video/webm; codecs="vp8, vorbis"' />
-	  <source src="video/wall.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-	  <source src="video/wall.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
-	  Video tag not supported. Download the video <a href="movie.webm">here</a>.
-	</video>
-	<h3>Why isn't it playing?</h3>
-</section>
-
-<section class="slide" id="new-attributes">
-  <h2>Attributes</h2>
-  <p>Both &lt;audio&gt; and &lt;video&gt; share the following attributes:</p>
-  <ul>
-		<li>src: <p>The URL to play.</p></li>
-		<li>autoplay: <p>Plays on load</p></li>
-		<li>loop: <p>Replay the file after completion</p></li>
-		<li>controls: <p>Implement browser/OS default player controls</p></li>
-	</ul>
-</section>
-
-<section class="slide" id="new-attributes-continued">
-  <h2>Attributes</h2>
-  <p>Both &lt;audio&gt; and &lt;video&gt; share the following attributes:</p>
-  <ul>
-		<li>preload: "buffer" the file automatically before some kind of user interaction
-			<ul>
-				<li>auto: let the browser decide to buffer or not based on current conditions</li>
-				<li>none: do not preload</li>
-				<li>meta: tells the browser that it should prefetch metadata (sizing, first frame, poster, duration etc) but that it shouldnt download anything until the user activates the controls</li>
-			</ul>
-		</li>
-		<li>poster (&lt;video&gt; only): a link to an image to show as a placeholder</li>
-	</ul>
-</section>
-
-<section class="slide" id="demo-2">
-  <h2>A more dressed-up demo</h2>
-  <video poster="images/karot.jpg" controls loop width="720">
-	  <source src="video/wall.webm" type='video/webm; codecs="vp8, vorbis"' />
-	  <source src="video/wall.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-	  <source src="video/wall.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
-	  Video tag not supported. Download the video <a href="movie.webm">here</a>.
-	</video>
-</section>
-
-<section class="slide" id="gotchas">
-  <h2>Gotchas</h2>
- 	<ul>
- 		<li>Firefox has a bug with "loop". jQuery fix:
-<pre><code>$(&#039;video[loop]&#039;).bind(&#039;ended&#039;, function () {
-	this.play();
-});</pre></code>
- 		</li>
- 		<li>Firefox will not recognize video without proper Apache config serving the correct MIME type. Add the following to <strong>httpd.conf</strong>:
-<pre><code>AddType video/ogg .ogv
-AddType video/mp4 .mp4
-AddType video/webm .webm</code></pre>
- 	</li>
- 		<li>Poster image will set width/height by default. (See demo)</li>
- 		<li>iPads require mp4 being the first &lt;source&gt; in the video stack.</li>
- 		<li><a href="http://transitioning.to/2012/01/the-world-of-pain-that-is-html5-video/">HTML5 Video: A World of Pain</a></li>
-	</ul>
-</section>
-
-<section class="slide" id="first-class">
-  <h2>A true first class citizen</h2>
-  <p>And a completely contrived example.</p>
-  <video poster="images/karot.jpg" controls loop width="720" class="bling">
-	  <source src="video/wall.webm" type='video/webm; codecs="vp8, vorbis"' />
-	  <source src="video/wall.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-	  <source src="video/wall.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
-	  Video tag not supported. Download the video <a href="movie.webm">here</a>.
-	</video>
-</section>
-
-<section class="slide" id="video-api">
-  <h2>&lt;video&gt;/&lt;audio&gt; elements have a full API</h2>
-  <p><a href="http://www.w3.org/2010/05/video/mediaevents.html">Click me: Huge list of video event and api in a beautiful interactive interface.</a></p>
-  <p>The video element comes with a bunch of new events to detect (and control) when the video is playing, paused or finished. Since loading a video resource can have many caveats there are many events to have a fine control of the loading process, both at network level (loadstart, progress, suspend, abort, error, emptied, stalled) and at buffering level (loadedmetadata, loadeddata, waiting, playing, canplay, canplaythrough).</p>
-  <a href="http://www.w3.org/2010/05/video/mediaevents.html"><img src="images/video-api.jpg" width="720"></a>
-	<cite>http://www.html5rocks.com/en/tutorials/video/basics/</cite>
-</section>
-
-<section class="slide" id="video-api-continued">
-  <h2>&lt;video&gt; API javascript demo</h2>
-  <pre><code>$(&#039;#api-video&#039;).bind(&#039;timeupdate&#039;, function(){
-  $(&#039;#timer&#039;).html($(this).get(0).currentTime);
-});
-$(&#039;#api-video&#039;).get(0).currentTime = 10;
-$(&#039;#api-video&#039;).get(0).play();</code></pre>
-  <p>Timer example: <span id="timer">TIMER!</span></p>
-  <video poster="images/karot.jpg" controls loop preload="auto" id="api-video">
-	  <source src="video/wall.webm" type='video/webm; codecs="vp8, vorbis"' />
-	  <source src="video/wall.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-	  <source src="video/wall.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
-	  Video tag not supported. Download the video <a href="movie.webm">here</a>.
-	</video>
-	<cite>http://www.html5rocks.com/en/tutorials/video/basics/</cite>
-</section>
-
-<section class="slide" id="tools">
-  <h2>Tools/Resources</h2>
-  <ul><li>http://www.mirovideoconverter.com/</li>
-	<li>http://www.html5rocks.com/en/tutorials/video/basics/</li>
-	<li>Amazing HTML5 video player and shim: http://mediaelementjs.com/</li>
-	</ul>
+<section class="slide" id="what-3">
+  <h2>Details</h2>
+  <p>Canvas is manipulated with javascript. Hence the flogging of javascript resources all semester.  </p>
+  <p>Canvas is essentially a bitmap: zooming in reveals pixels.</p>
+  <p>Unlike Flash, Canvas is not shape or vector-based.</p>
 </section>
 
 <section class="slide" id="homework">
