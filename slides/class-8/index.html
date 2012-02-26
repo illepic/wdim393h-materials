@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>WDIM393 - Week 7</title>
+
+  <meta name="description" content="A jQuery library for modern HTML presentations">
+  <meta name="author" content="Caleb Troughton">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <!-- Core and extension CSS files -->
+  <link rel="stylesheet" href="../deck.js/core/deck.core.css">
+  <link rel="stylesheet" href="../deck.js/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" href="../deck.js/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="../deck.js/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="../deck.js/extensions/status/deck.status.css">
+  <link rel="stylesheet" href="../deck.js/extensions/hash/deck.hash.css">
+
+  <!-- Theme CSS files (menu swaps these out) (or did until we modified) -->
+  <link rel="stylesheet" id="style-theme-link" href="../deck.js/themes/style/web-2.0-wdim.css">
+  <link rel="stylesheet" id="transition-theme-link" href="../deck.js/themes/transition/vertical-slide.css">
+
+  <!-- syntax highlighter -->
+  <link rel="stylesheet" href="../custom-common/css/jquery.snippet.css">
+
+  <!-- Custom CSS for all AI classes -->
+  <link rel="stylesheet" href="../custom-common/css/custom-common.css">
+  <!-- Custom CSS just for this page -->
+  <link rel="stylesheet" href="ai-class.css">
+  <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='demo.css' />
+
+  <script src="../deck.js/modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container class-3">
+
+<section class="slide" id="title-slide">
+  <h1>WDIM363 - Week 7</h1>
+</section>
+
+<section class="slide" id="agenda">
+  <h2>Agenda</h2>
+  <h3>Audio, Video</h3>
+  <ol>
+    <li>From whence we came</li>
+    <li>Why not Object?</li>
+    <li>Need for first-class citizens</li>
+    <li>Do as the natives do</li>
+    <li>Audio Implementation</li>
+    <li>Video Implementation</li>
+  </ol>
+</section>
+
+<section class="slide" id="history-1">
+  <h2>History of Multimedia On The Web</h2>
+  <p>In the beginning there was MIDI. And it was good.</p>
+  <p>A defacto standard at first due to filesize and bandwidth limitations.</p>
+  <embed src="images/final-countdown.mid" align="baseline" border="0" controls="smallconsole" autostart="false" loop="true">
+  <p> Yet never native:</p>
+  <code>&lt;embed src=&quot;images/final-countdown.mid&quot; align=&quot;baseline&quot; border=&quot;0&quot; controls=&quot;smallconsole&quot; autostart=&quot;true&quot; loop=&quot;true&quot;&gt;</code>
+</section>
+
+<section class="slide" id="history-2">
+  <h2>History of Multimedia On The Web</h2>
+  <h3>Motion achieved through gifs</h3>
+  <div id="hamster">
+    <img src="images/anin.gif" width="144" height="48"><img src="images/anin.gif" width="144" height="48"><img src="images/anin.gif" width="144" height="48">
+    <img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70"><img src="images/hamu.gif" width="60" height="70">
+    <img src="images/anin.gif" width="144" height="48"> <img src="images/anin.gif" width="144" height="48"> <img src="images/anin.gif" width="144" height="48">
+    <img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70"><img src="images/gerbil.gif" width="60" height="70">
+    <img src="images/anin.gif" width="144" height="48">
+    <img src="images/anin.gif" width="144" height="48"> <img src="images/anin.gif" width="144" height="48">
+    <img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74"><img src="images/hamwalk.gif" width="53" height="74">
+    <img src="images/anin.gif" width="144" height="48"><img src="images/anin.gif" width="144" height="48"><img src="images/anin.gif" width="144" height="48">
+  </div>
+</section>
+
+<section class="slide" id="multimedia-00s">
+  <h2>History of Multimedia On The Web</h2>
+  <h3>Early 00s: Hello Broadband</h3>
+  <img src="images/windows-media-player-logo.jpg" >
+  <img src="images/real_logo.jpg">
+  <img src="images/quicktime-logo.gif">
+  <h3>A Challenger Appears!</h3>
+  <img src="images/flashplayer_logo.gif">
+  </blockquote>
+</section>
+
+<section class="slide" id="flash">
+  <h2>The Reason Flash Won The War</h2>
+  <iframe width="420" height="315" src="http://www.youtube.com/embed/6GUN-rVrxgY" frameborder="0" allowfullscreen></iframe>
+  <p>No, not baby owls. </p>
+  <p>YouTube's launch in 2005 cemented Flash as <strong>the</strong> web video standard.</p>
+</section>
+
+<section class="slide" id="native">
+  <h2>Let's Talk Native vs Non-Native</h2>
+  <img src="images/hatin.jpg">
+  <code>&lt;img src=&quot;images/hatin.jpg&quot;&gt;</code>
+  <p>Browsers implement <code>&lt;img&gt;</code> natively, with full "understanding" of the object being embedded. Attributes like height, width, file path and file size are all available to the browser to manipulate at will.</p>
+</section>
+
+<section class="slide" id="non-native">
+  <h2>Non-Native</h2>
+  <img src="http://i.qkme.me/367s2d.jpg">
+  <h3>The &lt;object&gt; tag hands off all responsibility to an external program or plugin</h3>
+  <pre><code>&lt;object width=&quot;425&quot; height=&quot;344&quot;&gt;
+  &lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/video&quot; /&gt;
+  &lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; /&gt;
+  &lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; /&gt;
+  &lt;embed src=&quot;http://www.youtube.com/video&quot;
+  type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot;
+  allowfullscreen=&quot;true&quot; width=&quot;425&quot; height=&quot;344&quot;&gt;
+  &lt;/embed&gt;
+&lt;/object&gt;</code></pre>
+</section>
+
+<section class="slide" id="non-native-sucks">
+  <h2>Why this sucks</h2>
+  <p>Handing off rendering of multimedia is web standards "cheating".</p>
+  <ul>
+	  <li>The code is complicated to write and understand</li>
+	  <li>Browser has to verify that the user has a third party plugin</li>
+	  <li>Or has the knowledge and ability to download it. </li>
+	  <li>Plugins frequently cause instability and crash</li>
+	  <li>Freak out less tech-savvy people by prompting to download something to view the desirable content.</li>
+	  <li>Ever try to overlay an element (css dropdown menus, overlay lightboxes) overtop of an &lt;object&gt;?</li>
+	</ul>
+</section>
+
+<section class="slide" id="great-idea">
+  <h2>A great idea</h2>
+  <figure><blockquote>Opera has some internal experimental builds with an implementation of a &lt;video&gt; element. The element exposes a simple API (for the moment) much like the Audio() object: play(), pause(), stop(). The idea is that it works like &lt;object&gt; except that it has special &lt;video&gt; semantics much like &lt;img&gt; has image semantics.</blockquote><figcaption>Anne van Kesteren, 2007, W3C Working Group</figcaption></figure>
+</section>
+
+<section class="slide" id="ta-da">
+  <h2>Ta da!</h2>
+  <h3><code>&lt;video&gt;,&lt;audio&gt;</code></h3>
+  <p>HTML5 provides a standardized way to play video directly in the browser, with no plugins required.</p>
+  <figure>
+  <blockquote>One of the major advantages of the HTML5 video element is that, finally, video is a full-fledged citizen on the Web. It&rsquo;s no longer shunted off to the hinterland of &lt;object&gt; or the non-validating &lt;embed&gt; element.</blockquote>
+  	<figcaption>Remy Sharp & Bruce Lawson, October 2010</figcaption>
+  </figure>
+</section>
+
+<section class="slide" id="markup">
+  <h2>Markup</h2>
+  <p>Markup is similar to <code>&lt;img&gt;</code>, but with a few handy attributes.</p>
+  <pre class="htmlCode"><code>&lt;audio src=&quot;elvis.ogg&quot; controls preload=&quot;auto&quot;&gt;&lt;/audio&gt;
+
+&lt;video src=&quot;videofile.ogv&quot; controls preload=&quot;meta&quot;&gt;
+  Download the &lt;a href=videofile.ogv&gt;HTML5 video&lt;/a&gt;
+&lt;/video&gt;</code></pre>
+</section>
+
+<section class="slide" id="formats">
+  <h2>Formats</h2>
+  <p>Browser support and formats:</p>
+  <table class="table">
+  	<caption>Audio support</caption>
+  	<thead>
+  		<tr>
+  			<th>Browser</th>
+  			<th>Ogg Vorbis</th>
+  			<th>MP3</th>
+  			<th>WAV</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<tr>
+  			<td>Firefox 3.6+</td>
+  			<td>✓</td>
+  			<td></td>
+  			<td>✓</td>
+  		</tr>
+  		<tr>
+  			<td>Safari 5+</td>
+  			<td></td>
+  			<td>✓</td>
+  			<td>✓</td>
+  		</tr>
+  		<tr>
+  			<td>Chrome 6+</td>
+  			<td>✓</td>
+  			<td>✓</td>
+  			<td></td>
+  		</tr>
+  		<tr>
+  			<td>Opera 105+</td>
+  			<td>✓</td>
+  			<td></td>
+  			<td>✓</td>
+  		</tr>
+  		<tr>
+  			<td>Internet Explorer 9+</td>
+  			<td></td>
+  			<td>✓</td>
+  			<td>✓</td>
+  		</tr>
+  	</tbody>
+  </table>
+  <p>"Think of a <span class="file-format">video format</span> as a zip file which contains the encoded <span class="video-format">video stream</span> and <span class="audio-format">audio stream</span>. The three formats you should care about for the web are (<a href="http://caniuse.com/#search=mp4">mp4</a>, <a href="http://caniuse.com/#search=ogg">ogv</a> and <a href="http://caniuse.com/#search=webm">webm</a>)."</p>
+  <table class="table">
+  	<caption>Video support</caption>
+  	<thead>
+  		<tr>
+  			<th>Browser</th>
+  			<th><span class="file-format">.mp4</span> = <br><span class="video-format">H.264</span> + <span class="audio-format">AAC</span></th>
+  			<th><span class="file-format">.ogg/.ogv</span> = <br><span class="video-format">Theora</span> + <span class="audio-format">Vorbis</span></th>
+  			<th>.<span class="file-format">webm</span> = <br><span class="video-format">VP8</span> + <span class="audio-format">Vorbis</span></th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<tr>
+  			<td>Firefox 3.6+</td>
+  			<td></td>
+  			<td>✓</td>
+  			<td>✓</td>
+  		</tr>
+  		<tr>
+  			<td>Safari 5+</td>
+  			<td>✓</td>
+  			<td></td>
+  			<td></td>
+  		</tr>
+  		<tr>
+  			<td>Chrome 6+</td>
+  			<td>✓</td>
+  			<td>✓</td>
+  			<td>✓</td>
+  		</tr>
+  		<tr>
+  			<td>Opera 105+</td>
+  			<td></td>
+  			<td>✓</td>
+  			<td>✓</td>
+  		</tr>
+  		<tr>
+  			<td>Internet Explorer 9+</td>
+  			<td>✓</td>
+  			<td></td>
+  			<td>✓<br>(with plugin, ugh)</td>
+  		</tr>
+  	</tbody>
+  </table>
+  <cite>html5rocks.com, http://caniuse.com/</cite>
+</section>
+
+<section class="slide" id="stack-example">
+  <h2>The "Stack"</h2>
+  <p>This is a "safe" stack of &lt;source&gt; elements: </p>
+<pre class="htmlCode"><code>&lt;video&gt;
+  &lt;source src=&quot;video/wall.webm&quot; type=&#039;video/webm; codecs=&quot;vp8, vorbis&quot;&#039; /&gt;
+  &lt;source src=&quot;video/wall.mp4&quot; type=&#039;video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;&#039; /&gt;
+  &lt;source src=&quot;video/wall.theora.ogv&quot; type=&#039;video/ogg; codecs=&quot;theora, vorbis&quot;&#039; /&gt;
+  Video tag not supported. Download the video &lt;a href=&quot;movie.webm&quot;&gt;here&lt;/a&gt;.
+&lt;/video&gt;</code></pre>
+  <p>We included multiple &lt;source&gt; elements to "fall back" for browsers that don't support certain formats. At this early stage it is also recommended to include detailed "type" attributes to let browsers best decide rendering.</p>
+</section>
+
+<section class="slide" id="demo">
+  <h2>Demo</h2>
+  <video preload>
+	  <source src="video/wall.webm" type='video/webm; codecs="vp8, vorbis"' />
+	  <source src="video/wall.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+	  <source src="video/wall.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
+	  Video tag not supported. Download the video <a href="movie.webm">here</a>.
+	</video>
+	<h3>Why isn't it playing?</h3>
+</section>
+
+<section class="slide" id="new-attributes">
+  <h2>Attributes</h2>
+  <p>Both &lt;audio&gt; and &lt;video&gt; share the following attributes:</p>
+  <ul>
+		<li>src: <p>The URL to play.</p></li>
+		<li>autoplay: <p>Plays on load</p></li>
+		<li>loop: <p>Replay the file after completion</p></li>
+		<li>controls: <p>Implement browser/OS default player controls</p></li>
+	</ul>
+</section>
+
+<section class="slide" id="new-attributes-continued">
+  <h2>Attributes</h2>
+  <p>Both &lt;audio&gt; and &lt;video&gt; share the following attributes:</p>
+  <ul>
+		<li>preload: "buffer" the file automatically before some kind of user interaction
+			<ul>
+				<li>auto: let the browser decide to buffer or not based on current conditions</li>
+				<li>none: do not preload</li>
+				<li>meta: tells the browser that it should prefetch metadata (sizing, first frame, poster, duration etc) but that it shouldnt download anything until the user activates the controls</li>
+			</ul>
+		</li>
+		<li>poster (&lt;video&gt; only): a link to an image to show as a placeholder</li>
+	</ul>
+</section>
+
+<section class="slide" id="demo-2">
+  <h2>A more dressed-up demo</h2>
+  <video poster="images/karot.jpg" controls loop width="720">
+	  <source src="video/wall.webm" type='video/webm; codecs="vp8, vorbis"' />
+	  <source src="video/wall.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+	  <source src="video/wall.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
+	  Video tag not supported. Download the video <a href="movie.webm">here</a>.
+	</video>
+</section>
+
+<section class="slide" id="gotchas">
+  <h2>Gotchas</h2>
+ 	<ul>
+ 		<li>Firefox has a bug with "loop". jQuery fix:
+<pre><code>$(&#039;video[loop]&#039;).bind(&#039;ended&#039;, function () {
+	this.play();
+});</pre></code>
+ 		</li>
+ 		<li>Firefox will not recognize video without proper Apache config serving the correct MIME type. Add the following to <strong>httpd.conf</strong>:
+<pre><code>AddType video/ogg .ogv
+AddType video/mp4 .mp4
+AddType video/webm .webm</code></pre>
+ 	</li>
+ 		<li>Poster image will set width/height by default. (See demo)</li>
+ 		<li>iPads require mp4 being the first &lt;source&gt; in the video stack.</li>
+ 		<li><a href="http://transitioning.to/2012/01/the-world-of-pain-that-is-html5-video/">HTML5 Video: A World of Pain</a></li>
+	</ul>
+</section>
+
+<section class="slide" id="first-class">
+  <h2>A true first class citizen</h2>
+  <p>And a completely contrived example.</p>
+  <video poster="images/karot.jpg" controls loop width="720" class="bling">
+	  <source src="video/wall.webm" type='video/webm; codecs="vp8, vorbis"' />
+	  <source src="video/wall.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+	  <source src="video/wall.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
+	  Video tag not supported. Download the video <a href="movie.webm">here</a>.
+	</video>
+</section>
+
+<section class="slide" id="video-api">
+  <h2>&lt;video&gt;/&lt;audio&gt; elements have a full API</h2>
+  <p><a href="http://www.w3.org/2010/05/video/mediaevents.html">Click me: Huge list of video event and api in a beautiful interactive interface.</a></p>
+  <p>The video element comes with a bunch of new events to detect (and control) when the video is playing, paused or finished. Since loading a video resource can have many caveats there are many events to have a fine control of the loading process, both at network level (loadstart, progress, suspend, abort, error, emptied, stalled) and at buffering level (loadedmetadata, loadeddata, waiting, playing, canplay, canplaythrough).</p>
+  <a href="http://www.w3.org/2010/05/video/mediaevents.html"><img src="images/video-api.jpg" width="720"></a>
+	<cite>http://www.html5rocks.com/en/tutorials/video/basics/</cite>
+</section>
+
+<section class="slide" id="video-api-continued">
+  <h2>&lt;video&gt; API javascript demo</h2>
+  <pre><code>$(&#039;#api-video&#039;).bind(&#039;timeupdate&#039;, function(){
+  $(&#039;#timer&#039;).html($(this).get(0).currentTime);
+});
+$(&#039;#api-video&#039;).get(0).currentTime = 10;
+$(&#039;#api-video&#039;).get(0).play();</code></pre>
+  <p>Timer example: <span id="timer">TIMER!</span></p>
+  <video poster="images/karot.jpg" controls loop preload="auto" id="api-video">
+	  <source src="video/wall.webm" type='video/webm; codecs="vp8, vorbis"' />
+	  <source src="video/wall.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+	  <source src="video/wall.theora.ogv" type='video/ogg; codecs="theora, vorbis"' />
+	  Video tag not supported. Download the video <a href="movie.webm">here</a>.
+	</video>
+	<cite>http://www.html5rocks.com/en/tutorials/video/basics/</cite>
+</section>
+
+<section class="slide" id="tools">
+  <h2>Tools/Resources</h2>
+  <ul><li>http://www.mirovideoconverter.com/</li>
+	<li>http://www.html5rocks.com/en/tutorials/video/basics/</li>
+	<li>Amazing HTML5 video player and shim: http://mediaelementjs.com/</li>
+	</ul>
+</section>
+
+<section class="slide" id="homework">
+  <h2>Homework</h2>
+  <p>Video record interviews with each of your group members. Add a page for each member that plays the interview (link to each interview from the existing "About" page). Ensure the video is properly converted and stacked into the three formats. Dress up the video into your overall theme (CSS). Use posters. The interviews must play on Safari, Firefox, Chrome and IE9.</p>
+
+  <p>Build some form of interaction to the videos via javascript. Perhaps external play buttons, manipulation of playspeed, things that "fire" at various times throughout each video? Please surprise me.</p>
+
+  <p>Bump your progress bar up to 7/10.</p>
+</section>
+
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<p class="deck-status">
+  Press "m" to see all slides.
+  <span class="deck-status-current"></span>
+  /
+  <span class="deck-status-total"></span>
+</p>
+
+<form action="." method="get" class="goto-form">
+  <label for="goto-slide">Go to slide:</label>
+  <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+  <datalist id="goto-datalist"></datalist>
+  <input type="submit" value="Go">
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+  <!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../deck.js/jquery-1.7.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="../deck.js/core/deck.core.js"></script>
+<script src="../deck.js/extensions/hash/deck.hash.js"></script>
+<script src="../deck.js/extensions/menu/deck.menu.js"></script>
+<script src="../deck.js/extensions/goto/deck.goto.js"></script>
+<script src="../deck.js/extensions/status/deck.status.js"></script>
+<script src="../deck.js/extensions/navigation/deck.navigation.js"></script>
+
+<!-- syntax highlighter -->
+<script src="../custom-common/js/jquery.snippet.js"></script>
+
+<!-- Specific to this page -->
+<script src="ai-class.js"></script>
+
+</body>
+</html>
