@@ -101,7 +101,7 @@
     </figure>
   </section>
 
-    <section class="slide" id="states">
+  <section class="slide" id="states">
     <h2>State saving</h2>
     <p>Each time you call translate, rotate, or scale it adds on to the previous transformation. This gets really hard to track after awhile.</p>
     <blockquote>The context object represents the current drawing state. The state includes the current transform, the fill and stroke color, the current font, and a few other variables. Canvas lets you save this state by pushing it onto a "stack". After you save the state you can make modifications, then restore to the previous state. Canvas takes care of the book-keeping for you.</blockquote>
@@ -112,6 +112,13 @@
     <figure class="fiddle">
       <iframe style="width: 580px; height: 350px" src="http://jsfiddle.net/illepic/swtNb/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
     </figure>
+    <cite>joshy.org</cite>
+  </section>
+
+  <section class="slide" id="pixel-buffers">
+    <h2>Pixel buffers</h2>
+    <p>With canvas, we can get right at the pixels directly and manipulate them. We can create our own image data, or play with existing photo data. </p>
+    <canvas width="600" height="500"></canvas>
     <cite>joshy.org</cite>
   </section>
 
