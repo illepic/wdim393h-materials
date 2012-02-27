@@ -37,6 +37,7 @@ section {
 cite {
   display: block;
   text-align: right;
+  clear: left;
 }
 code {
   background-color: #fff;
