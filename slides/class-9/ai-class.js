@@ -7,12 +7,14 @@ $(function() {
 
   //pixel-buffers
   var img = new Image();
-	img.onload = function() {
+	$(img).load(function(){
 		//draw the image to the canvas
-		var c = $('#pixel-buffers canvas').get(0).getContext('2d');
+		var canvas = $('#pixel-buffers canvas');
+		var c = canvas.get(0).getContext('2d');
 		c.drawImage(img,0,0);
+		c.drawImage(img,500,0);
 		//get the canvas data
-		var data = c.getImageData(0,0,c.width,c.height);
+		var data = c.getImageData(500,0,img.width,img.height);
 		//invert each pixel
 		for(n=0; n<data.width*data.height; n++) {
 			var index = n*4;
@@ -22,8 +24,8 @@ $(function() {
 			//don't touch the alpha
 		}
 		//set the data back
-		c.putImageData(data,0,0);
-	};
+		c.putImageData(data,500,0);
+	});
 	img.src = "images/fire.jpg";
 });
 
