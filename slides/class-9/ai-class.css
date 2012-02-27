@@ -25,6 +25,9 @@
 .deck-container figure.fiddle:first-child {
   margin-right: 10px;
 }
+.deck-container .slide blockquote {
+  font-size: 1em;
+}
 .slide h2 {
   padding-left: 2em;
   background: url(../custom-common/images/HTML5_Tech_Classes_256/HTML5_Multimedia_256.png) left top no-repeat;
@@ -80,4 +83,7 @@
   -webkit-transform: rotate(360deg);
   -moz-transform: rotate(360deg);
   transform: rotate(360deg);
+}
+.clearleft {
+  clear: left;
 }
