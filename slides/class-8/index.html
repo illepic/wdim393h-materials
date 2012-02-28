@@ -187,22 +187,13 @@ c.fillRect(0,0,400,300);</pre></code>
 
   <section class="slide" id="code-image-1">
     <h2>Images</h2>
-  <code><pre>var image = new Image();
-$(image).load(function(){
-  var c = $(&#039;#code-5 canvas.first&#039;).get(0).getContext(&#039;2d&#039;);
-  var pat = c.createPattern(image, &#039;repeat&#039;);
-  c.fillStyle = pat;
-  c.fillRect(10,10,560,300);
-
-  var c = $(&#039;#code-5 canvas.second&#039;).get(0).getContext(&#039;2d&#039;);
-  var pat = c.createPattern(image, &#039;repeat-y&#039;);
-  c.fillStyle = pat;
-  c.fillRect(10,10,560,300);
-
-});
-image.src = &#039;images/derp.png&#039;;</pre></code>
-    <canvas class="first" width="560" height="300"></canvas>
-    <canvas class="second" width="560" height="300"></canvas>
+    <p>Patterns</p>
+   <figure class="fiddle">
+      <iframe style="width: 580px; height: 350px" src="http://jsfiddle.net/illepic/Kw7qw/embedded/js,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
+    <figure class="fiddle">
+      <iframe style="width: 580px; height: 350px" src="http://jsfiddle.net/illepic/Kw7qw/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+    </figure>
   </section>
 
   <section class="slide" id="code-image-2">
