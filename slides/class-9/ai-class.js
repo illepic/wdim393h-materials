@@ -23,5 +23,20 @@ $(function() {
 		c.putImageData(data,500,0); //set the recolored data back
 	});
 	img.src = "images/fire.jpg";
+
+	//events
+	var canvas = $('#events canvas'); //draw the image to the canvas
+	var c = canvas.get(0).getContext('2d');
+	c.fillStyle = 'rgb(0,255,0)';
+	c.beginPath();
+	c.arc(
+		100, 100, 40,  //40 pix radius circle at 100,100
+		0, Math.PI*2  //0 to 360 degrees for a full circle
+	);
+	c.closePath();
+	var a = c.isPointInPath(80,0);     // returns true
+	console.log(a);
+	var b = c.isPointInPath(200,100);
+	console.log(b);  // returns false
 });
 
