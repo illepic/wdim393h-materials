@@ -118,6 +118,24 @@
   <section class="slide" id="pixel-buffers">
     <h2>Pixel buffers</h2>
     <p>With canvas, we can get right at the pixels directly and manipulate them. We can create our own image data, or play with existing photo data. </p>
+    <p>Thinks of pixel buffers as essentially a huge array of all the pixels in an image. The pixels are made up of red, green, blue, and alpha components, in that order, so to calculate the index of the <span class="red">red</span> component of a particular pixel you would have to calculate the following equation:</p>
+    <code>
+      <pre>(y * width + x) * 4</pre>
+    </code>
+    <p>For the pixel 5,3 on a bitmap that is 6 pixels wide it would be:</p>
+    <code>
+       <pre>(3 * 6 + 5) * 4</pre>
+     </code>
+     <p>The * 4 is because each pixel has four color components (RGB and the opacity or 'alpha' component). The data object contains the width of the image, so you can write it as (3 * data.width + 5) * 4. Once you have found the red component you can find the others by incrementing the index for the green, blue, and alpha components. (code on next slide)</p>
+     <img src="images/pixel-array.png">
+    <canvas width="1000" height="500"></canvas>
+    <cite>joshy.org</cite>
+  </section>
+
+  <section class="slide" id="pixel-buffers-ex">
+    <h2>Pixel buffers Example</h2>
+    <p>In the following example, we're looping through all the pixels in the image and inverting them.</p>
+
     <canvas width="1000" height="500"></canvas>
     <cite>joshy.org</cite>
   </section>
@@ -125,19 +143,6 @@
 
   <section class="slide" id="lab">
     <h2>Hands on lab from joshy.org</h2>
-    <p>joshy.org includes a few great HTML5 resources. Below is a link to a hands-on lab to get you up to speed on drawing with canvas</p>
-    <h3><a href="http://projects.joshy.org/presentations/HTML/CanvasDeepDive/handson1/handson1.html">Canvas Deep Dive.</a></h3>
-    <p>Each class member will complete this assignment and turn in both html files via links online using the class website.</p>
-  </section>
-
-  <section class="slide" id="homework">
-    <h2>Final Project & Week 8 Homework</h2>
-    <p>The final project and presentation are due March 19th. Each group's final project will be done by the start of that class and the group will take between 30-45 minutes to discuss their site as a whole, including this new canvas addition.</p>
-    <p>
-      Next week we'll be going into more detail about animating canvas. For now, I want your team to submit a write-up with a description of what you want to do with canvas for your final project. This write up is due March 5th, but I'd like each group to start assigning users to different parts of the project and start making progress on it immediately. As part of your project, please let me know what each group member will be doing.
-    </p>
-
-    <p>With three weeks to work on your canvas project, try to keep it within a scope that makes sense for the capabilities of the group. However, if you'd like a challenge now is the time. Your project could be a game, a utility, a visualization: anything dynamic and interactive. </p>
   </section>
 
   <section class="slide" id="resources">

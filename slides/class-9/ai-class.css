@@ -28,6 +28,9 @@
 .deck-container .slide blockquote {
   font-size: 1em;
 }
+.deck-container .red {
+  color: red;
+}
 .slide h2 {
   padding-left: 2em;
   background: url(../custom-common/images/HTML5_Tech_Classes_256/HTML5_Multimedia_256.png) left top no-repeat;
