@@ -134,6 +134,25 @@
   <section class="slide" id="pixel-buffers-ex">
     <h2>Pixel buffers Example</h2>
     <p>In the following example, we're looping through all the pixels in the image and inverting them.</p>
+    <code>
+      <pre>var img = new Image();
+$(img).load(function(){
+  var canvas = $(&#039;#pixel-buffers-ex canvas&#039;); //draw the image to the canvas
+  var c = canvas.get(0).getContext(&#039;2d&#039;);
+  c.drawImage(img,0,0); //draw image 1
+  var data = c.getImageData(0,0,img.width,img.height); //get the canvas data
+  //invert each pixel
+  for(n=0; n&lt;data.width*data.height; n++) {
+    var index = n*4; //jumps to next point in array after 4 colors
+    data.data[index]   = 255-data.data[index];
+    data.data[index+1] = 255-data.data[index+1];
+    data.data[index+2] = 255-data.data[index+2];
+    //don&#039;t touch the alpha
+  }
+  c.putImageData(data,500,0); //set the recolored data back
+});
+img.src = &quot;images/fire.jpg&quot;;</pre>
+    </code>
 
     <canvas width="1000" height="500"></canvas>
     <cite>joshy.org</cite>
