@@ -47,7 +47,13 @@
     <h2>Agenda</h2>
     <h3>Advanced Canvas</h3>
     <ol>
-      <li></li>
+      <li>Translate</li>
+      <li>Rotate</li>
+      <li>Scale</li>
+      <li>State saving</li>
+      <li>Pixel buffers</li>
+      <li>Events</li>
+      <li>Animation</li>
     </ol>
   </section>
 
@@ -135,19 +141,18 @@
     <h2>Pixel buffers Example</h2>
     <p>In the following example, we're looping through all the pixels in the image and inverting them.</p>
     <code>
-      <pre>var img = new Image();
+      <pre class="jsCode">var img = new Image();
 $(img).load(function(){
-  var canvas = $(&#039;#pixel-buffers-ex canvas&#039;); //draw the image to the canvas
-  var c = canvas.get(0).getContext(&#039;2d&#039;);
-  c.drawImage(img,0,0); //draw image 1
+  var c = $(&#039;#pixel-buffers-ex canvas&#039;).get(0).getContext(&#039;2d&#039;);
+  c.drawImage(img,0,0); //draw initial image
   var data = c.getImageData(0,0,img.width,img.height); //get the canvas data
-  //invert each pixel
-  for(n=0; n&lt;data.width*data.height; n++) {
+  //invert each pixel by looping through array and subtracting from 255
+  for(n=0; n&lt;data.width*data.height; n++){
     var index = n*4; //jumps to next point in array after 4 colors
-    data.data[index]   = 255-data.data[index];
-    data.data[index+1] = 255-data.data[index+1];
-    data.data[index+2] = 255-data.data[index+2];
-    //don&#039;t touch the alpha
+    data.data[index]   = 255-data.data[index]; //red
+    data.data[index+1] = 255-data.data[index+1]; //green
+    data.data[index+2] = 255-data.data[index+2]; //blue
+    // alpha (skipping)
   }
   c.putImageData(data,500,0); //set the recolored data back
 });
@@ -158,23 +163,133 @@ img.src = &quot;images/fire.jpg&quot;;</pre>
   </section>
 
   <section class="slide" id="events">
-    <h2>Pixel buffers Example</h2>
-    <p>We have to define our own event inside of canvas. <code>isPointInPath</code> does the heavy lifting for us</p>
-    <canvas width="1000" height="500"></canvas>
+    <h2>Events</h2>
+    <p>We have to define our own event inside of canvas. <code>isPointInPath</code> does the heavy lifting for us. Use the console of your browser to see the javascript output.</p>
+    <code>
+      <pre class="jsCode">var c = $(&#039;#events canvas&#039;).get(0).getContext(&#039;2d&#039;);
+c.beginPath();
+c.arc(
+  100, 100, 40,  //40 pix radius circle at 100,100
+  0, Math.PI*2  //0 to 360 degrees for a full circle
+);
+c.closePath();
+c.stroke();
+var a = c.isPointInPath(110,110);
+console.log(&#039;Is point 110,110 in the circle? &#039; + a);// returns true
+var b = c.isPointInPath(200,100);
+console.log(&#039;Is point 200,11 in the circle? &#039; + b);  // returns false</pre>
+    </code>
+    <canvas width="1000" height="250"></canvas>
+  </section>
+
+  <section class="slide" id="animation-1">
+    <h2>Animation</h2>
+    <p>To animate on a canvas, think about it like drawing something over and over again. When you call a draw function, it is immediately put on the screen. Basically, after drawing something, wait a few milliseconds and then draw something else. We "ask" the browser to call us back after those few milliseconds and then draw another thing. Javascript gives us setInterval to make these repeated calls.</p>
+    <code>
+      <pre class="jsCode">var c3 = $(&#039;#animation-1 canvas&#039;).get(0).getContext(&#039;2d&#039;);
+c3.fillStyle = &quot;red&quot;;
+var x = 0;
+function drawIt() {
+  c3.fillRect(x,50,200,100);
+  x+=5;
+  // stop the timer once it&#039;s beyond the canvas
+  if(x &gt; c3.canvas.width){
+    clearInterval(intervalID);
+  }
+}
+var intervalID = setInterval(drawIt, 100);</pre>
+    </code>
+    <canvas width="1000" height="250"></canvas>
+  </section>
+
+  <section class="slide" id="animation-2">
+    <h2>Animation - Clearing</h2>
+    <p>Why was the previous example a solid bar instead of an animated box? Actually, our rectangle did go across the screen, updating by five pixels every 100 millesconds (or 10FPS), but the old rectangle is still there. It looks like the rectangle is just getting longer and longer.</p>
+    <p>Remember that the canvas is just a pixel buffer. If you set some pixels they will stay there until you change them. So lets clear the canvas on each frame before we draw the rectangle with clearRect().</p>
+    <code>
+      <pre class="jsCode">var c4 = $(&#039;#animation-2 canvas&#039;).get(0).getContext(&#039;2d&#039;);
+c4.fillStyle = &quot;red&quot;;
+var x2 = 0;
+function drawIt2() {
+  c4.fillRect(x,50,200,100);
+  //nuke it from orbit, it&#039;s the only way to be sure
+  c4.clearRect(0,0,c4.canvas.width,c4.canvas.height);
+  x2+=5;
+  // stop the timer once it&#039;s beyond the canvas
+  if(x2 &gt; c4.canvas.width){
+    clearInterval(intervalID);
+  }
+}
+var intervalID2 = setInterval(drawIt2, 100);</pre>
+    </code>
+    <canvas width="1000" height="250"></canvas>
+  </section>
+
+  <section class="slide" id="animation-3">
+    <h2>Animation - Sprites (still)</h2>
+    <p>Most 8-bit and 16-bit video game consoles relied soley on sprites for animation. Sprites are small images that draw quickly on the screen with little overhead. Sprites are usually "cut" out of a larger image called a sprite sheet.</p>
+    <p>Think about it like a flip book: The sprite contains all the different images and we just flip through each one. See the example below.</p>
+    <img src="images/explode.png" alt="">
+    <p>Let's draw just the third image from left.</p>
+    <code>
+      <pre class="jsCode">  var img2 = new Image();
+  $(img2).load(function(){
+    var c5 = $(&#039;#animation-3 canvas&#039;).get(0).getContext(&#039;2d&#039;);
+    c5.drawImage(
+      img2,       // the image of the sprite sheet
+      96,0,48,48, // source coords inside sheet (x,y,w,h)
+      0,0,48,48   // destination coordinates on canvas (x,y,w,h)
+    );
+  });
+  img2.src = &quot;images/explode.png&quot;;</pre>
+    </code>
+    <canvas width="1000" height="100"></canvas>
+  </section>
+
+  <section class="slide" id="animation-4">
+    <h2>Animation - Sprites (animated)</h2>
+    <p>Think about it like a flip book: The sprite contains all the different images and we just flip through each one.</p>
+    <img src="images/explode.png" alt="">
+    <p>Let's flip through it. We'll do this by keeping track of the current frame using a tick counter.</p>
+    <code>
+      <pre class="jsCode">  var tick = 0; //every time we redraw, we&#039;ll increment this
+  var c6 = $(&#039;#animation-4 canvas&#039;).get(0).getContext(&#039;2d&#039;);
+  var img3 = new Image();
+  $(img3).load(function(){
+    function drawIt3() {
+      var frame = tick % 7; //7 is the number of frames in the sprite sheet
+      var x3 = frame * 48; //48 is the width of each frame
+      c6.clearRect(0,0,c6.canvas.width,c6.canvas.height);
+      c6.drawImage(
+        img3,       // the image of the sprite sheet
+        x3,0,48,48, // source coords inside sheet (x,y,w,h)
+        0,0,48,48   // destination coordinates on canvas (x,y,w,h)
+      );
+      tick++;
+    }
+    var intervalID3 = setInterval(drawIt3, 100);
+  });
+  img3.src = &quot;images/explode.png&quot;;</pre>
+    </code>
+    <canvas width="1000" height="100"></canvas>
   </section>
 
   <section class="slide" id="lab">
     <h2>Hands on lab from joshy.org</h2>
+    <p><a href="http://projects.joshy.org/presentations/HTML/CanvasDeepDive/handson2/handson2.html">Click here for an advanced HTML5 hands on lab.</a></p>
+    <p><a href="lab/lab.zip">Zip of lab materials.</a></p>
+    <p>Each class member will complete this assignment and turn in the html files via links online using the class website. DO NOT EMAIL ME HTML FILES. Get your file online and use the homework submission system to turn in the LINK to your file.</p>
   </section>
 
   <section class="slide" id="resources">
     <h2>Resources</h2>
-    <p>There are many canvas resources out there. Below are a few you might find helpful.</p>
+    <p>There are many canvas animation resources out there. Below are a few you might find helpful.</p>
     <ul>
-      <li><a href="https://developer.mozilla.org/en/Canvas_tutorial">Mozilla Canvas Tutorial</a></li>
-      <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/canvas-from-scratch-introducing-canvas/">Nettuts: Discovering Canvas From Scratch</a></li>
-      <li><a href="http://projects.joshy.org/presentations/HTML/CanvasDeepDive/presentation.html">Canvas Presentation</a></li>
-      <li><a href="http://blog.nihilogic.dk/2009/02/html5-canvas-cheat-sheet.html?kozmic">Canvas Cheat Sheet</a></li>
+      <li><a href="http://mbostock.github.com/d3/">D3.js is really handy for data visualization.</a></li>
+      <li><a href="http://impactjs.com/">Impact.js is a full game engine</a></li>
+      <li><a href="http://createjs.com/">Create.js (includes easel.js): VERY nice api for animation</a></li>
+      <li><a href="http://paperjs.org/">Paper.js: vector animation using paperscript</a></li>
+      <li><a href="http://processingjs.org/">Processing.js: very neat data visualization and animation</a></li>
     </ul>
   </section>
 
