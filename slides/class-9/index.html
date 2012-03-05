@@ -109,7 +109,7 @@
 
   <section class="slide" id="states">
     <h2>State saving</h2>
-    <p>Each time you call translate, rotate, or scale it adds on to the previous transformation. This gets really hard to track after awhile.</p>
+    <p>Each time you call translate, rotate, or scale it adds on to the previous transformation. This gets really hard to track after a while.</p>
     <blockquote>The context object represents the current drawing state. The state includes the current transform, the fill and stroke color, the current font, and a few other variables. Canvas lets you save this state by pushing it onto a "stack". After you save the state you can make modifications, then restore to the previous state. Canvas takes care of the book-keeping for you.</blockquote>
     <p>Notice how the disance between rectangles does not expand, but rather stays linear.</p>
     <figure class="fiddle">
@@ -118,7 +118,6 @@
     <figure class="fiddle">
       <iframe style="width: 580px; height: 350px" src="http://jsfiddle.net/illepic/swtNb/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
     </figure>
-    <cite>joshy.org</cite>
   </section>
 
   <section class="slide" id="pixel-buffers">
@@ -134,7 +133,6 @@
      </code>
      <p>The * 4 is because each pixel has four color components (RGB and the opacity or 'alpha' component). The data object contains the width of the image, so you can write it as (3 * data.width + 5) * 4. Once you have found the red component you can find the others by incrementing the index for the green, blue, and alpha components. (code on next slide)</p>
      <img src="images/pixel-array.png">
-    <cite>joshy.org</cite>
   </section>
 
   <section class="slide" id="pixel-buffers-ex">
@@ -184,7 +182,7 @@ console.log(&#039;Is point 200,11 in the circle? &#039; + b);  // returns false<
 
   <section class="slide" id="animation-1">
     <h2>Animation</h2>
-    <p>To animate on a canvas, think about it like drawing something over and over again. When you call a draw function, it is immediately put on the screen. Basically, after drawing something, wait a few milliseconds and then draw something else. We "ask" the browser to call us back after those few milliseconds and then draw another thing. Javascript gives us setInterval to make these repeated calls.</p>
+    <p>To animate on a canvas, think about it like drawing something over and over again. When you call a draw function, it is immediately put on the screen. Basically, after drawing something, wait a few milliseconds and then draw something else. We "ask" the browser to call us back after those few milliseconds and then draw another thing. Javascript gives us setInterval to make these repeated calls. If you see a solid bar below, refresh page.</p>
     <code>
       <pre class="jsCode">var c3 = $(&#039;#animation-1 canvas&#039;).get(0).getContext(&#039;2d&#039;);
 c3.fillStyle = &quot;red&quot;;
@@ -204,8 +202,8 @@ var intervalID = setInterval(drawIt, 100);</pre>
 
   <section class="slide" id="animation-2">
     <h2>Animation - Clearing</h2>
-    <p>Why was the previous example a solid bar instead of an animated box? Actually, our rectangle did go across the screen, updating by five pixels every 100 millesconds (or 10FPS), but the old rectangle is still there. It looks like the rectangle is just getting longer and longer.</p>
-    <p>Remember that the canvas is just a pixel buffer. If you set some pixels they will stay there until you change them. So lets clear the canvas on each frame before we draw the rectangle with clearRect().</p>
+    <p>Why was the previous example a solid bar instead of an animated box? Actually, our rectangle did go across the screen, updating by five pixels every 100 milleseconds (or 10FPS), but the old rectangle is still there. It looks like the rectangle is just getting longer and longer.</p>
+    <p>Remember that the canvas is just a pixel buffer. If you set some pixels they will stay there until you change them. So let's clear the canvas on each frame before we draw the rectangle with clearRect(). (Refresh the page to see it in action)</p>
     <code>
       <pre class="jsCode">var c4 = $(&#039;#animation-2 canvas&#039;).get(0).getContext(&#039;2d&#039;);
 c4.fillStyle = &quot;red&quot;;
@@ -227,7 +225,7 @@ var intervalID2 = setInterval(drawIt2, 100);</pre>
 
   <section class="slide" id="animation-3">
     <h2>Animation - Sprites (still)</h2>
-    <p>Most 8-bit and 16-bit video game consoles relied soley on sprites for animation. Sprites are small images that draw quickly on the screen with little overhead. Sprites are usually "cut" out of a larger image called a sprite sheet.</p>
+    <p>Most 8-bit and 16-bit video game consoles relied solely on sprites for animation. Sprites are small images that draw quickly on the screen with little overhead. Sprites are usually "cut" out of a larger image called a sprite sheet.</p>
     <p>Think about it like a flip book: The sprite contains all the different images and we just flip through each one. See the example below.</p>
     <img src="images/explode.png" alt="">
     <p>Let's draw just the third image from left.</p>
